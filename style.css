@@ -29,13 +29,6 @@ body {
 .vertical-title img {
   height: 60px;
 }
-.close-btn {
-  font-size: 26px;
-  cursor: pointer;
-  text-align: right;
-  margin-bottom: 20px;
-}
-
 
 .hamburger {
   font-size: 32px;
@@ -67,6 +60,13 @@ body {
   font-size: 16px;
 }
 
+.close-btn {
+  font-size: 26px;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
 .side-menu.show {
   right: 0;
 }
@@ -83,15 +83,12 @@ body {
 .main-nav {
   position: sticky;
   top: 80px;
-  z-index: 50;
-}
-
-.main-nav {
   background: #EDE3D1;
   display: flex;
   justify-content: center;
   gap: 40px;
   padding: 18px;
+  z-index: 50;
 }
 
 .main-nav a {
