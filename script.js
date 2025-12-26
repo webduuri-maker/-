@@ -1,6 +1,6 @@
-const menuBtn = document.getElementById("menuBtn");
+const hamburger = document.getElementById("hamburger");
 const sideMenu = document.getElementById("sideMenu");
 
-menuBtn.addEventListener("click", () => {
+hamburger.addEventListener("click", () => {
   sideMenu.classList.toggle("show");
 });
