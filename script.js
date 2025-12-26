@@ -2,17 +2,17 @@ const hamburger = document.getElementById("hamburger");
 const sideMenu = document.getElementById("sideMenu");
 const closeBtn = document.getElementById("closeBtn");
 
-// нээх
+// Hamburger нээх
 hamburger.addEventListener("click", () => {
   sideMenu.classList.add("show");
 });
 
-// хаах (X)
+// X товч дарвал хаагдана
 closeBtn.addEventListener("click", () => {
   sideMenu.classList.remove("show");
 });
 
-// гадна дарвал хаагдана
+// Гадна дарвал хаагдана
 document.addEventListener("click", (e) => {
   if (
     sideMenu.classList.contains("show") &&
