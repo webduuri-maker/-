@@ -26,14 +26,12 @@ body {
   z-index: 100;
 }
 
-/* Logo + main nav хамт */
 .logo-and-title {
   display: flex;
   align-items: center;
-  gap: 40px; /* Logo ба nav-ийн зай */
+  gap: 40px;
 }
 
-/* Logo босоо */
 .logo-vertical {
   height: 80px;
 }
@@ -96,6 +94,40 @@ body {
 /* Responsive: 768px-с доош */
 @media (max-width: 768px) {
   .main-nav {
-    display: none; /* mobile дээр main nav харуулахгүй */
+    display: none; /* mobile-д main nav харагдахгүй */
   }
+}
+
+/* ===== HERO ===== */
+.hero img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  margin-top: 100px;
+}
+
+/* ===== INTRO ===== */
+.intro {
+  padding: 70px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-box {
+  max-width: 900px;
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 14px;
+  line-height: 1.9;
+  font-size: 17px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #4B2E2A;
+  color: #F5EFE6;
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
 }
