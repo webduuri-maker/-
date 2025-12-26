@@ -81,6 +81,12 @@ body {
 
 /* ===== MAIN NAV ===== */
 .main-nav {
+  position: sticky;
+  top: 80px;
+  z-index: 50;
+}
+
+.main-nav {
   background: #EDE3D1;
   display: flex;
   justify-content: center;
