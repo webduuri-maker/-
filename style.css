@@ -29,6 +29,13 @@ body {
 .vertical-title img {
   height: 60px;
 }
+.close-btn {
+  font-size: 26px;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
 
 .hamburger {
   font-size: 32px;
