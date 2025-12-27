@@ -1,155 +1,145 @@
-/* ================================
-   RESPONSIVE (DESKTOP + MOBILE)
-   ================================ */
-
-/* ====== LARGE DESKTOP (1400px+) ====== */
-@media (min-width: 1400px) {
-  .main-nav a {
-    font-size: 17px;
-  }
-
-  .intro-box {
-    font-size: 17px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* ====== NORMAL DESKTOP / LAPTOP ====== */
-@media (max-width: 1200px) {
-  .logo-and-title {
-    gap: 22px;
-  }
-
-  .main-nav {
-    gap: 24px;
-  }
-
-  .intro-box {
-    max-width: 800px;
-  }
+body {
+  background: #f6f1e7;
+  color: #2c2c2c;
 }
 
-/* ====== TABLET ====== */
-@media (max-width: 992px) {
-  .top-header {
-    height: 85px;
-    padding: 0 16px;
-  }
-
-  .logo-vertical {
-    height: 65px;
-  }
-
-  .main-nav a {
-    font-size: 15px;
-  }
-
-  .hero img {
-    height: 70vh;
-    margin-top: 85px;
-  }
-
-  .intro-box {
-    padding: 32px;
-    font-size: 16px;
-  }
-}
-
-/* ====== MOBILE ====== */
-@media (max-width: 768px) {
-
-  /* HEADER */
-  .top-header {
-    height: 70px;
-    padding: 0 14px;
-  }
-
-  .logo-and-title {
-    gap: 14px;
-  }
-
-  .logo-vertical {
-    height: 52px;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .hamburger {
-    font-size: 28px;
-  }
-
-  /* SIDE MENU */
-  .side-menu {
-    width: 100%;
-    right: -100%;
-    padding: 28px 22px;
-    transition: right 0.35s ease;
-  }
-
-  .side-menu.show {
-    right: 0;
-  }
-
-  .side-menu a {
-    font-size: 18px;
-  }
-
-  /* HERO */
-  .hero img {
-    height: 60vh;
-    margin-top: 70px;
-    object-fit: cover;
-  }
-
-  /* INTRO */
-  .intro {
-    padding: 40px 14px;
-  }
-
-  .intro-box {
-    padding: 26px;
-    font-size: 15.5px;
-    line-height: 1.8;
-    border-radius: 12px;
-  }
-
-  /* FOOTER */
-  .footer {
-    font-size: 13px;
-    padding: 18px 10px;
-  }
-
-  /* TOUCH FRIENDLY */
-  a, li {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-/* ====== SMALL MOBILE ====== */
-@media (max-width: 420px) {
-  .logo-vertical {
-    height: 48px;
-  }
-
-  .intro-box {
-    font-size: 15px;
-    padding: 22px;
-  }
-
-  .side-menu a {
-    font-size: 17px;
-  }
-   /* SIDE MENU LINKS FIX */
-.side-menu a {
-  display: block;
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  color: #fff;
+  height: 80px;
+  background: rgba(40,30,20,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.title-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #f5e6c8;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: #f5e6c8;
   text-decoration: none;
 }
 
-.side-menu li {
+.hamburger {
+  font-size: 30px;
+  color: #f5e6c8;
   cursor: pointer;
+  display: none;
 }
 
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: #2b1f14;
+  padding: 30px;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.side-menu.show {
+  right: 0;
+}
+
+.close-btn {
+  font-size: 28px;
+  color: #fff;
+  text-align: right;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.side-menu ul {
+  list-style: none;
+}
+
+.side-menu li {
+  margin-bottom: 18px;
+}
+
+.side-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* HERO */
+.hero {
+  margin-top: 80px;
+  height: 65vh;
+  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+/* INTRO */
+.intro {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-box {
+  max-width: 900px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  line-height: 1.9;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* FOOTER */
+footer {
+  background: #2b1f14;
+  color: #e8d9b0;
+  text-align: center;
+  padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hero {
+    height: 55vh;
+  }
 }
