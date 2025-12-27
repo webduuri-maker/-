@@ -140,4 +140,16 @@
   .side-menu a {
     font-size: 17px;
   }
+   /* SIDE MENU LINKS FIX */
+.side-menu a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.side-menu li {
+  cursor: pointer;
+}
+
 }
