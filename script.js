@@ -13,7 +13,7 @@ closeBtn.addEventListener("click", () => {
   sideMenu.classList.remove("show");
 });
 
-// Menu дотор дарахад хаахгүй
+// Menu дотор дарвал хаахгүй (линк ажиллана)
 sideMenu.addEventListener("click", (e) => {
   e.stopPropagation();
 });
