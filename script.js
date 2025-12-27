@@ -2,23 +2,23 @@ const hamburger = document.getElementById("hamburger");
 const sideMenu = document.getElementById("sideMenu");
 const closeBtn = document.getElementById("closeBtn");
 
-// Hamburger нээх
-hamburger.addEventListener("click", () => {
+// Нээх
+hamburger.addEventListener("click", (e) => {
+  e.stopPropagation();
   sideMenu.classList.add("show");
 });
 
-// X товч дарвал хаагдана
+// Хаах (X)
 closeBtn.addEventListener("click", () => {
   sideMenu.classList.remove("show");
 });
 
+// Menu дотор дарахад хаахгүй
+sideMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 // Гадна дарвал хаагдана
-document.addEventListener("click", (e) => {
-  if (
-    sideMenu.classList.contains("show") &&
-    !sideMenu.contains(e.target) &&
-    !hamburger.contains(e.target)
-  ) {
-    sideMenu.classList.remove("show");
-  }
+document.addEventListener("click", () => {
+  sideMenu.classList.remove("show");
 });
