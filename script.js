@@ -1,123 +1,116 @@
-// Baynbaraat Aylguu – Interaction Script
-// Vanilla JS only, calm and minimal
+(function () {
+  const pages = document.querySelectorAll(".page");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const navToggle = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".site-nav");
+  const scrollButtons = document.querySelectorAll("[data-scroll-target]");
+  const accordionTriggers = document.querySelectorAll(".accordion-trigger");
+  const yearSpan = document.getElementById("year");
 
-document.addEventListener("DOMContentLoaded", function () {
-  setupSmoothNavigation();
-  setupUserGuideAccordion();
-  setupAudioInteractions();
-});
+  function setYear() {
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  }
 
-/**
- * Smooth scrolling for main navigation links
- */
-function setupSmoothNavigation() {
-  var nav = document.querySelector('nav[aria-label="Main navigation"]');
-  if (!nav) return;
+  function showPage(id) {
+    pages.forEach((page) => {
+      page.classList.toggle("page--active", page.id === id);
+    });
+  }
 
-  var links = nav.querySelectorAll('a[href^="#"]');
-  links.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      var targetId = link.getAttribute("href");
-      if (!targetId || targetId === "#") return;
+  function setActiveNav(id) {
+    navLinks.forEach((link) => {
+      const target = link.getAttribute("data-nav");
+      link.classList.toggle("is-active", target === id);
+    });
+  }
 
-      var target = document.querySelector(targetId);
-      if (!target) return;
+  function handleHashNavigation() {
+    const hash = window.location.hash.replace("#", "");
+    const targetId = hash || "home";
+    const exists = Array.from(pages).some((p) => p.id === targetId);
+    const id = exists ? targetId : "home";
+    showPage(id);
+    setActiveNav(id);
+  }
 
+  function closeMobileNav() {
+    if (navMenu && navToggle) {
+      navMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  // Navigation link clicks
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const id = link.getAttribute("data-nav");
+      if (!id) return;
       event.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-      // Optional small offset for visual comfort
-      // You can adjust if you add a fixed header later
-      setTimeout(function () {
-        window.scrollBy(0, -10);
-      }, 400);
+      window.location.hash = id;
+      showPage(id);
+      setActiveNav(id);
+      closeMobileNav();
+      const topY = document.body.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: topY, behavior: "smooth" });
     });
   });
-}
 
-/**
- * Simple accordion behavior for User Guide steps
- * Enhances the "Step-by-Step Path" articles
- */
-function setupUserGuideAccordion() {
-  var guideSection = document.querySelector(
-    '#user-guide section[aria-label="Step by step guide"]'
-  );
-  if (!guideSection) return;
-
-  var items = guideSection.querySelectorAll("article");
-  if (!items.length) return;
-
-  items.forEach(function (item, index) {
-    var header = item.querySelector("header");
-    var title = header ? header.querySelector("h4") : null;
-    var content = null;
-
-    // Assume the first paragraph after the header is the main content
-    var paragraphs = item.querySelectorAll("p");
-    if (paragraphs.length > 0) {
-      content = paragraphs[0];
-    }
-
-    if (!header || !title || !content) return;
-
-    // Hide all but the first by default
-    var isInitiallyOpen = index === 0;
-    item.dataset.open = isInitiallyOpen ? "true" : "false";
-    content.style.display = isInitiallyOpen ? "block" : "none";
-
-    // Make header act like a button
-    header.setAttribute("role", "button");
-    header.setAttribute("tabindex", "0");
-    header.setAttribute("aria-expanded", String(isInitiallyOpen));
-
-    header.addEventListener("click", function () {
-      toggleAccordionItem(item, content, header);
+  // Mobile nav toggle
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
+  }
 
-    header.addEventListener("keydown", function (event) {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        toggleAccordionItem(item, content, header);
+  // CTA smooth scroll
+  scrollButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetSelector = btn.getAttribute("data-scroll-target");
+      const target = targetSelector ? document.querySelector(targetSelector) : null;
+      if (!target) return;
+      const id = target.id;
+      if (id) {
+        window.location.hash = id;
+        showPage(id);
+        setActiveNav(id);
+        const topY = document.body.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: topY, behavior: "smooth" });
       }
     });
   });
-}
 
-function toggleAccordionItem(item, content, header) {
-  var isOpen = item.dataset.open === "true";
-  var newState = !isOpen;
+  // Accordion behavior
+  accordionTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const expanded = trigger.getAttribute("aria-expanded") === "true";
+      const panelId = trigger.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
 
-  item.dataset.open = newState ? "true" : "false";
-  header.setAttribute("aria-expanded", String(newState));
-  content.style.display = newState ? "block" : "none";
-}
+      // Close others
+      accordionTriggers.forEach((otherTrigger) => {
+        const otherPanelId = otherTrigger.getAttribute("aria-controls");
+        const otherPanel = otherPanelId ? document.getElementById(otherPanelId) : null;
+        if (otherTrigger !== trigger) {
+          otherTrigger.setAttribute("aria-expanded", "false");
+          if (otherPanel) {
+            otherPanel.hidden = true;
+          }
+        }
+      });
 
-/**
- * Audio interaction for "Let’s Listen to Long Songs"
- * - Ensures only one audio element plays at a time
- */
-function setupAudioInteractions() {
-  var listenSection = document.querySelector("#listen-long-songs");
-  if (!listenSection) return;
-
-  var audioElements = listenSection.querySelectorAll("audio");
-  if (!audioElements.length) return;
-
-  audioElements.forEach(function (audio) {
-    audio.addEventListener("play", function () {
-      pauseOtherAudio(audioElements, audio);
+      // Toggle current
+      trigger.setAttribute("aria-expanded", String(!expanded));
+      panel.hidden = expanded;
     });
   });
-}
 
-function pauseOtherAudio(allAudios, current) {
-  allAudios.forEach(function (audio) {
-    if (audio !== current && !audio.paused) {
-      audio.pause();
-    }
-  });
-}
+  window.addEventListener("hashchange", handleHashNavigation);
+
+  // Initial load
+  setYear();
+  handleHashNavigation();
+})();
