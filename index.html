@@ -2,814 +2,431 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Baynbaraat Aylguu – Mongolian Long Song</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Baynbaraat Aylguu – Mongolian Long Song (Urtiin Duu)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Baynbaraat Aylguu – an educational platform dedicated to the calm, expansive style of Mongolian Long Song (Urtiin Duu).">
+  <meta name="description" content="A calm, educational space dedicated to the Baynbaraat style of Mongolian Long Song (Urtiin Duu).">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div>
-      <h1>Baynbaraat Aylguu – Mongolian Long Song</h1>
-      <p>An educational space for the calm, expansive, non-aggressive melodic style of Mongolian Long Song.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-main">Baynbaraat Aylguu</span>
+        <span class="brand-sub">Mongolian Long Song – Urtiin Duu</span>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" data-nav="home" class="nav-link is-active">Home</a></li>
+          <li><a href="#introduction" data-nav="introduction" class="nav-link">Introduction</a></li>
+          <li><a href="#user-guide" data-nav="user-guide" class="nav-link">User Guide</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#user-guide">User Guide</a></li>
-        <li><a href="#our-pride">Our Pride</a></li>
-        <li><a href="#long-song-trainings">Long Song Trainings</a></li>
-        <li><a href="#listen-long-songs">Let’s Listen to Long Songs</a></li>
-        <li><a href="#news-information">News &amp; Information</a></li>
-        <li><a href="#competition-rules">Competition Rules</a></li>
-        <li><a href="#cultural-heritage-bearers">Cultural Heritage Bearers</a></li>
-        <li><a href="#research-topics">Research Topics</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
-    <!-- 1. HOME -->
-    <section id="home" aria-labelledby="home-heading">
-      <header>
-        <h2 id="home-heading">Home</h2>
-      </header>
-
-      <article aria-label="Hero">
-        <header>
-          <h3>Baynbaraat – The Gentle Breath of the Steppe</h3>
-        </header>
-        <p>
-          Baynbaraat is a refined melodic style of Mongolian Long Song (Urtiin Duu) characterized by calm,
-          sustained tones, spacious phrasing, and a non-aggressive, contemplative energy. It arises from the
-          vast landscapes of the steppe, echoing the slow rhythm of horse hooves, wind, and open horizons.
-        </p>
-      </article>
-
-      <section aria-label="Short explanation of Baynbaraat">
-        <h3>What Makes Baynbaraat Unique?</h3>
-        <p>
-          Within the broader Long Song tradition, Baynbaraat emphasizes softness over force, inner stillness over
-          display, and subtle emotional nuance over dramatic gesture. Singers stretch a single syllable over many
-          beats, shaping the sound with delicate ornamentation and controlled breathing, inviting listeners into
-          a slow, attentive state.
-        </p>
-        <p>
-          This style carries memories of pastoral life, seasonal movements, and intimate relationships with
-          horses, mountains, and skies. It is not simply music, but a way of dwelling with the land and with
-          others through sound.
-        </p>
-      </section>
-
-      <section aria-label="Features">
-        <h3>What You Can Explore Here</h3>
-
-        <article>
-          <h4>Cultural Foundations</h4>
-          <p>
-            Learn about the historical roots of Mongolian Long Song, the social settings in which it is sung, and
-            the particular qualities that define the Baynbaraat style.
-          </p>
-        </article>
-
-        <article>
-          <h4>Listening with Care</h4>
-          <p>
-            Discover gentle listening practices that help you hear breath, timbre, and silence, and experience how
-            Long Song reshapes our sense of time and space.
-          </p>
-        </article>
-
-        <article>
-          <h4>Learning Pathways</h4>
-          <p>
-            Explore beginner, intermediate, and advanced learning pathways that honor traditional approaches to
-            vocal training while welcoming new learners with respect.
-          </p>
-        </article>
-
-        <article>
-          <h4>Living Heritage</h4>
-          <p>
-            Meet cultural heritage bearers—singers, teachers, and researchers—who carry and renew the Baynbaraat
-            tradition in their daily lives and communities.
-          </p>
-        </article>
-      </section>
-
-      <section aria-label="Home calls to action">
-        <h3>Begin Your Journey</h3>
-        <p>
-          You may start by reading the introduction, follow the user guide to understand how to use this platform,
-          or move directly to the listening section to encounter the sound of Baynbaraat.
-        </p>
-        <p>
-          This website is an invitation to slow down, listen attentively, and meet Mongolian Long Song as a
-          deeply human, communal, and ecological practice.
-        </p>
-      </section>
-    </section>
-
-    <!-- 2. INTRODUCTION -->
-    <section id="introduction" aria-labelledby="introduction-heading">
-      <header>
-        <h2 id="introduction-heading">Introduction</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Long Song and the Mongolian Landscape</h3>
-        </header>
-        <p>
-          Mongolian Long Song, known as Urtiin Duu, has been shaped for centuries by nomadic life on the steppe.
-          Its extended phrases and free rhythm are suited to outdoor singing, where the voice can travel across
-          valleys and answer the contours of mountains and sky. Each performance is a living relationship between
-          the singer, the land, and attentive listeners.
-        </p>
-        <p>
-          The texts of Long Songs speak of love, parting, horses, mountains, rivers, and the subtle emotions that
-          accompany everyday life. Rather than telling linear stories, they weave images and metaphors that allow
-          experience to unfold slowly in sound.
-        </p>
-      </article>
-
-      <article>
-        <header>
-          <h3>Baynbaraat as a Particular Style</h3>
-        </header>
-        <p>
-          Baynbaraat literally evokes smoothness, softness, and a sense of ease. In this style, vocal power is
-          present but carefully contained; the emphasis lies on clarity of tone, stable intonation, and a quiet,
-          sustained energy. Ornamentation is used sparingly, with each turn and slide serving the overall shape of
-          the phrase.
-        </p>
-        <p>
-          Singers of Baynbaraat cultivate an inner calm before they voice a single tone. Breathing is long and
-          grounded, and the body remains relatively still, as if the sound rises from the earth through the
-          spine. This cultivated softness allows the listener to sense not only the melody, but the space
-          surrounding it.
-        </p>
-      </article>
-
-      <article>
-        <header>
-          <h3>Purpose of This Platform</h3>
-        </header>
-        <p>
-          This platform has been created to offer a non-commercial, culturally grounded space for learning about
-          Baynbaraat and related Long Song traditions. It brings together curated explanations, listening
-          guidance, training pathways, research themes, and the voices of cultural heritage bearers.
-        </p>
-        <p>
-          Our aim is to support respectful engagement. We encourage visitors to approach the material with
-          curiosity, humility, and care for the communities whose heritage is being presented.
-        </p>
-      </article>
-    </section>
-
-    <!-- 3. USER GUIDE -->
-    <section id="user-guide" aria-labelledby="user-guide-heading">
-      <header>
-        <h2 id="user-guide-heading">User Guide</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>How to Use This Platform</h3>
-        </header>
-        <p>
-          This website is organized into thematic sections. You may move between them according to your interest,
-          or follow the suggested steps below for a gradual encounter with Baynbaraat Long Song.
-        </p>
-      </article>
-
-      <section aria-label="Step by step guide">
-        <h3>Step-by-Step Path</h3>
-
-        <article>
-          <header>
-            <h4>Step 1 – Read the Cultural Introduction</h4>
-          </header>
-          <p>
-            Begin with the Introduction section to understand the historical, social, and environmental context of
-            Mongolian Long Song and the Baynbaraat style in particular. This background will support deeper
-            listening and learning.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Step 2 – Prepare for Listening</h4>
-          </header>
-          <p>
-            Visit the “Let’s Listen to Long Songs” section to read about how to listen in a way that honors the
-            singers and the tradition. You will find suggestions on posture, attention, and emotional openness.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Step 3 – Explore Long Song Trainings</h4>
-          </header>
-          <p>
-            If you wish to learn, look through the “Long Song Trainings” section. It describes common learning
-            stages and the skills emphasized at each level. Use these descriptions as a guide for conversations
-            with qualified teachers.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Step 4 – Meet Cultural Heritage Bearers</h4>
-          </header>
-          <p>
-            The “Cultural Heritage Bearers” section introduces key singers and knowledge holders. Reading their
-            biographies offers insight into how Long Song is transmitted within families, lineages, and local
-            communities.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Step 5 – Engage with Research</h4>
-          </header>
-          <p>
-            For those interested in academic or community research, consult the “Research Topics” section. It
-            outlines possible themes and ethical considerations for collaborative inquiry.
-          </p>
-        </article>
-      </section>
-
-      <section aria-label="Guidelines for respectful engagement">
-        <h3>Guidelines for Respectful Engagement</h3>
-        <ul>
-          <li>Approach what you see and hear as living heritage, not as an object for quick consumption.</li>
-          <li>When sharing recordings or information, clearly credit singers, communities, and researchers.</li>
-          <li>Be attentive to language: avoid using Long Song as a mere “background” sound.</li>
-          <li>If you wish to learn to sing, seek guidance from recognized teachers and follow their advice.</li>
-          <li>Remember that some songs or practices may be context-specific and not intended for public use.</li>
-        </ul>
-      </section>
-    </section>
-
-    <!-- 4. OUR PRIDE -->
-    <section id="our-pride" aria-labelledby="our-pride-heading">
-      <header>
-        <h2 id="our-pride-heading">Our Pride</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>UNESCO Recognition and World Heritage</h3>
-        </header>
-        <p>
-          Mongolian Long Song has been recognized by UNESCO as part of the Intangible Cultural Heritage of
-          Humanity, acknowledging its artistic refinement, historical depth, and role in sustaining cultural
-          identity. This recognition highlights not only exceptional individual talent, but the collective
-          creativity and dedication of pastoral communities across generations.
-        </p>
-        <p>
-          Within this broader heritage, Baynbaraat stands as a treasured style that embodies gentleness, balance,
-          and emotional maturity. It shows that strength can be expressed through restraint, and that spaciousness
-          can be as powerful as density.
-        </p>
-      </article>
-
-      <section aria-label="Cultural values">
-        <h3>Cultural Values Expressed through Baynbaraat</h3>
-
-        <article>
-          <header>
-            <h4>Harmony with Landscape</h4>
-          </header>
-          <p>
-            The smooth, wide-ranging lines of Baynbaraat mirror the contours of hills and the slow movement of
-            clouds. Singing in this style affirms a relationship of care and reciprocity between people and the
-            environments that sustain them.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Respectful Communication</h4>
-          </header>
-          <p>
-            Long Song often serves as a refined form of communication at gatherings, celebrations, and moments of
-            departure. Baynbaraat’s calm tone allows difficult feelings—such as longing or parting—to be voiced
-            with dignity and grace.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Intergenerational Transmission</h4>
-          </header>
-          <p>
-            Pride in Baynbaraat is carried in the patient teaching of elders to younger singers. Techniques,
-            stories, and ways of listening are passed down orally, often within families or close mentor–student
-            relationships, creating a strong sense of continuity.
-          </p>
-        </article>
-      </section>
-    </section>
-
-    <!-- 5. LONG SONG TRAININGS -->
-    <section id="long-song-trainings" aria-labelledby="long-song-trainings-heading">
-      <header>
-        <h2 id="long-song-trainings-heading">Long Song Trainings</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Approaching Training with Care</h3>
-        </header>
-        <p>
-          Learning Long Song is a long-term, embodied process that involves the whole person: breath, posture,
-          memory, and emotion. The outlines below describe common stages of training in a general way. They are
-          not a substitute for direct guidance from experienced teachers, but may help learners to orient
-          themselves.
-        </p>
-      </article>
-
-      <section aria-label="Beginner training">
-        <h3>Beginner Level</h3>
-        <p>
-          At the beginner level, the focus is on building a respectful relationship with the tradition and
-          cultivating healthy vocal foundations.
-        </p>
-        <ul>
-          <li>Learning to sit or stand with an aligned, relaxed posture.</li>
-          <li>Developing steady, deep breathing without strain.</li>
-          <li>Practicing simple sustained tones on comfortable pitches.</li>
-          <li>Listening closely to recordings or live examples before imitating.</li>
-          <li>Memorizing short melodic phrases and key Long Song texts.</li>
-        </ul>
-        <p>
-          Beginners are encouraged to move slowly, prioritize listening over performance, and avoid pushing the
-          voice beyond its current capacity.
-        </p>
-      </section>
-
-      <section aria-label="Intermediate training">
-        <h3>Intermediate Level</h3>
-        <p>
-          At the intermediate stage, learners begin to work with longer phrases, ornamentation, and more subtle
-          aspects of tone and timbre.
-        </p>
-        <ul>
-          <li>Extending the length of phrases while maintaining calm breath support.</li>
-          <li>Exploring controlled vibrato and gentle melodic ornaments.</li>
-          <li>Studying differences between regional styles and specific lineages.</li>
-          <li>Interpreting poetic images and conveying them through vocal color.</li>
-          <li>Performing in small community settings under guidance from teachers.</li>
-        </ul>
-        <p>
-          Intermediate learners gradually discover their own vocal character, while remaining attentive to the
-          stylistic features that define Baynbaraat.
-        </p>
-      </section>
-
-      <section aria-label="Advanced training">
-        <h3>Advanced Level</h3>
-        <p>
-          Advanced training is closely personalized. It often involves many years of apprenticeship, subtle
-          refinement, and a deepening ethical commitment to the tradition and its communities.
-        </p>
-        <ul>
-          <li>Maintaining vocal freedom across a wide range without losing softness.</li>
-          <li>Shaping entire songs as coherent emotional and sonic journeys.</li>
-          <li>Guiding less experienced singers, while continuing one’s own learning.</li>
-          <li>Participating in cultural events, rituals, and heritage initiatives.</li>
-          <li>Contributing to documentation, teaching materials, or research collaborations.</li>
-        </ul>
-        <p>
-          Advanced singers of Baynbaraat often become cultural ambassadors, not through spectacle, but through
-          their steady presence, example, and generosity in sharing knowledge.
-        </p>
-      </section>
-    </section>
-
-    <!-- 6. LET’S LISTEN TO LONG SONGS -->
-    <section id="listen-long-songs" aria-labelledby="listen-long-songs-heading">
-      <header>
-        <h2 id="listen-long-songs-heading">Let’s Listen to Long Songs</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Preparing to Listen</h3>
-        </header>
-        <p>
-          Listening to Long Song, and especially to Baynbaraat, is an active practice. Rather than treating the
-          sound as background, we invite you to listen as if you were sitting with the singer on the open steppe,
-          sharing the same air and horizon.
-        </p>
-        <p>
-          Before listening, you may wish to slow your breathing, soften your gaze, and allow distractions to
-          settle. This creates an inner space in which the long lines of the melody can unfold.
-        </p>
-      </article>
-
-      <section aria-label="Listening guidance">
-        <h3>Listening Guidance</h3>
-        <ul>
-          <li>Notice how each breath shapes the phrase, and how silence follows sound.</li>
-          <li>Pay attention to the gentle ornaments and slides, rather than only to high notes.</li>
-          <li>Sense the relationship between the text and the sound: where do words stretch, linger, or fall?</li>
-          <li>Allow memories, images, or feelings to arise without forcing an interpretation.</li>
-          <li>After listening, sit quietly for a moment before speaking or moving on.</li>
-        </ul>
-      </section>
-
-      <section aria-label="Example songs">
-        <h3>Example Long Songs (Descriptions)</h3>
-
-        <article>
-          <header>
-            <h4>A Song of the Wide Steppe</h4>
-          </header>
-          <p>
-            This type of song evokes the boundless grasslands and the steady motion of a lone rider. The melody
-            moves slowly between a few central tones, with occasional rising figures that imitate the playfulness
-            of the wind. The overall impression is one of openness and gentle resilience.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>A Song of Remembered Companionship</h4>
-          </header>
-          <p>
-            Here the text recalls friends or relatives who are far away, acknowledging both sadness and gratitude.
-            Baynbaraat’s calm style allows the singer to voice these feelings without collapse, honoring the bond
-            that continues across distance.
-          </p>
-        </article>
-      </section>
-    </section>
-
-    <!-- 7. NEWS & INFORMATION -->
-    <section id="news-information" aria-labelledby="news-information-heading">
-      <header>
-        <h2 id="news-information-heading">News &amp; Information</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Recent and Ongoing Cultural Activities</h3>
-        </header>
-        <p>
-          This section shares informational updates related to Baynbaraat and Mongolian Long Song, with a focus on
-          educational, research, and heritage-preservation activities rather than commercial events.
-        </p>
-      </article>
-
-      <section aria-label="News list">
-        <h3>News Items</h3>
-
-        <article>
-          <header>
-            <p><time datetime="2025-08-15">15 August 2025</time></p>
-            <h4>Community Workshop on Gentle Vocal Techniques</h4>
-          </header>
-          <p>
-            A gathering of singers and students explored breathing, posture, and listening practices that support
-            the non-aggressive, spacious qualities of Baynbaraat. Participants reflected on how these techniques
-            can be adapted for different ages and physical conditions.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <p><time datetime="2025-06-02">2 June 2025</time></p>
-            <h4>Recording and Documentation Initiative</h4>
-          </header>
-          <p>
-            A small documentation team began recording interviews and performances with elder Long Song singers,
-            focusing on personal teaching histories, regional nuances, and memories of learning songs in daily
-            life, rather than only on staged performances.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <p><time datetime="2025-03-10">10 March 2025</time></p>
-            <h4>Roundtable on Ethical Sharing of Long Song Recordings</h4>
-          </header>
-          <p>
-            Cultural practitioners, archivists, and researchers met to discuss respectful ways of circulating Long
-            Song recordings online and offline, including approaches to consent, crediting, and community
-            participation in decision-making.
-          </p>
-        </article>
-      </section>
-    </section>
-
-    <!-- 8. COMPETITION RULES -->
-    <section id="competition-rules" aria-labelledby="competition-rules-heading">
-      <header>
-        <h2 id="competition-rules-heading">Competition Rules</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Competitions as Learning Spaces</h3>
-        </header>
-        <p>
-          In some contexts, Long Song competitions are organized not for rivalry, but as structured spaces for
-          learning, feedback, and recognition. The rules below describe one possible framework that emphasizes
-          respect, fairness, and cultural integrity.
-        </p>
-      </article>
-
-      <section aria-label="Eligibility and categories">
-        <h3>Eligibility and Categories</h3>
-        <ul>
-          <li>Participants should have prior guidance from a recognized Long Song teacher.</li>
-          <li>Age categories may be divided into youth, adult, and elder, with appropriate expectations.</li>
-          <li>Separate categories can be created for Baynbaraat and other Long Song styles.</li>
-          <li>Group performances are welcome when they reflect existing community practice.</li>
-        </ul>
-      </section>
-
-      <section aria-label="Performance guidelines">
-        <h3>Performance Guidelines</h3>
-        <ul>
-          <li>Each participant presents one Long Song, selected in consultation with their teacher.</li>
-          <li>The chosen song should be appropriate to the singer’s experience and vocal health.</li>
-          <li>Accompaniment, if any, should support rather than overshadow the voice.</li>
-          <li>Participants are encouraged to introduce the song’s background briefly and respectfully.</li>
-        </ul>
-      </section>
-
-      <section aria-label="Evaluation criteria">
-        <h3>Evaluation Criteria</h3>
-        <p>
-          Judges may consider the following aspects, giving priority to stylistic authenticity and emotional
-          integrity over spectacle:
-        </p>
-        <ul>
-          <li>Accuracy of melody and intonation within the chosen style.</li>
-          <li>Breath control and stability of tone across long phrases.</li>
-          <li>Appropriate use of ornamentation for Baynbaraat.</li>
-          <li>Clarity of text and meaningful connection to its imagery.</li>
-          <li>Overall presence, calmness, and respectfulness on stage.</li>
-        </ul>
-      </section>
-
-      <section aria-label="Ethical principles">
-        <h3>Ethical Principles</h3>
-        <ul>
-          <li>Competitions should not pressure singers into damaging their voices.</li>
-          <li>Feedback is offered in a supportive tone, highlighting strengths as well as areas for growth.</li>
-          <li>Attention is given to equitable participation across regions, genders, and generations.</li>
-          <li>Decisions about recording or broadcasting are made transparently and with consent.</li>
-        </ul>
-      </section>
-    </section>
-
-    <!-- 9. CULTURAL HERITAGE BEARERS -->
-    <section id="cultural-heritage-bearers" aria-labelledby="cultural-heritage-bearers-heading">
-      <header>
-        <h2 id="cultural-heritage-bearers-heading">Cultural Heritage Bearers</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Honoring the Carriers of Baynbaraat</h3>
-        </header>
-        <p>
-          Cultural heritage bearers are individuals whose lives are deeply intertwined with Long Song. They may be
-          professional singers, pastoralists who sing in daily life, teachers, or community organizers. What
-          unites them is a quiet commitment to keeping the tradition alive and meaningful.
-        </p>
-      </article>
-
-      <section aria-label="Profiles">
-        <h3>Selected Profiles</h3>
-
-        <article>
-          <header>
-            <h4>Elder Singer and Mentor</h4>
-          </header>
-          <p>
-            This elder singer learned Long Songs from relatives during long journeys and seasonal gatherings. Over
-            decades, they have become known for a particularly gentle Baynbaraat style, marked by unhurried
-            phrases and a grounded, resonant lower register.
-          </p>
-          <p>
-            In addition to performing, they spend considerable time teaching small groups of learners, emphasizing
-            patience, breath awareness, and thoughtful relationship to the land. Their home has become a quiet
-            meeting place for students seeking guidance.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Community-Based Teacher</h4>
-          </header>
-          <p>
-            Beginning as a student of local masters, this teacher now works with younger singers in schools and
-            cultural centers. They design learning pathways that integrate traditional oral methods with
-            reflective discussion about emotion, history, and language.
-          </p>
-          <p>
-            Their work highlights the importance of everyday practice: short but consistent singing sessions,
-            respectful listening among peers, and the inclusion of Long Songs in community gatherings and
-            ceremonies.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Researcher–Practitioner</h4>
-          </header>
-          <p>
-            Combining academic study with active singing, this heritage bearer documents regional variants of
-            Baynbaraat and collaborates with communities to create archives that remain accessible locally. Their
-            publications focus on listening practices, ethical documentation, and the relationships between sound,
-            ecology, and identity.
-          </p>
-          <p>
-            They view research as a shared endeavor, in which knowledge is co-created with singers and community
-            members rather than extracted from them.
-          </p>
-        </article>
-      </section>
-    </section>
-
-    <!-- 10. RESEARCH TOPICS -->
-    <section id="research-topics" aria-labelledby="research-topics-heading">
-      <header>
-        <h2 id="research-topics-heading">Research Topics</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Approaching Research Responsibly</h3>
-        </header>
-        <p>
-          Research on Baynbaraat and Mongolian Long Song can deepen understanding of music, language, and social
-          life. At the same time, it must be guided by ethical relationships, mutual benefit, and care for
-          cultural sovereignty. The themes below suggest possible directions for collaborative inquiry.
-        </p>
-      </article>
-
-      <section aria-label="Themes in research">
-        <h3>Possible Research Themes</h3>
-
-        <article>
-          <header>
-            <h4>Landscape, Ecology, and Sound</h4>
-          </header>
-          <p>
-            This theme explores how particular landscapes influence vocal techniques, repertoire, and metaphors in
-            Long Song. Researchers might examine how singers describe their relationship with mountains, rivers,
-            and seasonal changes, and how these perspectives inform environmental care.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Transmission and Pedagogy</h4>
-          </header>
-          <p>
-            Studies in this area consider how Long Song is learned within families, apprenticeship relationships,
-            and formal institutions. Questions include: How do elders adapt teaching methods for younger
-            generations? What roles do recording technologies play alongside oral memory?
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Embodiment and Vocal Health</h4>
-          </header>
-          <p>
-            Research on embodiment focuses on posture, breathing, and the felt experience of singing Baynbaraat.
-            Attention may be given to sustainable practices that protect vocal health while supporting extended,
-            non-aggressive phrases.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Language, Poetry, and Emotion</h4>
-          </header>
-          <p>
-            Long Song texts are rich in metaphor and emotional nuance. Researchers may investigate how particular
-            images—of horses, stars, dawn, or distant friends—carry layered meanings, and how these meanings are
-            expressed through melody, rhythm, and timbre.
-          </p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Digital Archives and Community Access</h4>
-          </header>
-          <p>
-            This theme addresses how recordings, photographs, and written materials can be preserved in ways that
-            remain useful and meaningful to the communities from which they arise. It raises questions about data
-            sovereignty, collaborative curation, and long-term stewardship.
-          </p>
-        </article>
-      </section>
-
-      <section aria-label="Ethical considerations">
-        <h3>Ethical Considerations</h3>
-        <ul>
-          <li>Ensure that research questions are discussed and agreed upon with community partners.</li>
-          <li>Share findings in accessible forms, including local languages and community presentations.</li>
-          <li>Recognize singers and knowledge holders as co-creators of knowledge.</li>
-          <li>Be attentive to what should remain private or context-specific, and respect such boundaries.</li>
-        </ul>
-      </section>
-    </section>
-
-    <!-- 11. CONTACT -->
-    <section id="contact" aria-labelledby="contact-heading">
-      <header>
-        <h2 id="contact-heading">Contact</h2>
-      </header>
-
-      <article>
-        <header>
-          <h3>Cultural Mission</h3>
-        </header>
-        <p>
-          The mission of this platform is to support the living practice of Baynbaraat and Mongolian Long Song by
-          providing careful explanations, listening guidance, and space for dialogue among singers, learners, and
-          researchers. We value calm, attentiveness, and reciprocity as guiding principles.
-        </p>
-        <p>
-          We welcome messages that arise from genuine interest in learning, collaborating, or contributing to the
-          preservation and thoughtful renewal of this heritage.
-        </p>
-      </article>
-
-      <section aria-label="Contact form">
-        <h3>Get in Touch</h3>
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Your Details</legend>
+    <!-- HOME -->
+    <section id="home" class="page page--active" aria-label="Home">
+      <div class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <h1>Baynbaraat Aylguu – Mongolian Long Song</h1>
+            <p class="hero-subtitle">
+              A calm, expansive, and non-aggressive melodic style of Urtiin Duu, echoing the gentle breath of the steppe.
+            </p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-scroll-target="#introduction">Begin with the Introduction</button>
+              <button class="btn btn-outline" data-scroll-target="#user-guide">Follow the Listening Path</button>
+            </div>
+          </div>
+          <div class="hero-side">
+            <p class="hero-tagline">
+              “Baynbaraat” evokes smoothness, inner stillness, and spacious sound. This platform is a quiet space
+              for cultural learning, careful listening, and respectful engagement.
+            </p>
+            <div class="hero-meta">
+              <span class="meta-label">Focus</span>
+              <span class="meta-value">Cultural &amp; Educational – Not Tourism, Not Commercial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container">
+          <header class="section-header">
+            <h2>What Is Baynbaraat Long Song?</h2>
             <p>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" required>
+              Baynbaraat is a refined melodic manner within Mongolian Long Song. It favors softness over force,
+              sustained tones over rapid display, and intimate attention over spectacle. Each phrase stretches gently
+              across time, shaped by long breath and subtle ornamentation.
+            </p>
+          </header>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Calm, Sustained Phrasing</h3>
+              <p>
+                Single syllables are carried across many beats, inviting listeners into a slower sense of time
+                where breath, silence, and resonance are as important as pitch.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Relationship with the Steppe</h3>
+              <p>
+                Baynbaraat emerges from open grasslands, mountains, and skies. The spacious melodic lines mirror
+                wide horizons, steady horse hooves, and drifting clouds.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Non‑Aggressive Vocality</h3>
+              <p>
+                Vocal power is present yet carefully contained. Instead of forceful projection, singers cultivate
+                clarity, ease, and a stable inner energy.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Living Cultural Heritage</h3>
+              <p>
+                Long Song is shared at gatherings, ceremonies, and quiet moments of daily life. Knowledge travels
+                through families, mentors, and communities, not only on stage.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container section-split">
+          <div>
+            <h2>Your Path Through This Platform</h2>
+            <p>
+              You are welcome to move freely, or to follow a gentle path: first ground yourself in the cultural
+              context, then prepare your listening, and finally explore ways of learning and practice.
+            </p>
+            <ul class="step-list">
+              <li>
+                <span class="step-label">Step 1</span>
+                <span class="step-text">Read the cultural and historical background in the Introduction.</span>
+              </li>
+              <li>
+                <span class="step-label">Step 2</span>
+                <span class="step-text">Prepare your posture, attention, and breath through the User Guide.</span>
+              </li>
+              <li>
+                <span class="step-label">Step 3</span>
+                <span class="step-text">Return often; Long Song learning is a long, patient process.</span>
+              </li>
+            </ul>
+          </div>
+          <aside class="aside-note" aria-label="Ethical reminder">
+            <h3>Listening with Respect</h3>
+            <p>
+              Treat what you encounter here as living heritage. When you listen, imagine sitting beside the singer
+              on the open steppe, sharing the same air, weather, and horizon.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section id="introduction" class="page" aria-label="Introduction">
+      <div class="page-header">
+        <div class="container">
+          <p class="page-kicker">Cultural &amp; Historical Context</p>
+          <h1>Introduction to Mongolian Long Song – Urtiin Duu</h1>
+          <p class="page-subtitle">
+            A calm, academically grounded overview of Long Song and the particular qualities of the Baynbaraat style.
+          </p>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container reading">
+          <h2>Urtiin Duu and the Mongolian Landscape</h2>
+          <p>
+            Mongolian Long Song, known as <em>Urtiin Duu</em>, has developed over centuries in close dialogue with
+            nomadic life on the steppe. Its extended, free‑flowing phrases are naturally suited to outdoor performance,
+            where the voice can travel across valleys and respond to the contours of hills, rivers, and sky. Rather
+            than being confined to stages, Long Song is woven into seasonal journeys, gatherings, and moments of
+            reflection.
+          </p>
+          <p>
+            The texts of Long Songs often evoke horses, mountains, parting, longing, and praise for the land. Instead
+            of following a linear plot, they unfold as sequences of images and metaphors. Meaning arises gradually as
+            words, melody, and timbre interact over time. The listener is invited to dwell within this unfolding rather
+            than to rush toward an ending.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container reading">
+          <h2>Baynbaraat as a Distinctive Style</h2>
+          <p>
+            Within the broader Long Song tradition, <em>Baynbaraat</em> refers to a refined melodic manner that
+            foregrounds smoothness, softness, and a sense of ease. While the voice may span a wide range, the energy
+            remains calm and contained. Strength is expressed through steadiness and control rather than through
+            volume or aggression.
+          </p>
+          <p>
+            In Baynbaraat singing, each phrase is carefully shaped by long, grounded breath. Ornamentation is present
+            but restrained: small turns, slides, and inflections serve the overall line instead of drawing attention
+            to themselves. Silence is treated as a meaningful partner to sound; the gentle decay of a tone and the
+            pause that follows it are integral parts of the musical experience.
+          </p>
+          <p>
+            Singers often prepare inwardly before voicing the first tone. Attention to posture, bodily alignment, and
+            inner calm ensures that the sound can rise without strain. This cultivated softness does not indicate
+            weakness. Rather, it allows listeners to perceive fine details of timbre and breath, and to sense the
+            spacious environment in which the song is imagined to resonate.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reading grid-two">
+          <div>
+            <h2>Social Settings and Cultural Roles</h2>
+            <p>
+              Long Song appears in diverse social contexts: at family celebrations, community gatherings, rituals, and
+              quiet intervals of work or travel. In many of these settings, singing functions as a refined form of
+              communication. A song may express gratitude, give voice to parting, or honor the qualities of a horse,
+              a landscape, or a host without resorting to direct statement.
             </p>
             <p>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required>
+              Baynbaraat’s calm tone is particularly suited to situations where emotional intensity must be expressed
+              with dignity. Feelings of longing, remembrance, or restrained joy can be held within the spacious
+              melodic lines, allowing both singer and listeners to remain grounded. The act of singing becomes a way
+              of caring for relationships with people, animals, and places.
+            </p>
+          </div>
+          <div>
+            <h2>Transmission and Lineages</h2>
+            <p>
+              Knowledge of Long Song is transmitted primarily through oral and embodied practice. Elders, relatives,
+              and mentors teach not only melodies and texts, but also ways of listening, breathing, and carrying
+              oneself. Lessons may take place in homes, on journeys, or in community spaces, often interwoven with
+              stories about the origins of particular songs or styles.
             </p>
             <p>
-              <label for="affiliation">Affiliation or Community (optional)</label>
-              <input id="affiliation" name="affiliation" type="text">
+              Baynbaraat exists in relation to specific regions and lineages. Subtle differences in phrasing, tempo,
+              and ornamentation reflect local histories and teacher–student relationships. Respectful engagement with
+              the tradition therefore includes awareness of these lineages and acknowledgment of the individuals and
+              communities who sustain them.
             </p>
-          </fieldset>
-
-          <fieldset>
-            <legend>Your Message</legend>
-            <p>
-              <label for="interest">Main Area of Interest</label>
-              <select id="interest" name="interest">
-                <option value="listening">Listening and understanding Long Song</option>
-                <option value="learning">Learning to sing</option>
-                <option value="research">Research collaboration</option>
-                <option value="documentation">Documentation and archiving</option>
-                <option value="other">Other</option>
-              </select>
-            </p>
-            <p>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-            </p>
-          </fieldset>
-
-          <p>
-            <button type="submit">Send Message</button>
-          </p>
-        </form>
+          </div>
+        </div>
       </section>
 
-      <section aria-label="Collaboration invitation">
-        <h3>Invitation to Collaborate</h3>
-        <p>
-          We are open to collaborative projects that center community needs and shared decision-making. This may
-          include co-developing educational materials, organizing listening circles, or designing research
-          projects that benefit both local practitioners and wider audiences.
-        </p>
-        <p>
-          If you are a singer, teacher, archivist, or researcher interested in such collaboration, please briefly
-          describe your background and ideas in your message so that we can respond thoughtfully.
-        </p>
+      <section class="section section-alt">
+        <div class="container reading">
+          <h2>Purpose of This Platform</h2>
+          <p>
+            This platform is designed as a non‑commercial, culturally grounded space for encountering Baynbaraat Long
+            Song. It does not attempt to replace in‑person teaching or community practice. Instead, it offers carefully
+            curated explanations, listening guidance, and orientation for those who wish to learn respectfully.
+          </p>
+          <p>
+            Readers are encouraged to approach the materials with curiosity, humility, and patience. When possible,
+            learning should be pursued in conversation with recognized singers, teachers, and knowledge holders. The
+            pages that follow aim to support such conversations by clarifying terminology, outlining common training
+            pathways, and foregrounding ethical considerations in listening, learning, and research.
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <!-- USER GUIDE -->
+    <section id="user-guide" class="page" aria-label="User Guide">
+      <div class="page-header">
+        <div class="container">
+          <p class="page-kicker">Step‑by‑Step Orientation</p>
+          <h1>User Guide for Engaging with Baynbaraat Long Song</h1>
+          <p class="page-subtitle">
+            A gentle pathway for listening, learning, and research, supported by simple, reflective practices.
+          </p>
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="container reading">
+          <h2>How to Use This Platform</h2>
+          <p>
+            You may follow the steps below in order or return to them in any sequence. Each expandable section
+            focuses on one aspect of engagement: cultural grounding, listening, vocal learning, and research.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <div class="accordion" role="list">
+            <!-- Step 1 -->
+            <article class="accordion-item" role="listitem">
+              <h2>
+                <button class="accordion-trigger" aria-expanded="true" aria-controls="step1-content" id="step1-header">
+                  <span class="accordion-step-label">Step 1</span>
+                  <span class="accordion-title">Begin with Cultural Foundations</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h2>
+              <div class="accordion-panel" id="step1-content" role="region" aria-labelledby="step1-header">
+                <div class="accordion-body reading">
+                  <p>
+                    Start by reading the Introduction in full. Familiarize yourself with how Long Song relates to
+                    landscape, movement, and social life. Notice the vocabulary used to describe Baynbaraat: softness,
+                    spaciousness, contained strength, and attentive breath.
+                  </p>
+                  <p>
+                    As you read, you might wish to keep a simple notebook. Note images or phrases that stay with you,
+                    such as particular landscapes, animals, or emotional tones. These observations will help orient
+                    your listening and prevent Long Song from being reduced to sound alone.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="accordion-item" role="listitem">
+              <h2>
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="step2-content" id="step2-header">
+                  <span class="accordion-step-label">Step 2</span>
+                  <span class="accordion-title">Prepare for Listening</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h2>
+              <div class="accordion-panel" id="step2-content" role="region" aria-labelledby="step2-header" hidden>
+                <div class="accordion-body reading">
+                  <p>
+                    Before you listen to any recording, take a short pause. Sit or stand with your feet grounded and
+                    your spine gently lengthened. Allow your shoulders and jaw to soften. Slow your breathing for a
+                    few cycles, without forcing it.
+                  </p>
+                  <p>
+                    When you begin listening, imagine yourself outdoors with the singer, sharing the same air and
+                    horizon. Avoid multitasking or treating the sound as background. Instead, focus on:
+                  </p>
+                  <ul>
+                    <li>How each breath begins and ends.</li>
+                    <li>The way syllables stretch over time.</li>
+                    <li>Subtle ornaments and shifts in timbre.</li>
+                    <li>The spaces of silence between phrases.</li>
+                  </ul>
+                  <p>
+                    After the song, sit quietly for a brief moment before speaking or moving on. Notice any images or
+                    sensations that linger.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="accordion-item" role="listitem">
+              <h2>
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="step3-content" id="step3-header">
+                  <span class="accordion-step-label">Step 3</span>
+                  <span class="accordion-title">Explore Gentle Vocal Learning</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h2>
+              <div class="accordion-panel" id="step3-content" role="region" aria-labelledby="step3-header" hidden>
+                <div class="accordion-body reading">
+                  <p>
+                    If you wish to try singing, begin with very modest aims. Baynbaraat is best learned under guidance
+                    from experienced teachers, but a few general principles can help you prepare for such study.
+                  </p>
+                  <ul>
+                    <li>Work with comfortable, mid‑range pitches; avoid forcing high or loud tones.</li>
+                    <li>Practice sustaining a single vowel on a gentle breath, noticing stability rather than volume.</li>
+                    <li>Limit practice sessions to short, regular intervals rather than long, exhausting attempts.</li>
+                    <li>Record yourself occasionally to observe posture, tension, and breathing patterns.</li>
+                  </ul>
+                  <p>
+                    Whenever possible, seek conversation with recognized singers or cultural heritage bearers.
+                    Use the vocabulary from the Introduction to ask informed, respectful questions about style,
+                    lineage, and local practices.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="accordion-item" role="listitem">
+              <h2>
+                <button class="accordion-trigger" aria-expanded="false" aria-controls="step4-content" id="step4-header">
+                  <span class="accordion-step-label">Step 4</span>
+                  <span class="accordion-title">Engage in Research and Documentation Thoughtfully</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h2>
+              <div class="accordion-panel" id="step4-content" role="region" aria-labelledby="step4-header" hidden>
+                <div class="accordion-body reading">
+                  <p>
+                    For researchers, archivists, and students, Baynbaraat Long Song raises important questions about
+                    cultural sovereignty, data stewardship, and collaborative knowledge‑making. Any project should
+                    begin with dialogue: clarify aims together with singers, families, and community organizations.
+                  </p>
+                  <p>
+                    When planning documentation or publication, consider:
+                  </p>
+                  <ul>
+                    <li>How recordings and materials will remain accessible to the communities from which they arise.</li>
+                    <li>What kinds of consent are needed for current and future uses.</li>
+                    <li>How singers and knowledge holders will be credited as co‑creators of knowledge.</li>
+                    <li>Which songs or practices may be context‑specific and not appropriate for broad circulation.</li>
+                  </ul>
+                  <p>
+                    Share findings in forms that are meaningful locally, including presentations, booklets, or
+                    digital collections in relevant languages. Research on Long Song is most valuable when it supports
+                    the vitality of the practice itself.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container section-split">
+          <div class="reading">
+            <h2>Ethics of Listening and Sharing</h2>
+            <p>
+              Whether you are a listener, learner, or researcher, consider how your actions contribute to the wellbeing
+              of singers and communities. Ask where recordings come from, how they are shared, and whose voices are
+              heard or left out. When in doubt, prioritize care, attribution, and dialogue.
+            </p>
+          </div>
+          <aside class="aside-note" aria-label="Practical reminder">
+            <h3>Gentle Practice</h3>
+            <p>
+              Move slowly. Return to songs and texts many times. Allow understanding to emerge over years rather than
+              days. Baynbaraat Long Song rewards patient, sustained attention.
+            </p>
+          </aside>
+        </div>
       </section>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <time datetime="2025">2025</time> Baynbaraat Aylguu – Mongolian Long Song. All rights reserved.</p>
-    <p>This website is dedicated to cultural understanding, careful listening, and respectful engagement with Mongolian Long Song heritage.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-title">Baynbaraat Aylguu – Mongolian Long Song (Urtiin Duu)</p>
+      <p class="footer-text">
+        This platform is dedicated to cultural understanding, careful listening, and respectful engagement with
+        Mongolian Long Song heritage.
+      </p>
+      <p class="footer-meta">
+        &copy; <span id="year"></span> Baynbaraat Aylguu. All rights reserved.
+      </p>
+    </div>
   </footer>
- <script src="script.js"></script>
+
+  <script src="main.js"></script>
 </body>
 </html>
