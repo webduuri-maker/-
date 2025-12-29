@@ -715,3 +715,35 @@ html {
 .news-card {
     position: relative;
 }
+/* ================= HERO SLIDE IMAGES ================= */
+
+.slide-1 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/slide1.jpg");
+}
+
+.slide-2 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/slide2.jpg");
+}
+
+.slide-3 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/slide3.jpg");
+}
+
+.slide-4 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/slide4.jpg");
+}
+
+.slide-5 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("images/slide5.jpg");
+}
+
