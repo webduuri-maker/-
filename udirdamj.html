@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Удирдамж</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Удирдамж</h1>
+    <a class="back" href="index.html">← Нүүр</a>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input id="location" placeholder="Хаана байрлаж байгаа талаарх тэмдэглэл (жиш: Архив, Төв)" />
+      <button id="saveLocal">Локалд хадгалах</button>
+      <button id="loadLocal">Локал унших</button>
+      <button id="download">HTML татаж авах</button>
+      <button id="reset">Сэргээх</button>
+    </div>
+
+    <article id="editor" contenteditable="true" data-page="udirdamj">
+      <h2>Энд удирдамжийн агуулгаа бичнэ үү</h2>
+      <p>Жишээ: Энэхүү хэсэгт хөтөлбөр, дүрэм, зааварчилгаа байрлана.</p>
+      <h3>Хаана байгаа:</h3>
+      <p class="location-note">Энд 'Хаана' гэж бичнэ.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Уртын дуу</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
