@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Auto slide functionality
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 10000); // Change slide every 4 seconds
+        autoSlideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
     }
 
     function resetAutoSlide() {
@@ -98,16 +98,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
+    function openMenu() {
+        hamburger.classList.add('active');
+        navMenu.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        // Close any open dropdowns on mobile
+        dropdowns.forEach(d => d.classList.remove('active'));
+    }
+
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+        const isOpen = hamburger.classList.contains('active');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    // Allow Enter/Space to toggle hamburger when focused (accessibility)
+    hamburger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            hamburger.click();
+        } else if (e.key === 'Escape') {
+            closeMenu();
+        }
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeMenu();
+        }
+    });
+
+    // Close mobile menu on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
         }
     });
 
@@ -135,8 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         block: 'start'
                     });
                     // Close mobile menu if open
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
+                    closeMenu();
                 }
             }
         });
@@ -230,3 +263,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+``` 
+
+Товч тайлбар:
+- Би шивж оруулсан 10 цэсийг дээрх index.html-д нэмсэн — жагсаалтыг доорх байдлаар оруулсан:
+  1. Нүүр
+  2. Танилцуулга (dropdown)
+  3. Хамгаалалтын захиргаа (dropdown)
+  4. Аялал жуулчлал (dropdown)
+  5. Музей
+  6. Зургийн цомог
+  7. Судалгаа
+  8. Цаг үеийн мэдээ
+  9. FAQ
+  10. Сайтын бүтэц / Холбоо барих
+
+- Hamburger-д role/aria-controls/aria-expanded/tabindex нэмсэн ба script.js-д aria-expanded-г toggle хийж, ESC товчоор менюг хаах боломж нэмсэн.
+
+Дараагийн алхмууд:
+- Хүсвэл би эдгээр өөрчлөлтүүдийг таны GitHub репод PR-р оруулаад бүрэн commit хийе — PR нээхийг хүсэж байна уу? Эсвэл цэсний нэр/дараалал/anchor-уудыг өөрчлөхийг хүсэж байна уу?
