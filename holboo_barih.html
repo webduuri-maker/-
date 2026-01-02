@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Холбоо барих</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Холбоо барих</h1>
+    <a class="back" href="index.html">← Нүүр</a>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input id="location" placeholder="Хаана очиж, хэнд хандах тухай тэмдэглэл" />
+      <button id="saveLocal">Локалд хадгалах</button>
+      <button id="loadLocal">Локал унших</button>
+      <button id="download">HTML татаж авах</button>
+      <button id="reset">Сэргээх</button>
+    </div>
+
+    <article id="editor" contenteditable="true" data-page="holboo_barih">
+      <h2>Хаяг, утас, имэйл</h2>
+      <p>Энд холбоо барих мэдээлэл, форм, газрын зураг (iframe) гэх мэт байрлуулна.</p>
+      <h3>Хаана байрлана:</h3>
+      <p class="location-note">...</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Уртын дуу</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
