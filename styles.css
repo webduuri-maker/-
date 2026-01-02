@@ -460,3 +460,232 @@ html {
         transform: translateY(0);
     }
 }
+
+/* =========================
+   Editor pages (shared)
+   Styles for the simple HTML pages you provided
+   Files: udirdamj.html, taniltsuulga.html, medee_medeelel.html, etc.
+   ========================= */
+
+/* Header for simple pages (targets <header> elements that are not .header class) */
+header {
+    background: var(--white);
+    padding: 18px 20px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Back link */
+a.back {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+a.back:hover {
+    background: rgba(0,136,204,0.08);
+    color: var(--secondary-color);
+}
+
+/* Main controls above editor */
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 18px 20px;
+    background: transparent;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.controls input[type="text"],
+.controls input,
+.controls input#location {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    min-width: 260px;
+    max-width: 100%;
+    background: #fff;
+    color: var(--text-color);
+    outline: none;
+    transition: box-shadow 0.15s, border-color 0.15s;
+}
+.controls input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0,136,204,0.08);
+}
+
+/* Buttons in the controls area */
+.controls button,
+.btn {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.08s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+}
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.controls button#reset {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+.controls button#download {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border: none;
+}
+
+/* Editor article */
+article#editor {
+    margin: 22px auto;
+    padding: 28px;
+    max-width: 980px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(20,20,20,0.04);
+    min-height: 380px;
+    outline: none;
+    caret-color: var(--secondary-color);
+    word-break: break-word;
+    line-height: 1.8;
+}
+
+/* When contenteditable focused */
+article#editor:focus {
+    box-shadow: 0 12px 30px rgba(0,136,204,0.06);
+    border: 1px solid rgba(0,136,204,0.08);
+}
+
+/* Typography inside editor */
+article#editor h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+article#editor h3 {
+    font-size: 16px;
+    margin-top: 16px;
+    color: #444;
+}
+article#editor p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* Location note */
+.location-note {
+    color: #777;
+    font-style: italic;
+    background: rgba(0,0,0,0.02);
+    padding: 8px 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Small helper for editors: toolbar-like visuals when hovering controls */
+.controls .hint {
+    font-size: 13px;
+    color: #666;
+    margin-left: 6px;
+}
+
+/* Footer for the simple pages */
+footer {
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid var(--border-color);
+    background: transparent;
+}
+
+/* Styling audio and media blocks inside editor/aside */
+article#editor audio,
+article#editor video {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    background: #000;
+}
+
+/* Utility button variants used in taniltsuulga.html */
+.btn.primary {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+}
+.btn.ghost {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 720px) {
+    header h1 {
+        font-size: 18px;
+    }
+    .controls {
+        padding: 12px;
+    }
+    .controls input#location {
+        min-width: 160px;
+        flex: 1 1 100%;
+    }
+    .controls button {
+        flex: 1 1 auto;
+        min-width: 120px;
+    }
+    article#editor {
+        padding: 18px;
+        margin: 14px;
+    }
+}
+
+/* Print styles for editor pages (simple) */
+@media print {
+    .controls, a.back, .hamburger, nav, .footer, header {
+        display: none !important;
+    }
+    article#editor {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
