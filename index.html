@@ -23,10 +23,9 @@
                 </div>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home">Нүүр</a></li>
-
-                    <!-- 1 -->
                     <li class="dropdown">
-                        <a href="#introduction">Танилцуулга <i class="fas fa-chevron-down"></i></a>
+                        <!-- Тойм: Танилцуулга одоо #introduction руу заана -->
+                        <a href="#introduction">Танилцуулга<i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#cultural-heritage">Бидний Бахархал</a></li>
                             <li><a href="#historical-sites">Мэдээ Мэдээлэл</a></li>
@@ -34,12 +33,11 @@
                             <li><a href="#gallery">Зургийн цомог</a></li>
                         </ul>
                     </li>
-
-                    <!-- 2 -->
                     <li class="dropdown">
                         <a href="#administration">Хамгаалалтын захиргаа <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#greeting">Мэндчилгээ</a></li>
+                            <!-- Администрацийн доторх танилцуулгын карточны id-г admin-introduction болголоо -->
                             <li><a href="#admin-introduction">Танилцуулга</a></li>
                             <li><a href="#activities">Үйл ажиллагаа</a></li>
                             <li><a href="#research">Судалгаа шинжилгээ</a></li>
@@ -51,8 +49,6 @@
                             <li><a href="#contact">Холбоо барих</a></li>
                         </ul>
                     </li>
-
-                    <!-- 3 -->
                     <li class="dropdown">
                         <a href="#tourism">Аялал жуулчлал <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -64,29 +60,10 @@
                             <li><a href="#events">Аялал жуулчлалын эвент</a></li>
                         </ul>
                     </li>
-
-                    <!-- 4 -->
-                    <li><a href="#museum">Музей</a></li>
-
-                    <!-- 5 -->
-                    <li><a href="#gallery">Зургийн цомог</a></li>
-
-                    <!-- 6 -->
-                    <li><a href="#research">Судалгаа</a></li>
-
-                    <!-- 7 -->
                     <li><a href="#news">Цаг үеийн мэдээ</a></li>
-
-                    <!-- 8 -->
-                    <li><a href="#faq">FAQ</a></li>
-
-                    <!-- 9 -->
-                    <li><a href="#sitemap">Сайтын бүтэц</a></li>
-
-                    <!-- 10 -->
-                    <li><a href="#contact">Холбоо барих</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0">
+                <!-- Added ARIA/role/tabindex for accessibility and reliable JS targeting -->
+                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Main menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -324,114 +301,4 @@
                 <div class="content-card" id="tourism-heritage">
                     <i class="fas fa-route"></i>
                     <h3>ДӨ-ОХСДГ ба Аялал жуулчлал</h3>
-                    <p>Дэлхийн өвийн соёлын дурсгалт газар болох Орхоны хөндийн аялал жуулчлалын танилцуулга.</p>
-                </div>
-                <div class="content-card" id="museum">
-                    <i class="fas fa-university"></i>
-                    <h3>Музей</h3>
-                    <p>Орхоны хөндийн түүх, соёлын дурсгалуудыг үзэх боломжтой музей, үзэсгэлэн.</p>
-                </div>
-                <div class="content-card" id="must-see">
-                    <i class="fas fa-star"></i>
-                    <h3>Заавал үзэх гайхамшигт дурсгалууд</h3>
-                    <p>Орхоны хөндийн заавал үзэх ёстой гайхамшигт түүх, соёлын дурсгалууд.</p>
-                </div>
-                <div class="content-card" id="tourist-bases">
-                    <i class="fas fa-campground"></i>
-                    <h3>Жуулчны баазууд</h3>
-                    <p>Орхоны хөндийн бүс нутагт байрлах жуулчны баазууд, амралтын газар.</p>
-                </div>
-                <div class="content-card" id="routes">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Аялал жуулчлалын маршрут</h3>
-                    <p>Орхоны хөндийн аялал жуулчлалын санал болгох маршрутууд.</p>
-                </div>
-                <div class="content-card" id="events">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Аялал жуулчлалын эвент</h3>
-                    <p>Орхоны хөндийд зохион байгуулагддаг аялал жуулчлалын эвент, үйл ажиллагаанууд.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured News Section -->
-    <section class="featured-news" id="news">
-        <div class="container">
-            <h2 class="section-title">Онцлох мэдээ</h2>
-            <div class="news-grid">
-                <article class="news-card">
-                    <div class="news-date">2025.11.12</div>
-                    <h3>ДЭЛХИЙН ӨВ-ОРХОНЫ ХӨНДИЙН СОЁЛЫН ДУРСГАЛТ ГАЗРЫН БАЙГАЛЬ, СОЁЛЫН ӨВИЙН ХАДГАЛАЛТ ХАМГААЛАЛТЫН �[...]
-                    <p>ДӨОХСДГ-ын байгаль, соёлын биет болон биет бус өвийн хадгалалт, хамгаалалтын өнөөгийн байдал, тү�[...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2024.08.02</div>
-                    <h3>Дэлхийн өв-түүх, соёлын дурсгалт газрын хадгалалт хамгаалалт" монгол-японы соёлын өвийн симпози[...]
-                    <p>Орхоны хөндийн соёлын дурсгалт газрыг ЮНЕСКО-ийн дэлхийн өвд бүртгэгдсэний 20 жилийн ойн хүрээнд[...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2020.08.29</div>
-                    <h3>Соёлын сайд С.Чулуун Дэлхийн өв-Орхоны хөндийн соёлын дурсгалт газрын хамгаалалтын захиргаа бо�[...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2020.08.07</div>
-                    <h3>Мониторинг тандан судалгааны ажлын товч танилцуулга</h3>
-                    <p>ДӨ-ОХСДГ-ын хамгаалалтын захиргааны 2020 оны мониторинг тандан судалгааны зорилго нь түүх, соёлын [...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2020.04.17</div>
-                    <h3>Хөшөө дурсгал, дурсгалт газрын олон улсын тэмдэглэлт өдрийн мэндийг дэвшүүлье</h3>
-                    <p>Хөшөө дурсгал, дурсгалт газрын олон улсын тэмдэглэлт өдрийг дэлхий нийтээрээ 4 дүгээр сарын 18-нд [...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2019.11.20</div>
-                    <h3>Дэлхийн соёлын болон байгалийн өвийг хамгаалах тухай конвенци батлагдсан тэмдэглэлт өдөр-2019 он[...]
-                    <p>Дэлхийн соёлын болон байгалийн өвийг хамгаалах тухай конвенци батлагдсан өдрийн хүрээнд 2019 оны [...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-                <article class="news-card">
-                    <div class="news-date">2019.09.23</div>
-                    <h3>Орон нутгийн төр захиргаа, соёлын байгууллагуудын хамтын ажиллагаа 2019</h3>
-                    <p>Дэлхийн Өв-Орхоны Хөндийн Соёлын Дурсгалт Газрын хамгаалалтын захиргаанд холбогдох таван сумды[...]
-                    <a href="#" class="read-more">Дэлгэрэнгүй ...</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Холбоо барих</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Хаяг:</strong> Төв аймаг, Баян-Өнжүүл сум, ямар  баг</p>
-                        <p><i class="fas fa-phone"></i> <strong>Утас:</strong> 91919791; 99914009</p>
-                        <p><i class="fas fa-envelope"></i> <strong>Цахим шуудан:</strong> ovcl.worldheritage@gmail.com</p>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Холбоосууд</h3>
-                    <ul class="footer-links">
-                        <li><a href="#faq">FAQ's</a></li>
-                        <li><a href="#sitemap">Сайтын бүтэц</a></li>
-                        <li><a href="#contact">Холбоо барих</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy;Монголын Үнэт Соёл 2025. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                    <p>Дэлхийн өвийн со
