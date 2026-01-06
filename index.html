@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Монголын уртын дууны Баянбараат аялгуу - Дэлхийн соёлын өвийн танилцуулга">
+    <meta name="keywords" content="Уртын дуу, Баянбараат, Монгол соёл, Орхоны хөндий">
     <title>Уртын дууны Баянбараат аялгуу</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-top">
                 <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> 91919791; 99914009</span>
-                    <span><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</span>
+                    <span><i class="fas fa-phone" aria-hidden="true"></i> 91919791; 99914009</span>
+                    <span><i class="fas fa-envelope" aria-hidden="true"></i> ovcl.worldheritage@gmail.com</span>
                 </div>
             </div>
-            <nav class="navbar">
+            <nav class="navbar" role="navigation" aria-label="Үндсэн цэс">
                 <div class="logo">
                     <h1>Бараатын Дөмөн аялгуу</h1>
                 </div>
@@ -25,16 +27,15 @@
                     <li><a href="#home">Нүүр</a></li>
                     <li><a href="taniltsuulga.html">Танилцуулга </a></li>
                     <li class="dropdown">
-                        <a href="udirdamj.html">Удирдамж <i class="fas fa-chevron-down"></i></a>
+                        <a href="udirdamj.html">Удирдамж <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="surgalt.html">Уртын дууны сургөлтууд</a></li>
-                            <!-- Администрацийн доторх танилцуулгын карточны id-г admin-introduction болголоо -->
                             <li><a href="duugaa_sonsotsgooy.html">Уртын дуугаа сонсоцгооё</a></li>
                             <li><a href="uraldaan_bolzol.html">Уралдаан болзол</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="bidnii_baharhal.html">Бидний бахархал <i class="fas fa-chevron-down"></i></a>
+                        <a href="bidnii_baharhal.html">Бидний бахархал <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
                             <li><a href="sudalgaanii_sedew.html">Судалгааны сэдэв</a></li>
@@ -43,8 +44,7 @@
                     </li>
                     <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
                 </ul>
-                <!-- Added ARIA/role/tabindex for accessibility and reliable JS targeting -->
-                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Main menu">
+                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Цэс">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -54,63 +54,63 @@
     </header>
 
 <!-- Hero Carousel -->
-<section class="hero-carousel" id="home">
+<section class="hero-carousel" id="home" aria-label="Гол слайд шоу">
     <div class="carousel-container">
 
-        <div class="carousel-slide slide-1 active">
+        <article class="carousel-slide slide-1 active">
             <div class="slide-content">
                 <h2>Уртын Дуу</h2>
                 <h1>Бараатын Аялгуу</h1>
                 <p>Таалан соёрхоно уу!</p>
             </div>
-        </div>
+        </article>
 
-        <div class="carousel-slide slide-2">
+        <article class="carousel-slide slide-2">
             <div class="slide-content">
                 <h2>Дэлхийн өв</h2>
                 <h1>ОРХОНЫ ХӨНДИЙД</h1>
                 <p>Тавтай морилно уу!</p>
             </div>
-        </div>
+        </article>
 
-        <div class="carousel-slide slide-3">
+        <article class="carousel-slide slide-3">
             <div class="slide-content">
                 <h2>Соёлын өв</h2>
                 <h1>УРТЫН ДУУ</h1>
                 <p>Монгол түмний бахархал</p>
             </div>
-        </div>
+        </article>
 
-        <div class="carousel-slide slide-4">
+        <article class="carousel-slide slide-4">
             <div class="slide-content">
                 <h2>Байгалийн гайхамшиг</h2>
                 <h1>ОРХОН ГОЛ</h1>
                 <p>Түүх, соёл, байгаль</p>
             </div>
-        </div>
+        </article>
 
-        <div class="carousel-slide slide-5">
+        <article class="carousel-slide slide-5">
             <div class="slide-content">
                 <h2>Аялал жуулчлал</h2>
                 <h1>МОНГОЛ НУТАГ</h1>
                 <p>Тавтай морилно уу!</p>
             </div>
-        </div>
+        </article>
 
     </div>
 
     <!-- Controls -->
-    <div class="carousel-controls">
-        <button class="carousel-btn prev" id="prevBtn">
-            <i class="fas fa-chevron-left"></i>
+    <div class="carousel-controls" role="group" aria-label="Слайд удирдлага">
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Өмнөх слайд">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <button class="carousel-btn next" id="nextBtn">
-            <i class="fas fa-chevron-right"></i>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Дараах слайд">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- Indicators -->
-    <div class="carousel-indicators" id="carouselIndicators"></div>
+    <div class="carousel-indicators" id="carouselIndicators" role="tablist" aria-label="Слайдууд"></div>
 </section>
 
 <!-- Introduction Section (Нэг хуудас шиг танилцуулга) -->
