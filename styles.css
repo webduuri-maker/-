@@ -1,4 +1,11 @@
-/* Reset and Base Styles */
+/* ============================================
+   COMPLETE CSS STYLESHEET
+   Баянбараатын Дөмөн Аялгуу Website
+   ============================================ */
+
+/* =========================
+   1. RESET AND BASE STYLES
+   ========================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +13,7 @@
 }
 
 :root {
+    /* Color Variables */
     --primary-color: #1e1e1e;
     --secondary-color: #0088cc;
     --accent-color: #f7941d;
@@ -13,6 +21,8 @@
     --light-bg: #f5f5f5;
     --white: #ffffff;
     --border-color: #e0e0e0;
+    
+    /* Typography */
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -23,13 +33,19 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header Styles */
+/* =========================
+   2. HEADER STYLES
+   ========================= */
 .header {
     background: var(--white);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -57,6 +73,9 @@ body {
     gap: 8px;
 }
 
+/* =========================
+   3. NAVIGATION STYLES
+   ========================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -144,7 +163,6 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    /* ensure appears above menu and other overlays */
     z-index: 1101;
     position: relative;
 }
@@ -156,7 +174,9 @@ body {
     transition: all 0.3s;
 }
 
-/* Hero Carousel */
+/* =========================
+   4. HERO CAROUSEL
+   ========================= */
 .hero-carousel {
     position: relative;
     height: 500px;
@@ -179,7 +199,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -278,7 +297,9 @@ body {
     transform: scale(1.2);
 }
 
-/* Content Sections */
+/* =========================
+   5. CONTENT SECTIONS
+   ========================= */
 .content-section {
     padding: 80px 0;
     background: var(--white);
@@ -291,6 +312,13 @@ body {
 .section-header {
     text-align: center;
     margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
 .section-subtitle {
@@ -340,22 +368,85 @@ body {
     min-height: 60px;
 }
 
+.content-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 .content-card p {
     color: #666;
     line-height: 1.8;
     font-size: 15px;
 }
 
-/* Featured News Section */
-.featured-news {
-    padding: 80px 0;
-    background: var(--light-bg);
+.content-card ul,
+.content-card ol {
+    text-align: left;
+    margin: 15px 0;
+    padding-left: 25px;
 }
 
-/* ... (rest of CSS unchanged) ... */
+.content-card li {
+    margin-bottom: 8px;
+    color: #555;
+}
 
-/* Responsive Design */
+/* =========================
+   6. BUTTONS AND CONTROLS
+   ========================= */
+.btn {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.08s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    border: none;
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+/* =========================
+   7. ANIMATIONS
+   ========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   8. RESPONSIVE DESIGN
+   ========================= */
 @media (max-width: 968px) {
+    /* Mobile Navigation */
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -367,7 +458,7 @@ body {
         padding: 80px 30px 30px;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         transition: left 0.3s;
-        z-index: 1000; /* ensure menu under hamburger */
+        z-index: 1000;
         align-items: flex-start;
         gap: 0;
         overflow-y: auto;
@@ -404,7 +495,7 @@ body {
 
     .hamburger {
         display: flex;
-        z-index: 1101; /* ensure hamburger above nav */
+        z-index: 1101;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -419,6 +510,11 @@ body {
         transform: rotate(-45deg) translate(7px, -7px);
     }
 
+    /* Carousel Adjustments */
+    .hero-carousel {
+        height: 400px;
+    }
+
     .slide-content h2 {
         font-size: 24px;
     }
@@ -431,8 +527,19 @@ body {
         font-size: 18px;
     }
 
-    .news-grid {
-        grid-template-columns: 1fr;
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    /* Content Adjustments */
+    .content-section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
     }
 
     .content-grid {
@@ -442,32 +549,52 @@ body {
     .content-card {
         padding: 30px 20px;
     }
-}
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Loading Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    .content-card h3 {
+        min-height: auto;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+    .header-top .contact-info {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .slide-content h2 {
+        font-size: 18px;
+    }
+
+    .slide-content h1 {
+        font-size: 28px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
     }
 }
 
 /* =========================
-   Editor pages (shared)
-   Styles for the simple HTML pages you provided
-   Files: udirdamj.html, taniltsuulga.html, medee_medeelel.html, etc.
+   9. EDITOR PAGES STYLES
+   (For additional HTML pages)
    ========================= */
-
-/* Header for simple pages (targets <header> elements that are not .header class) */
 header {
     background: var(--white);
     padding: 18px 20px;
@@ -487,7 +614,6 @@ header h1 {
     font-weight: 600;
 }
 
-/* Back link */
 a.back {
     text-decoration: none;
     color: var(--secondary-color);
@@ -501,12 +627,12 @@ a.back {
     align-items: center;
     gap: 8px;
 }
+
 a.back:hover {
     background: rgba(0,136,204,0.08);
     color: var(--secondary-color);
 }
 
-/* Main controls above editor */
 .controls {
     display: flex;
     gap: 10px;
@@ -518,8 +644,7 @@ a.back:hover {
 }
 
 .controls input[type="text"],
-.controls input,
-.controls input#location {
+.controls input {
     padding: 10px 12px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -530,38 +655,12 @@ a.back:hover {
     outline: none;
     transition: box-shadow 0.15s, border-color 0.15s;
 }
+
 .controls input:focus {
     border-color: var(--secondary-color);
     box-shadow: 0 4px 12px rgba(0,136,204,0.08);
 }
 
-/* Buttons in the controls area */
-.controls button,
-.btn {
-    padding: 10px 14px;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    background: var(--secondary-color);
-    color: #fff;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.08s ease, box-shadow 0.12s ease, opacity 0.12s ease;
-}
-.controls button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-.controls button#reset {
-    background: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
-}
-.controls button#download {
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-    border: none;
-}
-
-/* Editor article */
 article#editor {
     margin: 22px auto;
     padding: 28px;
@@ -576,47 +675,11 @@ article#editor {
     line-height: 1.8;
 }
 
-/* When contenteditable focused */
 article#editor:focus {
     box-shadow: 0 12px 30px rgba(0,136,204,0.06);
     border: 1px solid rgba(0,136,204,0.08);
 }
 
-/* Typography inside editor */
-article#editor h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-article#editor h3 {
-    font-size: 16px;
-    margin-top: 16px;
-    color: #444;
-}
-article#editor p {
-    font-size: 15px;
-    color: #444;
-    margin-bottom: 12px;
-}
-
-/* Location note */
-.location-note {
-    color: #777;
-    font-style: italic;
-    background: rgba(0,0,0,0.02);
-    padding: 8px 10px;
-    border-radius: 6px;
-    display: inline-block;
-}
-
-/* Small helper for editors: toolbar-like visuals when hovering controls */
-.controls .hint {
-    font-size: 13px;
-    color: #666;
-    margin-left: 6px;
-}
-
-/* Footer for the simple pages */
 footer {
     padding: 18px 20px;
     text-align: center;
@@ -626,58 +689,9 @@ footer {
     background: transparent;
 }
 
-/* Styling audio and media blocks inside editor/aside */
-article#editor audio,
-article#editor video {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 6px;
-    background: #000;
-}
-
-/* Utility button variants used in taniltsuulga.html */
-.btn.primary {
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-    color: #fff;
-    padding: 10px 14px;
-    border-radius: 8px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 700;
-    border: none;
-}
-.btn.ghost {
-    background: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--border-color);
-    padding: 10px 14px;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-/* Responsive adjustments for small screens */
-@media (max-width: 720px) {
-    header h1 {
-        font-size: 18px;
-    }
-    .controls {
-        padding: 12px;
-    }
-    .controls input#location {
-        min-width: 160px;
-        flex: 1 1 100%;
-    }
-    .controls button {
-        flex: 1 1 auto;
-        min-width: 120px;
-    }
-    article#editor {
-        padding: 18px;
-        margin: 14px;
-    }
-}
-
-/* Print styles for editor pages (simple) */
+/* =========================
+   10. PRINT STYLES
+   ========================= */
 @media print {
     .controls, a.back, .hamburger, nav, .footer, header {
         display: none !important;
