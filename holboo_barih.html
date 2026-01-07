@@ -3,36 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Холбоо барих</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Холбоо барих — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Холбоо барих</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Header / nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Холбоо барих</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="holboo_barih.html" aria-current="page">Холбоо</a></li>
+          <li><a href="medee_medeelel.html">Мэдээ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Хаана очиж, хэнд хандах тухай тэмдэглэл" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container contact-page">
+    <!-- Contact form -->
+    <section class="contact-form" aria-labelledby="contact-title">
+      <h1 id="contact-title">Холбоо барих</h1>
+      <form class="form" action="#" method="post" novalidate>
+        <div class="form-row"><label for="name">Нэр</label><input id="name" name="name" type="text" required></div>
+        <div class="form-row"><label for="email">Имэйл</label><input id="email" name="email" type="email" required></div>
+        <div class="form-row"><label for="message">Зурвас</label><textarea id="message" name="message" rows="6" required></textarea></div>
+        <div class="form-row"><button class="btn primary" type="submit">Илгээх</button></div>
+      </form>
+    </section>
 
-    <article id="editor" contenteditable="true" data-page="holboo_barih">
-      <h2>Хаяг, утас, имэйл</h2>
-      <p>Энд холбоо барих мэдээлэл, форм, газрын зураг (iframe) гэх мэт байрлуулна.</p>
-      <h3>Хаана байрлана:</h3>
-      <p class="location-note">...</p>
-    </article>
+    <!-- Contact information cards -->
+    <section class="contact-info" aria-labelledby="info-title">
+      <h2 id="info-title">Мэдээлэл</h2>
+      <div class="info-grid">
+        <div class="info-card"><h3>И-мэйл</h3><p><a href="mailto:ovcl.worldheritage@gmail.com">ovcl.worldheritage@gmail.com</a></p></div>
+        <div class="info-card"><h3>Утас</h3><p>91919791 • 99914009</p></div>
+        <div class="info-card"><h3>Хаяг</h3><p>Орхон аймаг, ХХХ гудамж</p></div>
+      </div>
+    </section>
+
+    <!-- Embedded map placeholder -->
+    <section class="map" aria-labelledby="map-title">
+      <h2 id="map-title">Байршил</h2>
+      <div class="map-placeholder" role="img" aria-label="Газрын зураг">MAP PLACEHOLDER — энд iframe эсвэл interactive map залгана</div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Холбоо</small></div></footer>
 </body>
 </html>
