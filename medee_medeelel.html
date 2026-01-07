@@ -3,36 +3,95 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Мэдээ мэдээлэл</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Бидний бахархал — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Мэдээ мэдээлэл</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Shared header/navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Уртын дуу</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="bidnii_baharhal.html" aria-current="page">Бидний бахархал</a></li>
+          <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
+          <li><a href="sudalgaanii_sedew.html">Судалгаа</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Мэдээ хаанаас ирсэн, хугацаа, эх сурвалж" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container gallery-page">
+    <!-- Gallery layout -->
+    <section class="gallery" aria-labelledby="gallery-title">
+      <h1 id="gallery-title">Галерей — Онцлох зураг</h1>
+      <p class="lead">Уртын дууны уран бүтээлчид, архив, арга хэмжээний гэрэл зургууд</p>
 
-    <article id="editor" contenteditable="true" data-page="medee_medeelel">
-      <h2>Шинэ мэдээ</h2>
-      <p>Энд хамгийн сүүлийн мэдээ, нийтлэл, зарлал оруулна.</p>
-      <h3>Эх сурвалж / Хаана:</h3>
-      <p class="location-note">...</p>
-    </article>
+      <div class="gallery-grid">
+        <!-- Image card 1 -->
+        <figure class="img-card">
+          <img src="image/artist1.jpg" alt="Уран бүтээлч 1">
+          <figcaption>
+            <h3>Уран бүтээлч А</h3>
+            <p>Ардын уртын дууны өвлөн тээгч, олон арван жилийн туршлагатай.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Image card 2 -->
+        <figure class="img-card">
+          <img src="image/archive1.jpg" alt="Архив бичлэг">
+          <figcaption>
+            <h3>Архивын бичлэг</h3>
+            <p>Эртний тэмдэглэлүүдийг сэргээн хадгалсан цуглуулга.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Image card 3 -->
+        <figure class="img-card">
+          <img src="image/event1.jpg" alt="Соёлын арга хэмжээ">
+          <figcaption>
+            <h3>Соёлын арга хэмжээ</h3>
+            <p>Тэмцээн, үзүүлбэрийн агшин.</p>
+          </figcaption>
+        </figure>
+
+        <!-- Image card 4 -->
+        <figure class="img-card">
+          <img src="image/landscape1.jpg" alt="Орхон гол">
+          <figcaption>
+            <h3>Орхон голын уянга</h3>
+            <p>Байгаль, аялгууг уялдуулсан зураг.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Achievement timeline -->
+    <section class="achievements" aria-labelledby="achieve-title">
+      <h2 id="achieve-title">Амжилтын хронологи</h2>
+      <ol class="timeline">
+        <li>
+          <time datetime="1995">1995</time>
+          <div class="tl-body"><strong>Анхны бүртгэл</strong> — Уртын дууны анхны аудио бүртгэгдсэн.</div>
+        </li>
+        <li>
+          <time datetime="2008">2008</time>
+          <div class="tl-body"><strong>Фестиваль</strong> — Үндэсний фестиваль анх зохион байгуулагдсан.</div>
+        </li>
+        <li>
+          <time datetime="2020">2020</time>
+          <div class="tl-body"><strong>Олон улсын хүлээн зөвшөөрөл</strong> — Аялгуу нь дэлхийд танигдсан.</div>
+        </li>
+      </ol>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 Уртын дуу — Бидний бахархал</small>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
