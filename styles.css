@@ -1,5 +1,5 @@
 /* ============================================
-   COMPLETE CSS STYLESHEET
+   COMPLETE CSS STYLESHEET (UPDATED)
    Баянбараатын Дөмөн Аялгуу Website
    ============================================ */
 
@@ -21,7 +21,11 @@
     --light-bg: #f5f5f5;
     --white: #ffffff;
     --border-color: #e0e0e0;
-    
+
+    /* Transitions */
+    --transition-fast: 0.18s;
+    --transition-medium: 0.3s;
+
     /* Typography */
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -35,6 +39,31 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+/* ADDED: Make images and audio responsive and block-level to avoid overflow */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+audio,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+/* ADDED: visually hidden helper for accessibility */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 .container {
@@ -105,14 +134,20 @@ html {
     color: var(--text-color);
     font-weight: 500;
     font-size: 15px;
-    transition: color 0.3s;
+    transition: color var(--transition-fast);
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
+/* ADDED: Visible focus style for keyboard users (improves accessibility) */
+.nav-menu a:focus,
+.nav-menu a:focus-visible,
 .nav-menu a:hover {
     color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,136,204,0.08);
+    border-radius: 4px;
 }
 
 /* Dropdown Menu */
@@ -127,7 +162,7 @@ html {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all 0.3s;
+    transition: all var(--transition-medium);
     z-index: 100;
     margin-top: 10px;
 }
@@ -171,7 +206,15 @@ html {
     width: 25px;
     height: 3px;
     background: var(--primary-color);
-    transition: all 0.3s;
+    transition: all var(--transition-fast);
+}
+
+/* ADDED: focus-visible for hamburger */
+.hamburger:focus,
+.hamburger:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0,136,204,0.12);
+    border-radius: 6px;
 }
 
 /* =========================
@@ -261,8 +304,16 @@ html {
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    transition: all 0.3s;
+    transition: all var(--transition-fast);
     backdrop-filter: blur(10px);
+}
+
+/* ADDED: visible focus styles for carousel buttons */
+.carousel-btn:focus,
+.carousel-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.12);
+    transform: scale(1.05);
 }
 
 .carousel-btn:hover {
@@ -288,8 +339,16 @@ html {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all var(--transition-fast);
     border: 2px solid transparent;
+}
+
+/* ADDED: keyboard-focusable indicator style for accessibility */
+.carousel-indicator:focus,
+.carousel-indicator:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.12);
+    transform: scale(1.1);
 }
 
 .carousel-indicator.active {
@@ -334,13 +393,14 @@ html {
     gap: 30px;
 }
 
+/* ADDED: improved card look for small screens and accessible focus */
 .content-card {
     background: var(--white);
     border-radius: 8px;
     padding: 40px 30px;
     text-align: center;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     border-top: 4px solid var(--secondary-color);
 }
 
@@ -348,7 +408,8 @@ html {
     background: var(--white);
 }
 
-.content-card:hover {
+.content-card:hover,
+.content-card:focus-within {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
@@ -392,6 +453,21 @@ html {
     color: #555;
 }
 
+/* Timeline improvements */
+.timeline {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 12px;
+}
+
+.timeline li {
+    padding: 12px 16px;
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+    border-radius: 6px;
+}
+
 /* =========================
    6. BUTTONS AND CONTROLS
    ========================= */
@@ -403,7 +479,7 @@ html {
     color: #fff;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.08s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
     text-decoration: none;
     display: inline-block;
 }
@@ -457,7 +533,7 @@ html {
         height: 100vh;
         padding: 80px 30px 30px;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        transition: left 0.3s;
+        transition: left var(--transition-medium);
         z-index: 1000;
         align-items: flex-start;
         gap: 0;
@@ -621,7 +697,7 @@ a.back {
     background: transparent;
     padding: 8px 12px;
     border-radius: 6px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
     border: 1px solid transparent;
     display: inline-flex;
     align-items: center;
@@ -653,7 +729,7 @@ a.back:hover {
     background: #fff;
     color: var(--text-color);
     outline: none;
-    transition: box-shadow 0.15s, border-color 0.15s;
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .controls input:focus {
@@ -703,3 +779,25 @@ footer {
         padding: 0;
     }
 }
+
+/* =========================
+   11. REDUCED MOTION
+   ========================= */
+/* ADDED: Respect user's OS-level reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto;
+    }
+}
+
+/* =========================
+   CHANGES/ADDITIONS NOTES:
+   - Added responsive image/audio rules so media won't overflow layout.
+   - Added .sr-only helper for screen-reader-only text.
+   - Added visible focus styles for interactive controls (hamburger, nav links, carousel controls, indicators).
+   - Added minor visual improvements for timeline and cards.
+   - Added reduced-motion support.
+   - Kept all existing class names and structure unchanged.
+   ========================= */
