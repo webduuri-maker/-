@@ -3,36 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Уралдаан болзол</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Уралдаан болзол — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Уралдаан болзол</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Header / nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Уралдаан</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="uraldaan_bolzol.html" aria-current="page">Уралдаан</a></li>
+          <li><a href="medee_medeelel.html">Мэдээ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Уралдаан явагдах газар, нөхцөл" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container competition">
+    <!-- Competition overview -->
+    <section class="overview" aria-labelledby="overview-title">
+      <h1 id="overview-title">Уралдаан — Товч</h1>
+      <p class="lead">Уралдаан нь шинэ авьяасыг нээн гаргаж, уламжлалыг түгээх зорилготой.</p>
+    </section>
 
-    <article id="editor" contenteditable="true" data-page="uraldaan_bolzol">
-      <h2>Болзол, дүрэм</h2>
-      <p>Уралдааны нөхцөл, шалгуур, нас, ангилал гэх мэт мэдээлэл оруулна.</p>
-      <h3>Хаана байрлана:</h3>
-      <p class="location-note">...</p>
-    </article>
+    <!-- Rules and conditions -->
+    <section class="rules" aria-labelledby="rules-title">
+      <h2 id="rules-title">Дүрэм, болзол</h2>
+      <ol class="rules-list">
+        <li>Оролцогчид насны ангилалд хуваагдана.</li>
+        <li>Гурван уртын дуу үзүүлэх ба шүүгчид шалгана.</li>
+        <li>Оролцогчид зөв ёс зүй баримтлана.</li>
+        <li>Шүүгчийн шийдвэр үнэмлэхүй.</li>
+      </ol>
+    </section>
+
+    <!-- Important dates timeline -->
+    <section class="dates" aria-labelledby="dates-title">
+      <h2 id="dates-title">Чухал өдрүүд</h2>
+      <ul class="dates-list">
+        <li><strong>Бүртгэл хаагдах:</strong> 2026-02-10</li>
+        <li><strong>Шалгаруулалт:</strong> 2026-02-20</li>
+        <li><strong>Тэмцээн:</strong> 2026-03-05</li>
+      </ul>
+    </section>
+
+    <!-- Prizes section -->
+    <section class="prizes" aria-labelledby="prizes-title">
+      <h2 id="prizes-title">Шагнал</h2>
+      <div class="prize-grid">
+        <div class="prize">
+          <h3>Тэргүүн байр</h3>
+          <p>Цом, мөнгөн шагнал, тайзны уран бүтээлийн боломж.</p>
+        </div>
+        <div class="prize">
+          <h3>Дэд байр</h3>
+          <p>Сургалтын тэтгэлэг болон медаль.</p>
+        </div>
+        <div class="prize">
+          <h3>Гутгаар байр</h3>
+          <p>Дурсгалын сертификат, дурсгалын зүйл.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Уралдаан</small></div></footer>
 </body>
 </html>
