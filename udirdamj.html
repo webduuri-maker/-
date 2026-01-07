@@ -3,36 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Удирдамж</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Удирдамж — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Удирдамж</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- SHARED HEADER / NAV -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Удрдэмж — Уртын дуу</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс нээх/хаах">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="udirdamj.html" aria-current="page">Удирдамж</a></li>
+          <li><a href="training.html">Сургалт</a></li>
+          <li><a href="holboo_barih.html">Холбоо</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Хаана байрлаж байгаа талаарх тэмдэглэл (жиш: Архив, Төв)" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container">
+    <!-- PAGE TITLE -->
+    <header class="page-header">
+      <h1>Удирдамж</h1>
+      <p class="lead">Алхам алхмаар суралцах, дасгалын заавар, татаж авах материалууд</p>
+    </header>
 
-    <article id="editor" contenteditable="true" data-page="udirdamj">
-      <h2>Энд удирдамжийн агуулгаа бичнэ үү</h2>
-      <p>Жишээ: Энэхүү хэсэгт хөтөлбөр, дүрэм, зааварчилгаа байрлана.</p>
-      <h3>Хаана байгаа:</h3>
-      <p class="location-note">Энд 'Хаана' гэж бичнэ.</p>
-    </article>
+    <!-- STEP-BY-STEP INSTRUCTIONS -->
+    <section class="steps" aria-labelledby="steps-title">
+      <h2 id="steps-title">Алхам бүрийн заавар</h2>
+      <ol class="steps-list">
+        <li>
+          <h3>Алхам 1 — Амьсгал, бэлтгэл</h3>
+          <p>Өглөө, үдээс өмнө 10 минут амьсгалын дасгал хийж хоолойг сэргээ.</p>
+        </li>
+        <li>
+          <h3>Алхам 2 — Фразыг задалж давтах</h3>
+          <p>Урт фразуудыг 10-20 секундээр хэсэг болгон давтаж сурах.</p>
+        </li>
+        <li>
+          <h3>Алхам 3 — Морин хуурын дэмжлэг</h3>
+          <p>Морин хуурын дагалдах аялгуу, хэмнэл сонсоно.</p>
+        </li>
+        <li>
+          <h3>Алхам 4 — Тайзны бэлтгэл</h3>
+          <p>Тайзан дээр дуулах, микрофон, амьсгалын хяналтын дадлага.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- DOWNLOAD LINKS -->
+    <section class="downloads" aria-labelledby="downloads-title">
+      <h2 id="downloads-title">Татаж авах материал</h2>
+      <ul class="download-list">
+        <li><a href="assets/udirdamj.pdf" download>Удирдамж (PDF)</a></li>
+        <li><a href="assets/phrases_audio.zip" download>Фразын аудио (ZIP)</a></li>
+        <li><a href="assets/notation_examples.pdf" download>Нотын жишээ (PDF)</a></li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Түгээмэл асуултууд</h2>
+
+      <!-- Using details for accessible toggles -->
+      <details>
+        <summary>Сургалт үнэ төлбөргүй юу?</summary>
+        <p>Тодорхой курсууд үнэгүй, тодорхой модулиудад тэтгэлэг эсвэл төлбөр шаардлагатай байж болно.</p>
+      </details>
+
+      <details>
+        <summary>Татаж авсан материалыг хэрхэн ашиглах вэ?</summary>
+        <p>PDF, аудио файлууд нь сургалтын зориулалтаар ашиглахад зориулагдсан; зургийг заавал зээл авч болохгүй.</p>
+      </details>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 Уртын дуу — Удирдамж</small>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // nav toggle
+    (function(){
+      const btn=document.querySelector('.nav-toggle');
+      const nav=document.getElementById('primary-nav');
+      btn.addEventListener('click',()=>{ const open=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',String(!open)); nav.classList.toggle('open'); });
+    })();
+  </script>
 </body>
 </html>
