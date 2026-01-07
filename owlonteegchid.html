@@ -3,36 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Өвлөн тээгчид</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Өвлөн тээгчид — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Өвлөн тээгчид</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Header / nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Өвлөн тээгчид</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="owlonteegchid.html" aria-current="page">Өвлөн тээгчид</a></li>
+          <li><a href="bidnii_baharhal.html">Бидний бахархал</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Өвлөн тээгчдэд хамаарах байрлал (архив, төсөл гэх мэт)" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container profile">
+    <!-- Profile layout: portrait + biography -->
+    <section class="profile-card" aria-labelledby="profile-title">
+      <h1 id="profile-title">Ж. Бат-Оргил — Өвлөн тээгч</h1>
+      <div class="profile-grid">
+        <img class="portrait" src="image/elder1.jpg" alt="Ж. Бат-Оргил — өвлөн тээгч">
+        <div class="bio">
+          <h2>Товч намтар</h2>
+          <p>Ж. Бат-Оргил нь 40+ жил уртын дууг судалж, өвлөн тээгч, олон шавьтай багш. Түүний аялгуу нь байгалийн сэтгэлгээтэй гүн холбогддог.</p>
+          <p class="meta">Холбоо: 91919791</p>
+        </div>
+      </div>
+    </section>
 
-    <article id="editor" contenteditable="true" data-page="ovlon_teegchid">
-      <h2>Өвлөн тээгчдийн мэдээлэл</h2>
-      <p>Үндсэн мэдээлэл, товч намтар, холбоос, гэрэл зураг оруулна.</p>
-      <h3>Файлын байрлал:</h3>
-      <p class="location-note">...</p>
-    </article>
+    <!-- Quote section -->
+    <section class="quote" aria-labelledby="quote-title">
+      <h2 id="quote-title">Эшлэл</h2>
+      <blockquote>“Уртын дуу бол түүх, байгаль, хүний зүрхийг холбосон хэл.” <cite>— Ж. Бат-Оргил</cite></blockquote>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Өвлөн тээгчид</small></div></footer>
 </body>
 </html>
