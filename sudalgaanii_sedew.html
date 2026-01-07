@@ -3,36 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Судалгааны сэдэв</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Судалгааны сэдэв — Уртын дуу</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Судалгааны сэдэв</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Header / nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Судалгааны сэдэв</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="sudalgaanii_sedew.html" aria-current="page">Судалгаа</a></li>
+          <li><a href="bidnii_baharhal.html">Бидний бахархал</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Судалгааны баримт материал хаана байрлаж байгаа тухай" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container research">
+    <!-- Research topic list -->
+    <section class="topics" aria-labelledby="topics-title">
+      <h1 id="topics-title">Судалгааны сэдэв</h1>
+      <ul class="topics-list">
+        <li><h3>Орхон голын аялгуу ба гарал</h3><p>Аялгууны түүх, эх сурвалж судлах.</p></li>
+        <li><h3>Аудио архивын сэргээх</h3><p>Бичлэг сэргээх, дижитал хадгалалт.</p></li>
+        <li><h3>Уртын дуу ба экологи</h3><p>Байгаль ба аялгууны уялдаа.</p></li>
+      </ul>
+    </section>
 
-    <article id="editor" contenteditable="true" data-page="sudalgaanii_sedev">
-      <h2>Судалгааны санаа, дүгнэлт</h2>
-      <p>Энд судалгааны сэдэв, зорилго, баримт бичиг, лавлагаа оруулна.</p>
-      <h3>Хаана байрлана:</h3>
-      <p class="location-note">...</p>
-    </article>
+    <!-- Article preview layout -->
+    <section class="previews" aria-labelledby="previews-title">
+      <h2 id="previews-title">Архив судалгааны товч</h2>
+
+      <article class="preview">
+        <h3>Уртын дууны хэл судлал</h3>
+        <p class="meta">С. Төгөлдөр — 2024</p>
+        <p>Фразын бүтэц, хэл найруулгын онцлогийг судалсан. <a href="assets/study1.pdf" download>Татах</a></p>
+      </article>
+
+      <article class="preview">
+        <h3>Аудио тэмдэглэл</h3>
+        <p class="meta">М. Номин — 2022</p>
+        <p>Тэмдэглэл хийх стандарт, тэмдэглэгээний протокол. <a href="assets/study2.pdf" download>Татах</a></p>
+      </article>
+    </section>
+
+    <!-- Downloadable documents -->
+    <section class="docs" aria-labelledby="docs-title">
+      <h2 id="docs-title">Татаж авах баримт бичиг</h2>
+      <ul class="docs-list">
+        <li><a href="assets/protocol.pdf" download>Судалгааны протокол (PDF)</a></li>
+        <li><a href="assets/transcription_guidelines.pdf" download>Тэмдэглэл хийх заавар (PDF)</a></li>
+      </ul>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Судалгаa</small></div></footer>
 </body>
 </html>
