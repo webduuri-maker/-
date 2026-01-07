@@ -1,38 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Бидний бахархал</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бидний бахархал - Уртын дууны амжилт, өвлөн тээгчид, түүхэн дурсгал">
+    <meta name="keywords" content="бахархал, амжилт, өв, уртын дуу">
+    <title>Бидний бахархал - Уртын дууны Баянбараат аялгуу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Бидний бахархал</h1>
-    <a class="back" href="index.html">← Нүүр</a>
-  </header>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 91919791; 99914009</span>
+                    <span><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</span>
+                </div>
+            </div>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Бараатын Дөмөн аялгуу</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="taniltsuulga.html">Танилцуулга</a></li>
+                    <li class="dropdown">
+                        <a href="udirdamj.html">Удирдамж <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="surgalt.html">Уртын дууны сургалтууд</a></li>
+                            <li><a href="duugaa_sonsotsgooy.html">Уртын дуугаа сонсоцгооё</a></li>
+                            <li><a href="uraldaan_bolzol.html">Уралдаан болзол</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="bidnii_baharhal.html" class="active">Бидний бахархал <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
+                            <li><a href="sudalgaanii_sedew.html">Судалгааны сэдэв</a></li>
+                            <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Main menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Энд ямар баримт, гэрэл зураг байршиж буйг бичнэ" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Бидний бахархал</h2>
+                    <p class="section-subtitle">Амжилт, өвлөн тээгчид, түүхэн дурсгал</p>
+                </div>
 
-    <article id="editor" contenteditable="true" data-page="bidnii_baharkhal">
-      <h2>Хүндэтгэсэн хүмүүс, амжилт</h2>
-      <p>Түүхэн баримт, шилдэг дуучид, шагналуудын мэдээлэл оруулна.</p>
-      <h3>Файлын байршил/Хаана:</h3>
-      <p class="location-note">...</p>
-    </article>
-  </main>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Амжилтууд</h3>
+                        <p>Олон улсын болон үндэсний хэмжээний уралдаан тэмцээнүүдэд амжилттай оролцож, шагнал хүртсэн түүх.</p>
+                        <!-- <img src="image/awards.jpg" alt="Шагнал урамшуулал" /> -->
+                    </div>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
+                    <div class="content-card">
+                        <i class="fas fa-medal"></i>
+                        <h3>Алдартай дуучид</h3>
+                        <p>Уртын дууны Баянбараат аялгууг өвлөн тээгч, алдартай дуучид болон уран бүтээлчид.</p>
+                        <!-- <img src="image/famous-singers.jpg" alt="Алдартай дуучид" /> -->
+                    </div>
 
-  <script src="script.js"></script>
+                    <div class="content-card">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Түүхэн өв</h3>
+                        <p>Олон зууны түүхтэй уртын дууны өв уламжлал, соёлын үнэт дурсгал.</p>
+                        <!-- <img src="image/heritage.jpg" alt="Түүхэн өв" /> -->
+                    </div>
+                </div>
+
+                <div class="content-card" style="margin-top: 30px; text-align: left;">
+                    <h3>Бахархалын түүх</h3>
+                    <p>Уртын дууны Баянбараат аялгуу нь Монголын соёлын биет бус өвийн нэг хэсэг болж, олон үеийн дуучид, морин хуурчид түүнийг өвлүүлэн ирсэн. Энэхүү өв уламжлал нь:</p>
+                    <ul>
+                        <li>UNESCO-ийн Хүн төрөлхтний соёлын биет бус өвийн жагсаалтад бүртгэгдсэн</li>
+                        <li>Олон улсын болон үндэсний фестивалиудад тогтмол оролцдог</li>
+                        <li>Залуу үеийнхэнд өвлүүлэх ажлыг амжилттай явуулж байна</li>
+                        <li>Судалгааны ажлаар дэмжигдэж, архивлагддаг</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Холбоо барих</h3>
+                    <p><i class="fas fa-phone"></i> 91919791; 99914009</p>
+                    <p><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Холбоосууд</h3>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="taniltsuulga.html">Танилцуулга</a></li>
+                        <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                        <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Бидний тухай</h3>
+                    <p>Уртын дууны Баянбараат аялгуу - Монголын соёлын биет бус өвийг хадгалж, өвлүүлэх</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Уртын дууны Баянбараат аялгуу. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

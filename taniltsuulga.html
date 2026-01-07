@@ -1,267 +1,175 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Танилцуулга — Уртын дуу</title>
-
-  <!-- Simple, self-contained CSS so the page is fully working standalone -->
-  <style>
-    /* Base / reset */
-    :root{
-      --bg-start: #fff8e6; /* цайвар шаргал */
-      --bg-end: #fffaf1;   /* хөнгөн градиент */
-      --card-bg: #ffffff;
-      --accent: #b8863e;   /* алтлаг / бор дунд өнгө */
-      --muted: #6b6b6b;
-      --shadow: 0 6px 18px rgba(39,39,39,0.08);
-      --max-width: 1100px;
-      --radius: 10px;
-      --line-height: 1.8;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Mongolian", "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
-      color:#222;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:var(--line-height);
-    }
-
-    /* Page container */
-    .container{
-      width:calc(100% - 40px);
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:20px;
-    }
-
-    /* Header */
-    header{
-      padding:22px 0 6px;
-      text-align:center;
-    }
-    .site-title{
-      margin:0;
-      font-weight:700;
-      font-size:28px;
-      letter-spacing:1px;
-    }
-    .accent-line{
-      height:6px;
-      width:110px;
-      background:linear-gradient(90deg, rgba(184,134,62,1), rgba(196,152,87,0.9));
-      border-radius:6px;
-      margin:12px auto 0;
-      box-shadow: 0 4px 12px rgba(184,134,62,0.12);
-    }
-
-    /* Main hero */
-    .hero{
-      text-align:center;
-      padding:34px 20px;
-    }
-    .hero h1{
-      margin:6px 0 10px;
-      font-size:36px;
-      font-weight:600;
-    }
-    .hero p{
-      margin:0 auto;
-      max-width:900px;
-      color:var(--muted);
-      font-size:16px;
-    }
-
-    /* Layout: each section as card */
-    main{
-      padding-bottom:40px;
-    }
-    .section-card{
-      background:var(--card-bg);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-      margin:20px 0;
-      border-left:6px solid var(--accent); /* алтлаг accent line */
-    }
-    .section-header{
-      text-align:center;
-      margin-bottom:12px;
-    }
-    .section-header h2{
-      margin:0;
-      font-size:28px;
-      letter-spacing:0.5px;
-    }
-    .section-header p{
-      margin:6px 0 0;
-      color:var(--muted);
-    }
-
-    /* Grid for content and aside */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 340px;
-      gap:20px;
-      align-items:start;
-    }
-
-    /* Typography for readability */
-    h3{font-size:20px; margin-top:8px;}
-    p{font-size:16px; color:#222; margin:12px 0;}
-    ul{margin:10px 0 18px 20px; color:#222;}
-
-    /* Smaller card for aside elements */
-    .aside-card{
-      background:linear-gradient(180deg,#fff,#fffaf7);
-      border-radius:8px;
-      padding:16px;
-      box-shadow:0 8px 24px rgba(34,34,34,0.06);
-      font-size:15px;
-      color:var(--muted);
-    }
-
-    /* Footer */
-    footer{
-      text-align:center;
-      padding:18px 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* Responsive: mobile one column */
-    @media (max-width:880px){
-      .grid{grid-template-columns:1fr; }
-      .hero h1{font-size:28px;}
-      .section-header h2{font-size:22px;}
-      .site-title{font-size:20px;}
-    }
-
-    /* Small helpers */
-    .muted{color:var(--muted);}    
-    .lead{font-size:17px; color:#333;}
-    /* improve selection look */
-    ::selection{background:rgba(184,134,62,0.12);} 
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Уртын дуу - Монголын ардын уртын дуу болон Баянбараат аялгууны танилцуулга. Соёлын биет бус өвийн талаарх дэлгэрэнгүй мэдээлэл.">
+    <meta name="keywords" content="уртын дуу, Монгол дуу, Баянбараат аялгуу, ардын дуу, соёлын өв">
+    <title>Танилцуулга - Уртын дууны Баянбараат аялгуу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header: big centered title with accent -->
-  <header>
-    <div class="container">
-      <h1 class="site-title">Уртын дуу — Танилцуулга</h1>
-      <div class="accent-line" aria-hidden="true"></div>
-      <div style="margin-top:10px;" class="muted">Монголын ардын уртын дуу ба Баянбараат аялгуу</div>
-    </div>
-  </header>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 91919791; 99914009</span>
+                    <span><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</span>
+                </div>
+            </div>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Бараатын Дөмөн аялгуу</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="taniltsuulga.html" class="active">Танилцуулга</a></li>
+                    <li class="dropdown">
+                        <a href="udirdamj.html">Удирдамж <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="surgalt.html">Уртын дууны сургалтууд</a></li>
+                            <li><a href="duugaa_sonsotsgooy.html">Уртын дуугаа сонсоцгооё</a></li>
+                            <li><a href="uraldaan_bolzol.html">Уралдаан болзол</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="bidnii_baharhal.html">Бидний бахархал <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
+                            <li><a href="sudalgaanii_sedew.html">Судалгааны сэдэв</a></li>
+                            <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Main menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main class="container" role="main">
-    <section class="hero">
-      <h1>Танилцуулга</h1>
-      <p class="lead">Энэхүү хуудас нь өдөр тутмын ойлголтод хялбар, мөн соёл, түүхийн утга учрыг хүндэтгэн тайлбарлах зорилготой.</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Page Title Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Танилцуулга</h2>
+                    <p class="section-subtitle">Уртын дуу - Монголын ардын соёлын өв</p>
+                </div>
 
-    <!-- 1-р хэсэг: Эрхэм зорилго -->
-    <section class="section-card" aria-labelledby="goalHeading">
-      <div class="section-header">
-        <h2 id="goalHeading">Эрхэм зорилго</h2>
-      </div>
-
-      <!-- Гэмтээхгүйгээр яг ижил текст: мөрүүдийг задалж өөрчлөлтгүй оруулна -->
-      <div>
-        <p style="white-space:pre-line; font-size:16px; line-height:1.9;">
-“Монгол түмний бахархал бол ардын уртын дуу болон
+                <!-- Эрхэм зорилго -->
+                <div class="content-card">
+                    <h3>Эрхэм зорилго</h3>
+                    <p style="white-space:pre-line; line-height:1.9;">
+"Монгол түмний бахархал бол ардын уртын дуу болон
 уртын дууны онцлог өвөрмөц төлөөлөл болох
 Баянбараат уртын дууны тухай мэдээллийг
 түмэн олонд түгээх энэхүү цахим хуудасны
 эрхэм зорилго байх болно.
 Мөн Уртын дууны Баянбараат аялгууг
 өвлөн эзэмшигч нарыг алдаршуулах,
-олонд түгээх нь бидний эрх үүрэг байх болно.”
-        </p>
-      </div>
-    </section>
+олонд түгээх нь бидний эрх үүрэг байх болно."
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- 2-р хэсэг: Уртын дууны тухай ерөнхий ойлголт -->
-    <section class="section-card" aria-labelledby="generalHeading">
-      <div class="section-header">
-        <h2 id="generalHeading">Уртын дууны тухай ерөнхий ойлголт</h2>
-        <p class="muted">Хүүхэд, залууст ойлгомжтой, энгийн тайлбар</p>
-      </div>
+        <!-- Уртын дууны тухай Section -->
+        <section class="content-section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Уртын дууны тухай ерөнхий ойлголт</h2>
+                    <p class="section-subtitle">Хүүхэд, залууст ойлгомжтой энгийн тайлбар</p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <i class="fas fa-music"></i>
+                        <h3>Уртын дуу гэж юу вэ</h3>
+                        <p>Уртын дуу гэдэг нь урт, сунжирсан аялагтай, ихэвчлэн ганцаараа дуулдаг монгол ардын дууны төрөл юм. Нэг хэллэг нь олон амьсгалын урт хугацаанд үргэлжлэх тул "урт" гэж нэрлэгддэг.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <i class="fas fa-gem"></i>
+                        <h3>Монгол соёл дахь үнэ цэнэ</h3>
+                        <p>Уртын дуу нь байгаль, амьтан, хайр сэтгэл, өв уламжлал, түүхийг илэрхийлдэг. Нүүдлийн ахуйн дурсгал, нутгийн хэл, уран илтгэх арга барилыг хадгалж ирсэн тул соёлын үнэт өвөд тооцогдоно.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Яагаад бахархал вэ</h3>
+                        <p>Эдгээр дуу нь ардын оюун ухаан, тэсвэр хатуужил, сэтгэлийн гүн гүнзгий мэдрэмжийг харуулдаг. Дэлхийн соёлын олон янз байдал дотор Монголын уртын дуу чухал байр эзэлдэг.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <div class="grid" style="grid-template-columns:1fr;">
-        <div>
-          <!-- Уртын дуу гэж юу вэ -->
-          <h3>Уртын дуу гэж юу вэ</h3>
-          <p>Уртын дуу гэдэг нь урт, сунжирсан аялагтай, ихэвчлэн ганцаараа дуулдаг монгол ардын дууны төрөл юм. Нэг хэллэг нь олон амьсгалын урт хугацаанд үргэлжлэх тул "урт" гэж нэрлэгддэг.</p>
+        <!-- Баянбараат аялгуу Section -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Баянбараатын уртын дуу ба аялгуу</h2>
+                    <p class="section-subtitle">Онцлог, өвлөн тээгчид ба өнөөгийн ач холбогдол</p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-card">
+                        <i class="fas fa-guitar"></i>
+                        <h3>Баянбараат уртын дууны онцлог</h3>
+                        <p>Баянбараат уртын дуу нь уулын болон тал нутгийн сэтгэлгээнээс төрсөн уянгалаг, дотоодод гүнзгий мэдрэмж төрүүлэх аялгуутай. Дууны болон хэллэгийн бүтэц нь өвөрмөц шинж чанартай.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <i class="fas fa-wave-square"></i>
+                        <h3>Аялгууны уужуу, суналттай хэв маяг</h3>
+                        <p>Аялгуу нь ихэвчлэн уужуу, удааширсан хэлбэртэй бөгөөд нэг үгийг эсвэл өгүүлбэрийн хэсгийг урт хугацаанд сунжруулан дуулдаг. Энэ нь сэтгэлийн гүнээс гарч буй илэрхийллийг илүүтэй тусгана.</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Өвлөн тээгчдийн ач холбогдол</h3>
+                        <p>Баянбараат уртын дууг өвлөн тээгчид нь ахмад дуучид, морин хуурчид, нутгийн уран яруу найрагчид байж ирсэн. Тэдгээр хүмүүс дууны аялгуу, үг, хэллэгийн нарийн мэдрэмжийг дамжуулдаг.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-          <!-- Монгол соёл дахь үнэ цэнэ -->
-          <h3>Монгол соёл дахь үнэ цэнэ</h3>
-          <p>Уртын дуу нь байгаль, амьтан, хайр сэтгэл, өв уламжлал, түүхийг илэрхийлдэг. Нүүдлийн ахуйн дурсгал, нутгийн хэл, уран илтгэх арга барилыг хадгалж ирсэн тул соёлын үнэт өвөд тооцогдоно.</p>
-
-          <!-- Яагаад бахархал вэ -->
-          <h3>Яагаад бахархал вэ</h3>
-          <p>Эдгээр дуу нь ардын оюун ухаан, тэсвэр хатуужил, сэтгэлийн гүн гүнзгий мэдрэмжийг харуулдаг. Дэлхийн соёлын олон янз байдал дотор Монголын уртын дуу чухал байр эзэлдэг тул бид тэдгээрийг бахархалтайгаар хамгаалж, өвлүүлэн үлдээх ёстой.</p>
-
-          <!-- Энгийн тайлбар хүүхдэд -->
-          <h3>Хүүхэд, залуучуудад энгийн тайлбар</h3>
-          <p>Уртын дуу — их урт, жаахан амьсгалаар дуулдаг сайхан аялгуутай дуу. Тэр дуугаар өвөг дээдэс маань байгаль, гэр бүл, амьдралын тухай ярьж байсан. Та үүнийг сонсоод тайвшрахаас гадна нутгийнхантай холбогдох боломжтой.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Холбоо барих</h3>
+                    <p><i class="fas fa-phone"></i> 91919791; 99914009</p>
+                    <p><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Холбоосууд</h3>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="taniltsuulga.html">Танилцуулга</a></li>
+                        <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                        <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Бидний тухай</h3>
+                    <p>Уртын дууны Баянбараат аялгуу - Монголын соёлын биет бус өвийг хадгалж, өвлүүлэх</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Уртын дууны Баянбараат аялгуу. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- 3-р хэсэг: Баянбараатын уртын дуу, аялгуу -->
-    <section class="section-card" aria-labelledby="bayanHeading">
-      <div class="section-header">
-        <h2 id="bayanHeading">Баянбараатын уртын дуу ба аялгуу</h2>
-        <p class="muted">Онцлог, өвлөн тээгчид ба өнөөгийн ач холбогдол</p>
-      </div>
-
-      <div class="grid">
-        <div>
-          <h3>Баянбараат уртын дууны онцлог</h3>
-          <p>Баянбараат уртын дуу нь уулын болон тал нутгийн сэтгэлгээнээс төрсөн уянгалаг, дотоодод гүнзгий мэдрэмж төрүүлэх аялгуутай. Дууны болон хэллэгийн бүтэц нь заримдаа том хэмжээний фраз болон олон давталттай байдаг бөгөөд энэ нь тухайн дууны өвөрмөц шинж чанар юм.</p>
-
-          <h3>Аялгууны уужуу, суналттай хэв маяг</h3>
-          <p>Аялгуу нь ихэвчлэн уужуу, удааширсан хэлбэртэй бөгөөд нэг үгийг эсвэл өгүүлбэрийн хэсгийг урт хугацаанд сунжруулан дуулдаг. Энэ нь сэтгэлийн гүнээс гарч буй илэрхийллийг илүүтэй тусгана.</p>
-
-          <h3>Өвлөн тээгчдийн ач холбогдол</h3>
-          <p>Баянбараат уртын дууг өвлөн тээгчид нь ахмад дуучид, морин хуурчид, нутгийн уран яруу найрагчид байж ирсэн. Тэдгээр хүмүүс дууны аялгуу, үг, хэллэгийн нарийн мэдрэмжийг ирээдүй хойч үед дамжуулан хэлбэржүүлдэг.</p>
-
-          <h3>Өнөө цагт соёлын өв болж буй ач холбогдол</h3>
-          <p>Орчин үед Баянбараат уртын дуу нь соёлын өв болгон хойч үедээ өвлүүлэх, олон нийтэд сурталчлах шаардлагатай болж байна. Дижитал платформууд, сургалт, фестиваль, судалгаа зэрэг нь энэ өвийг хадгалж, хөгжүүлэх чухал хэрэгсэл болж байна.</p>
-        </div>
-
-        <!-- Aside: онцлох зүйлс, аудио зөвлөмж, сурах товч зөвлөмж -->
-        <aside class="aside-card" aria-labelledby="asideHeading">
-          <h4 id="asideHeading" style="margin-top:0;">Сонсох & Суралцах</h4>
-          <p>Баянбараат уртын дууны аялгууг үнэхээр ойлгохын тулд:</p>
-          <ul>
-            <li>Олон жишээ сонсож, аялгуун дээр анхаарал тавина.</li>
-            <li>Өгүүлбэрүүдийг жижиг хэсэг болгон хичээнгүйлэн дуулж үзнэ.</li>
-            <li>Морин хуурын дагалдааг сонсож, хэмнэлийг мэдэрнэ.</li>
-            <li>Ахмад дуучдаас, сургалтаас заавар авна.</li>
-          </ul>
-          <p class="muted" style="font-size:13px; margin-top:6px;">(Хэрэв боломжтой бол нутгийн ахмад дуучдыг олж, тэднээс шууд суралцахад хамгийн их үнэ цэнэ бий.)</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Холбоос / footer-like contact block -->
-    <section class="section-card" aria-labelledby="contactHeading">
-      <div class="section-header">
-        <h2 id="contactHeading">Холбоо</h2>
-      </div>
-      <p class="muted">И-мэйл: <a href="mailto:ovcl.worldheritage@gmail.com">ovcl.worldheritage@gmail.com</a> • Утас: <a href="tel:+97691919791">91919791</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="font-size:13px;">&copy; Уртын дуу. Бүх эрх хуулиар хамгаалагдсан.</div>
-    </div>
-  </footer>
+    <script src="script.js"></script>
 </body>
 </html>

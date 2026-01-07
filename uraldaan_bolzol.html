@@ -1,38 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Уралдаан болзол</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Уралдаан болзол - Уртын дууны Баянбараат аялгуу">
+    <meta name="keywords" content="уртын дуу, Монгол дуу, Баянбараат аялгуу">
+    <title>Уралдаан болзол - Уртын дууны Баянбараат аялгуу</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Уралдаан болзол</h1>
-    <a class="back" href="index.html">← Нүүр</a>
-  </header>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 91919791; 99914009</span>
+                    <span><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</span>
+                </div>
+            </div>
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Бараатын Дөмөн аялгуу</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Нүүр</a></li>
+                    <li><a href="taniltsuulga.html">Танилцуулга</a></li>
+                    <li class="dropdown">
+                        <a href="udirdamj.html">Удирдамж <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="surgalt.html">Уртын дууны сургалтууд</a></li>
+                            <li><a href="duugaa_sonsotsgooy.html">Уртын дуугаа сонсоцгооё</a></li>
+                            <li><a href="uraldaan_bolzol.html">Уралдаан болзол</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="bidnii_baharhal.html">Бидний бахархал <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
+                            <li><a href="sudalgaanii_sedew.html">Судалгааны сэдэв</a></li>
+                            <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger" role="button" aria-controls="navMenu" aria-expanded="false" tabindex="0" aria-label="Main menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Уралдаан явагдах газар, нөхцөл" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Уралдаан болзол</h2>
+                    <p class="section-subtitle">Уралдаан тэмцээн, олон улсын болзлууд</p>
+                </div>
+                
+<div class="content-grid">
+    <div class="content-card">
+        <i class="fas fa-trophy"></i>
+        <h3>Үндэсний уралдаан</h3>
+        <p>Үндэсний хэмжээний уртын дууны уралдаан тэмцээн.</p>
+        <!-- <img src="image/competition.jpg" alt="Уралдаан" /> -->
     </div>
 
-    <article id="editor" contenteditable="true" data-page="uraldaan_bolzol">
-      <h2>Болзол, дүрэм</h2>
-      <p>Уралдааны нөхцөл, шалгуур, нас, ангилал гэх мэт мэдээлэл оруулна.</p>
-      <h3>Хаана байрлана:</h3>
-      <p class="location-note">...</p>
-    </article>
-  </main>
+    <div class="content-card">
+        <i class="fas fa-globe"></i>
+        <h3>Олон улсын болзол</h3>
+        <p>Олон улсын фестиваль, солилцоо, хамтын ажиллагаа.</p>
+        <!-- <img src="image/international.jpg" alt="Олон улс" /> -->
+    </div>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
-  </footer>
+    <div class="content-card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Удахгүй</h3>
+        <p>Удахгүй болох уралдаан, арга хэмжээний мэдээлэл.</p>
+        <!-- <img src="image/upcoming.jpg" alt="Удахгүй" /> -->
+    </div>
+</div>
 
-  <script src="script.js"></script>
+<div class="content-card" style="margin-top: 30px; text-align: left;">
+    <h3>Уралдааны мэдээлэл</h3>
+    <p>Уртын дууны уралдаан нь жил бүр зохион байгуулагддаг. Оролцох нөхцөл:</p>
+    <ul>
+        <li>Насны ангилал: Хүүхэд, залуучууд, том хүмүүс</li>
+        <li>Урьдчилсан шалгаруулалт</li>
+        <li>Эцсийн тоглолт</li>
+    </ul>
+</div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Холбоо барих</h3>
+                    <p><i class="fas fa-phone"></i> 91919791; 99914009</p>
+                    <p><i class="fas fa-envelope"></i> ovcl.worldheritage@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Холбоосууд</h3>
+                    <ul>
+                        <li><a href="index.html">Нүүр</a></li>
+                        <li><a href="taniltsuulga.html">Танилцуулга</a></li>
+                        <li><a href="medee_medeelel.html">Мэдээ мэдээлэл</a></li>
+                        <li><a href="holboo_barih.html">Холбоо барих</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Бидний тухай</h3>
+                    <p>Уртын дууны Баянбараат аялгуу - Монголын соёлын биет бус өвийг хадгалж, өвлүүлэх</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Уртын дууны Баянбараат аялгуу. Бүх эрх хуулиар хамгаалагдсан.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
