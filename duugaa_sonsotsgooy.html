@@ -3,36 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Уртын дуугаа сонсоцгооё</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Уртын дууны сургалтууд</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Уртын дуугаа сонсоцгооё</h1>
-    <a class="back" href="index.html">← Нүүр</a>
+  <!-- Header / nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <a class="brand" href="index.html">Сургалт</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
+      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Нүүр</a></li>
+          <li><a href="training.html" aria-current="page">Сургалт</a></li>
+          <li><a href="duugaa_sonsotsgooy.html">Сонсох</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="controls">
-      <input id="location" placeholder="Дуу байрлах (жиш: Аудио, Видео, Файл хавтас)" />
-      <button id="saveLocal">Локалд хадгалах</button>
-      <button id="loadLocal">Локал унших</button>
-      <button id="download">HTML татаж авах</button>
-      <button id="reset">Сэргээх</button>
-    </div>
+  <main class="container training-page">
+    <!-- Training program cards -->
+    <section class="programs" aria-labelledby="programs-title">
+      <h1 id="programs-title">Сургалтын хөтөлбөр</h1>
+      <div class="program-grid">
+        <article class="program-card">
+          <h3>Анхан шат</h3>
+          <p>Амьсгал, суурь фраз, эх элементүүд.</p>
+          <p class="meta">Хугацаа: 8 долоо хоног</p>
+        </article>
 
-    <article id="editor" contenteditable="true" data-page="urt_duugaa_sonsojgoo">
-      <h2>Дууны жагсаалт</h2>
-      <p>Энд та дуугийн тайлбар, холбоос, аудио оруулна.</p>
-      <h3>Файлын байршил/Хаана:</h3>
-      <p class="location-note">...</p>
-    </article>
+        <article class="program-card">
+          <h3>Дунд шат</h3>
+          <p>Аялгуу өргөжүүлэх, давхар аялгууг эзэмших.</p>
+          <p class="meta">Хугацаа: 12 долоо хоног</p>
+        </article>
+
+        <article class="program-card">
+          <h3>Дээд шат</h3>
+          <p>Тайзны ур чадвар, мэргэжлийн бэлтгэл.</p>
+          <p class="meta">Хугацаа: 16 долоо хоног</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Level comparison table -->
+    <section class="comparison" aria-labelledby="compare-title">
+      <h2 id="compare-title">Түвшин харьцуулалт</h2>
+      <div class="table-wrap">
+        <table class="compare-table" summary="Анхан, Дунд, Дээд түвшний харьцуулалт">
+          <thead>
+            <tr><th>Шалгуур</th><th>Анхан</th><th>Дунд</th><th>Дээд</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Амьсгал</td><td>Суурь</td><td>Тогтвортой</td><td>Мэргэжлийн</td></tr>
+            <tr><td>Фраз удирдах</td><td>Энгийн</td><td>Давхар</td><td>Нарийвчилсан</td></tr>
+            <tr><td>Тайз</td><td>Бага</td><td>Дунд</td><td>Өндөр</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Teacher profile section -->
+    <section class="teacher" aria-labelledby="teacher-title">
+      <h2 id="teacher-title">Багшийн профайл</h2>
+      <div class="teacher-card">
+        <img src="image/teacher1.jpg" alt="Багшийн хөрөг">
+        <div>
+          <h3>Ж. Бат-Оргил</h3>
+          <p>Ардын уртын дууны өвлөн тээгч, олон жилийн багш. Технологи болон уламжлалыг хослуулсан сургалт.</p>
+          <p class="meta">Холбоо: 91919791</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Уртын дуу</p>
+  <footer class="site-footer">
+    <div class="container"><small>© 2026 Уртын дуу — Сургалт</small></div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
