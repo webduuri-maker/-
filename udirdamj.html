@@ -3,96 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Удирдамж — Уртын дуу</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Судалгааны сэдэв — Уртын дуу</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- SHARED HEADER / NAV -->
+  <!-- Header / nav -->
   <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html">Удрдэмж — Уртын дуу</a>
-      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс нээх/хаах">☰</button>
+      <a class="brand" href="index.html">Судалгааны сэдэв</a>
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
       <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
         <ul>
           <li><a href="index.html">Нүүр</a></li>
-          <li><a href="udirdamj.html" aria-current="page">Удирдамж</a></li>
-          <li><a href="training.html">Сургалт</a></li>
-          <li><a href="holboo_barih.html">Холбоо</a></li>
+          <li><a href="sudalgaanii_sedew.html" aria-current="page">Судалгаа</a></li>
+          <li><a href="bidnii_baharhal.html">Бидний бахархал</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <!-- PAGE TITLE -->
-    <header class="page-header">
-      <h1>Удирдамж</h1>
-      <p class="lead">Алхам алхмаар суралцах, дасгалын заавар, татаж авах материалууд</p>
-    </header>
-
-    <!-- STEP-BY-STEP INSTRUCTIONS -->
-    <section class="steps" aria-labelledby="steps-title">
-      <h2 id="steps-title">Алхам бүрийн заавар</h2>
-      <ol class="steps-list">
-        <li>
-          <h3>Алхам 1 — Амьсгал, бэлтгэл</h3>
-          <p>Өглөө, үдээс өмнө 10 минут амьсгалын дасгал хийж хоолойг сэргээ.</p>
-        </li>
-        <li>
-          <h3>Алхам 2 — Фразыг задалж давтах</h3>
-          <p>Урт фразуудыг 10-20 секундээр хэсэг болгон давтаж сурах.</p>
-        </li>
-        <li>
-          <h3>Алхам 3 — Морин хуурын дэмжлэг</h3>
-          <p>Морин хуурын дагалдах аялгуу, хэмнэл сонсоно.</p>
-        </li>
-        <li>
-          <h3>Алхам 4 — Тайзны бэлтгэл</h3>
-          <p>Тайзан дээр дуулах, микрофон, амьсгалын хяналтын дадлага.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- DOWNLOAD LINKS -->
-    <section class="downloads" aria-labelledby="downloads-title">
-      <h2 id="downloads-title">Татаж авах материал</h2>
-      <ul class="download-list">
-        <li><a href="assets/udirdamj.pdf" download>Удирдамж (PDF)</a></li>
-        <li><a href="assets/phrases_audio.zip" download>Фразын аудио (ZIP)</a></li>
-        <li><a href="assets/notation_examples.pdf" download>Нотын жишээ (PDF)</a></li>
+  <main class="container research">
+    <!-- Research topic list -->
+    <section class="topics" aria-labelledby="topics-title">
+      <h1 id="topics-title">Судалгааны сэдэв</h1>
+      <ul class="topics-list">
+        <li><h3>Орхон голын аялгуу ба гарал</h3><p>Аялгууны түүх, эх сурвалж судлах.</p></li>
+        <li><h3>Аудио архивын сэргээх</h3><p>Бичлэг сэргээх, дижитал хадгалалт.</p></li>
+        <li><h3>Уртын дуу ба экологи</h3><p>Байгаль ба аялгууны уялдаа.</p></li>
       </ul>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title">Түгээмэл асуултууд</h2>
+    <!-- Article preview layout -->
+    <section class="previews" aria-labelledby="previews-title">
+      <h2 id="previews-title">Архив судалгааны товч</h2>
 
-      <!-- Using details for accessible toggles -->
-      <details>
-        <summary>Сургалт үнэ төлбөргүй юу?</summary>
-        <p>Тодорхой курсууд үнэгүй, тодорхой модулиудад тэтгэлэг эсвэл төлбөр шаардлагатай байж болно.</p>
-      </details>
+      <article class="preview">
+        <h3>Уртын дууны хэл судлал</h3>
+        <p class="meta">С. Төгөлдөр — 2024</p>
+        <p>Фразын бүтэц, хэл найруулгын онцлогийг судалсан. <a href="assets/study1.pdf" download>Татах</a></p>
+      </article>
 
-      <details>
-        <summary>Татаж авсан материалыг хэрхэн ашиглах вэ?</summary>
-        <p>PDF, аудио файлууд нь сургалтын зориулалтаар ашиглахад зориулагдсан; зургийг заавал зээл авч болохгүй.</p>
-      </details>
+      <article class="preview">
+        <h3>Аудио тэмдэглэл</h3>
+        <p class="meta">М. Номин — 2022</p>
+        <p>Тэмдэглэл хийх стандарт, тэмдэглэгээний протокол. <a href="assets/study2.pdf" download>Татах</a></p>
+      </article>
+    </section>
+
+    <!-- Downloadable documents -->
+    <section class="docs" aria-labelledby="docs-title">
+      <h2 id="docs-title">Татаж авах баримт бичиг</h2>
+      <ul class="docs-list">
+        <li><a href="assets/protocol.pdf" download>Судалгааны протокол (PDF)</a></li>
+        <li><a href="assets/transcription_guidelines.pdf" download>Тэмдэглэл хийх заавар (PDF)</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© 2026 Уртын дуу — Удирдамж</small>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Судалгаa</small></div></footer>
 
-  <script>
-    // nav toggle
-    (function(){
-      const btn=document.querySelector('.nav-toggle');
-      const nav=document.getElementById('primary-nav');
-      btn.addEventListener('click',()=>{ const open=btn.getAttribute('aria-expanded')==='true'; btn.setAttribute('aria-expanded',String(!open)); nav.classList.toggle('open'); });
-    })();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
