@@ -1,5 +1,14 @@
-// Carousel Functionality
+/* ============================================
+   COMPLETE JAVASCRIPT IMPLEMENTATION
+   Баянбараатын Дөмөн Аялгуу Website
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // =========================
+    // 1. CAROUSEL FUNCTIONALITY
+    // =========================
+    
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -7,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let autoSlideInterval;
 
-    // Create indicators
+    // Create carousel indicators dynamically
     slides.forEach((_, index) => {
         const indicator = document.createElement('div');
         indicator.className = 'carousel-indicator';
@@ -18,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const indicators = document.querySelectorAll('.carousel-indicator');
 
-    // Function to show specific slide
+    /**
+     * Show specific slide by index
+     */
     function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
@@ -30,41 +41,53 @@ document.addEventListener('DOMContentLoaded', function() {
         currentSlide = index;
     }
 
-    // Function to go to specific slide
+    /**
+     * Navigate to specific slide
+     */
     function goToSlide(index) {
         showSlide(index);
         resetAutoSlide();
     }
 
-    // Next slide
+    /**
+     * Move to next slide
+     */
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     }
 
-    // Previous slide
+    /**
+     * Move to previous slide
+     */
     function prevSlide() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         showSlide(currentSlide);
     }
 
-    // Auto slide functionality
+    /**
+     * Start automatic slide rotation
+     */
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
+        autoSlideInterval = setInterval(nextSlide, 10000); // 10 seconds
     }
 
+    /**
+     * Reset auto-slide timer
+     */
     function resetAutoSlide() {
         clearInterval(autoSlideInterval);
         startAutoSlide();
     }
 
-    // Event listeners
+    // Carousel button event listeners
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             nextSlide();
             resetAutoSlide();
         });
     }
+    
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             prevSlide();
@@ -72,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Pause on hover
+    // Pause carousel on hover
     const carousel = document.querySelector('.hero-carousel');
     if (carousel) {
         carousel.addEventListener('mouseenter', () => {
@@ -84,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Keyboard navigation
+    // Keyboard navigation for carousel
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             prevSlide();
@@ -95,30 +118,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Start auto slide
+    // Start automatic carousel rotation
     startAutoSlide();
 
-    /* ===========================
-       Robust Mobile Menu Toggle
-       =========================== */
+    // =========================
+    // 2. MOBILE MENU TOGGLE
+    // =========================
+    
     (function setupMobileMenu() {
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         const dropdowns = document.querySelectorAll('.dropdown');
 
         if (!hamburger || !navMenu) {
-            console.warn('Hamburger or navMenu not found. IDs must match (#hamburger, #navMenu).');
+            console.warn('Hamburger or navMenu not found. Required IDs: #hamburger, #navMenu');
             return;
         }
 
+        /**
+         * Open mobile menu
+         */
         function openMenu() {
             hamburger.classList.add('active');
             navMenu.classList.add('active');
             hamburger.setAttribute('aria-expanded', 'true');
-            // optionally prevent body scroll while menu is open
             document.body.style.overflow = 'hidden';
         }
 
+        /**
+         * Close mobile menu
+         */
         function closeMenu() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
@@ -127,20 +156,25 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         }
 
+        /**
+         * Toggle menu open/closed
+         */
         function toggleMenu(e) {
-            // stopPropagation so document-level handlers don't immediately close the menu
             if (e && e.stopPropagation) e.stopPropagation();
-            if (hamburger.classList.contains('active')) closeMenu(); else openMenu();
+            if (hamburger.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         }
 
-        // Use pointerdown for better cross-device responsiveness; keep click as fallback
+        // Hamburger click/touch events
         hamburger.addEventListener('pointerdown', toggleMenu);
         hamburger.addEventListener('click', (e) => {
-            // click fallback, prevent default navigation if any
             e.preventDefault();
         });
 
-        // Make hamburger keyboard accessible
+        // Keyboard accessibility for hamburger
         hamburger.setAttribute('role', 'button');
         hamburger.setAttribute('tabindex', '0');
         hamburger.addEventListener('keydown', (e) => {
@@ -155,12 +189,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Prevent clicks inside the nav from closing the menu
+        // Prevent clicks inside nav from closing menu
         navMenu.addEventListener('pointerdown', (e) => {
             e.stopPropagation();
         });
 
-        // Close when clicking/tapping outside (only when menu open)
+        /**
+         * Close menu when clicking outside
+         */
         function outsideHandler(e) {
             if (!navMenu.classList.contains('active')) return;
             const target = e.target;
@@ -168,15 +204,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeMenu();
             }
         }
+        
         document.addEventListener('pointerdown', outsideHandler);
         document.addEventListener('touchstart', outsideHandler, { passive: true });
 
-        // Close on ESC globally
+        // Close on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
         });
 
-        // Mobile dropdown toggles inside menu
+        // Mobile dropdown toggles
         dropdowns.forEach(dropdown => {
             const toggle = dropdown.querySelector('a');
             if (!toggle) return;
@@ -189,7 +226,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })();
 
-    // Smooth scroll for anchor links
+    // =========================
+    // 3. SMOOTH SCROLL
+    // =========================
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -201,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    
                     // Close mobile menu if open
                     const hamburger = document.getElementById('hamburger');
                     const navMenu = document.getElementById('navMenu');
@@ -215,7 +256,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add scroll effect to header
+    // =========================
+    // 4. HEADER SCROLL EFFECT
+    // =========================
+    
     let lastScroll = 0;
     const header = document.querySelector('.header');
 
@@ -231,7 +275,10 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
-    // Intersection Observer for fade-in animations
+    // =========================
+    // 5. INTERSECTION OBSERVER
+    // =========================
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -246,15 +293,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe news cards
-    document.querySelectorAll('.news-card').forEach(card => {
+    // Observe content cards for fade-in animation
+    document.querySelectorAll('.content-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
         card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(card);
     });
 
-    // Touch swipe support for carousel
+    // =========================
+    // 6. TOUCH SWIPE SUPPORT
+    // =========================
+    
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -269,6 +319,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
     }
 
+    /**
+     * Handle swipe gestures
+     */
     function handleSwipe() {
         const swipeThreshold = 50;
         const diff = touchStartX - touchEndX;
@@ -285,7 +338,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Lazy loading for images (if added in future)
+    // =========================
+    // 7. LAZY LOADING
+    // =========================
+    
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -300,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
+        // Observe all images with data-src attribute
         document.querySelectorAll('img[data-src]').forEach(img => {
             imageObserver.observe(img);
         });
