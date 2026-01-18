@@ -585,3 +585,11 @@ document.addEventListener('DOMContentLoaded', function() {
  - Added reduced-motion respect in CSS and set native lazy-loading for images by default.
  - Everything preserves original class names and markup — changes are incremental and additive.
  ========================= */
+
+// =========================
+// SET CURRENT YEAR IN FOOTER
+// =========================
+const yearSpan = document.getElementById('current-year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
