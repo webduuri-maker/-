@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Бидний бахархал — Уртын дуу</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Мэдээ — Уртын дуу</title>
+  <link rel="stylesheet" href="medee_medeelel.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,85 +16,102 @@
       <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
         <ul>
           <li><a href="index.html">Нүүр</a></li>
-          <li><a href="bidnii_baharhal.html" aria-current="page">Бидний бахархал</a></li>
+          <li><a href="bidnii_baharhal.html">Бидний бахархал</a></li>
           <li><a href="owlonteegchid.html">Өвлөн тээгчид</a></li>
-          <li><a href="sudalgaanii_sedew.html">Судалгаа</a></li>
+          <li><a href="medee_medeelel.html" aria-current="page">Мэдээ</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container gallery-page">
-    <!-- Gallery layout -->
-    <section class="gallery" aria-labelledby="gallery-title">
-      <h1 id="gallery-title">Галерей — Онцлох зураг</h1>
-      <p class="lead">Уртын дууны уран бүтээлчид, архив, арга хэмжээний гэрэл зургууд</p>
+  <main class="container news-page">
+    <header class="news-hero">
+      <h1>Сүүлийн мэдээ, мэдээлэл</h1>
+      <p class="lead">Уртын дуутай холбогдох арга хэмжээ, судалгаа, шинэ бүтээл болон сонирхолтой контент</p>
 
-      <div class="gallery-grid">
-        <!-- Image card 1 -->
-        <figure class="img-card">
-          <img src="image/artist1.jpg" alt="Уран бүтээлч 1">
-          <figcaption>
-            <h3>Уран бүтээлч А</h3>
-            <p>Ардын уртын дууны өвлөн тээгч, олон арван жилийн туршлагатай.</p>
-          </figcaption>
-        </figure>
+      <div class="controls">
+        <div class="search">
+          <label for="news-search" class="sr-only">Мэдээнээс хайх</label>
+          <input id="news-search" type="search" placeholder="Мэдээнээс хайх (жишээ: фестиваль, архив, уран бүтээлч)...">
+          <button id="clear-search" aria-label="Хайлтыг арилгах" title="Хайлтыг арилгах" class="hidden">✕</button>
+        </div>
 
-        <!-- Image card 2 -->
-        <figure class="img-card">
-          <img src="image/archive1.jpg" alt="Архив бичлэг">
-          <figcaption>
-            <h3>Архивын бичлэг</h3>
-            <p>Эртний тэмдэглэлүүдийг сэргээн хадгалсан цуглуулга.</p>
-          </figcaption>
-        </figure>
-
-        <!-- Image card 3 -->
-        <figure class="img-card">
-          <img src="image/event1.jpg" alt="Соёлын арга хэмжээ">
-          <figcaption>
-            <h3>Соёлын арга хэмжээ</h3>
-            <p>Тэмцээн, үзүүлбэрийн агшин.</p>
-          </figcaption>
-        </figure>
-
-        <!-- Image card 4 -->
-        <figure class="img-card">
-          <img src="image/landscape1.jpg" alt="Орхон гол">
-          <figcaption>
-            <h3>Орхон голын уянга</h3>
-            <p>Байгаль, аялгууг уялдуулсан зураг.</p>
-          </figcaption>
-        </figure>
+        <div class="filters" role="toolbar" aria-label="Категори шүүлт">
+          <button class="filter-btn active" data-cat="all" aria-pressed="true">Бүгд</button>
+          <button class="filter-btn" data-cat="festival">Фестиваль</button>
+          <button class="filter-btn" data-cat="archive">Архив</button>
+          <button class="filter-btn" data-cat="artist">Уран бүтээлч</button>
+          <button class="filter-btn" data-cat="research">Судалгаа</button>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <!-- Achievement timeline -->
-    <section class="achievements" aria-labelledby="achieve-title">
-      <h2 id="achieve-title">Амжилтын хронологи</h2>
-      <ol class="timeline">
-        <li>
-          <time datetime="1995">1995</time>
-          <div class="tl-body"><strong>Анхны бүртгэл</strong> — Уртын дууны анхны аудио бүртгэгдсэн.</div>
-        </li>
-        <li>
-          <time datetime="2008">2008</time>
-          <div class="tl-body"><strong>Фестиваль</strong> — Үндэсний фестиваль анх зохион байгуулагдсан.</div>
-        </li>
-        <li>
-          <time datetime="2020">2020</time>
-          <div class="tl-body"><strong>Олон улсын хүлээн зөвшөөрөл</strong> — Аялгуу нь дэлхийд танигдсан.</div>
-        </li>
-      </ol>
+    <section class="news-list" aria-live="polite" aria-label="Мэдээний жагсаалт">
+      <div class="grid" id="news-grid">
+        <!-- Example article cards — редактороор нэмнэ/солино -->
+        <article class="card reveal" data-title="Фестиваль амжилттай боллоо" data-category="festival">
+          <div class="thumb">
+            <img data-src="image/event1.jpg" alt="Фестивалиас зураг" class="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Фестиваль амжилттай боллоо</h3>
+            <p class="card-meta"><time datetime="2026-01-10">2026-01-10</time> · Фестиваль</p>
+            <p class="card-excerpt">Уртын дууны үндэсний фестивальд шилдэг уран бүтээлчид оролцож, шинэ үеийн залуус олон шагнал хүртлээ.</p>
+            <a class="read-more" href="#">Дэлгэрэнгүй</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-title="Архивын шинэ бүртгэл" data-category="archive">
+          <div class="thumb">
+            <img data-src="image/archive1.jpg" alt="Архивын бичлэг" class="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Архивын шинэ бүртгэл</h3>
+            <p class="card-meta"><time datetime="2025-12-01">2025-12-01</time> · Архив</p>
+            <p class="card-excerpt">Эртний бичлэгүүдийг цифржүүлэн хадгалсан шинэ төслийг танилцуулж байна.</p>
+            <a class="read-more" href="#">Дэлгэрэнгүй</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-title="Уран бүтээлч А-гийн концерт" data-category="artist">
+          <div class="thumb">
+            <img data-src="image/artist1.jpg" alt="Уран бүтээлчийн концерт" class="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Уран бүтээлч А-гийн концерт</h3>
+            <p class="card-meta"><time datetime="2025-11-05">2025-11-05</time> · Уран бүтээлч</p>
+            <p class="card-excerpt">Уран бүтээлч А-гийн Монгол даяар зохион байгуулсан тоглолтын тойм.</p>
+            <a class="read-more" href="#">Дэлгэрэнгүй</a>
+          </div>
+        </article>
+
+        <article class="card reveal" data-title="Судалгааны шинэ үр дүн" data-category="research">
+          <div class="thumb">
+            <img data-src="image/research1.jpg" alt="Судалгааны зураг" class="lazy">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Судалгааны шинэ үр дүн</h3>
+            <p class="card-meta"><time datetime="2025-09-20">2025-09-20</time> · Судалгаа</p>
+            <p class="card-excerpt">Уртын дууны аялгуу судалгаанаас сонирхолтой шинэ илрүүлэг гарчээ.</p>
+            <a class="read-more" href="#">Дэлгэрэнгүй</a>
+          </div>
+        </article>
+
+        <!-- (Давхар дээш/дараах картууд) -->
+      </div>
+
+      <div class="controls-bottom">
+        <button id="load-more" class="btn-outline">Ачааллах бүртгэлүүд</button>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <small>© 2026 Уртын дуу — Бидний бахархал</small>
+      <small>© 2026 Уртын дуу — Мэдээ</small>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="medee_medeelel.js" defer></script>
 </body>
 </html>
