@@ -162,7 +162,7 @@ video {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: all var(--transition-medium);
+    transition: all 0.3s;
     z-index: 100;
     margin-top: 10px;
 }
