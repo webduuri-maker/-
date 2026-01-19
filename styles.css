@@ -237,23 +237,32 @@ video {
     height: 100%;
 }
 
-/* === ADD: Slide-1 background image (Zorgol mountain hotlink) ===
-   Append these rules into the "4. HERO CAROUSEL" section of styles.css
-*/
+/* Base carousel slide styles - all slides */
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Slide 1 - Background image with overlay */
 .carousel-slide.slide-1 {
     background-image: url('assets/Гарчиггүй дизайн.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel-slide.slide-1.active {
-    opacity: 1;
-    z-index: 1;
 }
 
 /* Subtle overlay so white text remains readable on the PNG */
@@ -272,26 +281,6 @@ video {
     text-align: center;
     color: #fff;
     padding: 1rem;
-}
-
-/* Ensure all slides sizing/positioning is correct */
-.carousel-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    z-index: 1;
 }
 
 /* Slide 2 - Orkhon Valley World Heritage */
