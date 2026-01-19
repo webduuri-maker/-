@@ -1,0 +1,106 @@
+:root{
+  --bg:#fbfbff;
+  --card:#ffffff;
+  --accent:#2f6fdb;
+  --accent-2:#ff6b6b;
+  --muted:#52606d;
+  --radius:12px;
+  --shadow:0 14px 40px rgba(8,20,40,0.06);
+  --container-padding:1rem;
+  --max-width:1100px;
+  --trans:240ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,#ffffff,#f6f9ff);
+  color:#052029;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Container & header */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--container-padding)}
+.site-header{padding:1rem 0;position:sticky;top:0;background:transparent;z-index:50}
+.header-row{display:flex;align-items:center;gap:1rem}
+.brand{font-weight:800;color:#0b2545;text-decoration:none;font-size:1.1rem}
+.nav-toggle{margin-left:auto;background:transparent;border:0;font-size:1.1rem}
+.primary-nav ul{display:flex;gap:0.5rem;list-style:none;margin:0;padding:0}
+.primary-nav a{padding:0.35rem 0.6rem;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:700}
+.primary-nav a[aria-current="page"]{color:var(--accent);background:rgba(47,111,219,0.06)}
+
+/* Hero/controls */
+.audio-hero{padding:1.1rem 0 0.2rem}
+.audio-hero .lead{color:var(--muted);margin-top:0.3rem}
+.controls-row{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:0.8rem}
+.filter-form{display:flex;gap:0.6rem;align-items:center}
+.filter-form label{display:inline-flex;gap:6px;align-items:center;font-weight:700;color:var(--muted)}
+.search{flex:1 1 240px;max-width:520px}
+.search input{width:100%;padding:0.6rem 0.9rem;border-radius:10px;border:1px solid #eaf0fb;background:white;box-shadow:var(--shadow);font-size:0.95rem}
+
+/* Song grid */
+.song-grid{list-style:none;margin:1rem 0 3rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.song-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:0.9rem;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:0.7rem;
+  transition:transform var(--trans), box-shadow var(--trans), border-color var(--trans);
+  border:1px solid rgba(6,39,67,0.03);
+  align-items:stretch;
+}
+.song-card:focus-within, .song-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 26px 60px rgba(8,20,40,0.08);
+  border-color:rgba(47,111,219,0.08);
+}
+
+/* Song meta */
+.song-meta{display:flex;flex-direction:column}
+.song-title{font-weight:800;color:#062743}
+.song-sub{font-size:0.95rem;color:var(--muted)}
+
+/* Player area */
+.player-wrap{display:flex;align-items:center;gap:0.6rem;margin-top:auto;position:relative}
+.play-btn{
+  width:48px;height:48px;border-radius:10px;border:0;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:white;font-weight:800;
+  font-size:1.05rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(50,80,160,0.12);
+}
+.play-btn.playing{background:linear-gradient(90deg,#4cc9f0,#2f6fdb);transform:scale(1.02)}
+.audio{flex:1;width:100%;display:none} /* hide native control, we use our play button & visualizer */
+.download{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center}
+.share-btn{background:transparent;border:1px solid rgba(6,39,67,0.06);padding:6px 8px;border-radius:8px;cursor:pointer}
+
+/* visualizer canvas */
+.visualizer{width:100%;max-width:280px;height:48px;border-radius:6px;background:linear-gradient(180deg,#fbfdff,#f3f8ff);box-shadow:inset 0 2px 6px rgba(6,39,67,0.02);display:block}
+
+/* transcript */
+.transcript{font-size:0.95rem;color:var(--muted);margin-top:0.4rem}
+.transcript summary{cursor:pointer;font-weight:700}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(10px);transition:opacity 420ms var(--trans), transform 420ms var(--trans)}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* Small screens */
+@media (max-width:640px){
+  .player-wrap{flex-direction:row;gap:0.6rem}
+  .play-btn{width:44px;height:44px}
+  .visualizer{max-width:180px}
+}
+
+/* Accessible helper */
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important}
+  .reveal{transition:none}
+}
