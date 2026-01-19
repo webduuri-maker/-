@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Уртын дууны сургалтууд</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="surgalt.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
       <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
         <ul>
           <li><a href="index.html">Нүүр</a></li>
-          <li><a href="training.html" aria-current="page">Сургалт</a></li>
+          <li><a href="surgalt.html" aria-current="page">Сургалт</a></li>
           <li><a href="duugaa_sonsotsgooy.html">Сонсох</a></li>
         </ul>
       </nav>
@@ -27,23 +27,64 @@
     <!-- Training program cards -->
     <section class="programs" aria-labelledby="programs-title">
       <h1 id="programs-title">Сургалтын хөтөлбөр</h1>
+      <p class="lead">Уртын дууг сурах гурван түвшин — интерактив хичээл, дасгал, тайзны бэлтгэл.</p>
+
       <div class="program-grid">
-        <article class="program-card">
-          <h3>Анхан шат</h3>
-          <p>Амьсгал, суурь фраз, эх элементүүд.</p>
-          <p class="meta">Хугацаа: 8 долоо хоног</p>
+        <article class="program-card reveal" data-level="beginner" tabindex="0">
+          <div class="card-head">
+            <h3>Анхан шат</h3>
+            <span class="pill">8 долоо хоног</span>
+          </div>
+          <p class="card-short">Амьсгал, суурь фраз, эх элементүүд.</p>
+          <div class="card-body">
+            <ul>
+              <li>Нөхцөл тогтсон амьсгал</li>
+              <li>Суурь аялгуу</li>
+              <li>Өгүүлбэрийн өртөө</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-ghost details-btn">Дэлгэрэнгүй</button>
+              <button class="btn-primary enroll-btn">Бүртгүүлэх</button>
+            </div>
+          </div>
         </article>
 
-        <article class="program-card">
-          <h3>Дунд шат</h3>
-          <p>Аялгуу өргөжүүлэх, давхар аялгууг эзэмших.</p>
-          <p class="meta">Хугацаа: 12 долоо хоног</p>
+        <article class="program-card reveal" data-level="intermediate" tabindex="0">
+          <div class="card-head">
+            <h3>Дунд шат</h3>
+            <span class="pill">12 долоо хоног</span>
+          </div>
+          <p class="card-short">Аялгуу өргөжүүлэх, давхар аялгууг эзэмших.</p>
+          <div class="card-body hidden">
+            <ul>
+              <li>Хоёр давхар аялгуу</li>
+              <li>Фразын олон янз</li>
+              <li>Падаар дасгал</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-ghost details-btn">Дэлгэрэнгүй</button>
+              <button class="btn-primary enroll-btn">Бүртгүүлэх</button>
+            </div>
+          </div>
         </article>
 
-        <article class="program-card">
-          <h3>Дээд шат</h3>
-          <p>Тайзны ур чадвар, мэргэжлийн бэлтгэл.</p>
-          <p class="meta">Хугацаа: 16 долоо хоног</p>
+        <article class="program-card reveal" data-level="advanced" tabindex="0">
+          <div class="card-head">
+            <h3>Дээд шат</h3>
+            <span class="pill">16 долоо хоног</span>
+          </div>
+          <p class="card-short">Тайзны ур чадвар, мэргэжлийн бэлтгэл.</p>
+          <div class="card-body hidden">
+            <ul>
+              <li>Тайзны дасгал</li>
+              <li>Мэргэжлийн тайлбар</li>
+              <li>Оролцогчдын продюсинг</li>
+            </ul>
+            <div class="card-actions">
+              <button class="btn-ghost details-btn">Дэлгэрэнгүй</button>
+              <button class="btn-primary enroll-btn">Бүртгүүлэх</button>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -68,12 +109,16 @@
     <!-- Teacher profile section -->
     <section class="teacher" aria-labelledby="teacher-title">
       <h2 id="teacher-title">Багшийн профайл</h2>
-      <div class="teacher-card">
-        <img src="image/teacher1.jpg" alt="Багшийн хөрөг">
-        <div>
+      <div class="teacher-card reveal">
+        <img class="teacher-photo" src="image/teacher1.jpg" alt="Ж. Бат-Оргил — багш">
+        <div class="teacher-body">
           <h3>Ж. Бат-Оргил</h3>
-          <p>Ардын уртын дууны өвлөн тээгч, олон жилийн багш. Технологи болон уламжлалыг хослуулсан сургалт.</p>
-          <p class="meta">Холбоо: 91919791</p>
+          <p class="teacher-desc">Ардын уртын дууны өвлөн тээгч, олон жилийн багш. Технологи болон уламжлалыг хослуулсан сургалт.</p>
+          <p class="meta">Холбоо: <a class="tel" href="tel:+97691919791">+976 91919791</a></p>
+          <div class="teacher-actions">
+            <button class="btn-ghost" id="teacher-more">Дэлгэрэнгүй профайл</button>
+            <button class="btn-primary" id="contact-teacher">Холбогдох</button>
+          </div>
         </div>
       </div>
     </section>
@@ -83,6 +128,34 @@
     <div class="container"><small>© 2026 Уртын дуу — Сургалт</small></div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- Enrollment modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Хаах">✕</button>
+      <h3 id="modal-title">Сургалтанд бүртгүүлэх</h3>
+      <form id="enroll-form" novalidate>
+        <label for="name">Нэр</label>
+        <input id="name" name="name" required>
+        <label for="phone">Утас</label>
+        <input id="phone" name="phone" inputmode="tel" required placeholder="+976...">
+        <label for="level">Түвшин</label>
+        <select id="level" name="level" required>
+          <option value="">-- Сонгох --</option>
+          <option value="Анхан">Анхан</option>
+          <option value="Дунд">Дунд</option>
+          <option value="Дээд">Дээд</option>
+        </select>
+        <div class="form-actions">
+          <button class="btn-outline" type="button" id="cancel-btn">Буцах</button>
+          <button class="btn-primary" type="submit">Илгээх</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="surgalt.js" defer></script>
 </body>
 </html>
