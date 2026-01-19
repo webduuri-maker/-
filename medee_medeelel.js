@@ -11,6 +11,12 @@
     const clearBtn = document.getElementById('clear-search');
     const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
     const grid = document.getElementById('news-grid');
+    
+    // Guard: exit if essential elements don't exist
+    if (!grid) {
+      return; // Silent fail - page may not have news grid
+    }
+    
     const cards = Array.from(grid.querySelectorAll('.card'));
     const loadMoreBtn = document.getElementById('load-more');
 
@@ -38,12 +44,14 @@
 
     // search + filter logic
     function applyFilters(){
-      const q = (searchInput.value || '').trim().toLowerCase();
+      const q = (searchInput?.value || '').trim().toLowerCase();
       const activeCat = (filterBtns.find(b => b.classList.contains('active')) || {dataset:{cat:'all'}}).dataset.cat;
       cards.forEach(c => {
         const title = (c.dataset.title || '').toLowerCase();
         const cat = (c.dataset.category || '').toLowerCase();
-        const matchesQ = !q || title.includes(q) || (c.querySelector('.card-excerpt') && c.querySelector('.card-excerpt').textContent.toLowerCase().includes(q));
+        const excerptEl = c.querySelector('.card-excerpt');
+        const excerptText = excerptEl ? excerptEl.textContent.toLowerCase() : '';
+        const matchesQ = !q || title.includes(q) || excerptText.includes(q);
         const matchesCat = activeCat === 'all' || cat === activeCat;
         const shouldShow = matchesQ && matchesCat;
         c.dataset.filteredHidden = shouldShow ? '' : '1';
