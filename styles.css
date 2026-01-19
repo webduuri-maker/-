@@ -339,7 +339,7 @@ video {
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: all var(--transition-fast);
+    transition: all var(assets/Гарчиггүй дизайн.png);
     border: 2px solid transparent;
 }
 
