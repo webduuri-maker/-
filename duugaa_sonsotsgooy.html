@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Уртын дуугаа сонсоцгооё</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="duugaa_sonsotsgooy.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,65 +17,123 @@
         <ul>
           <li><a href="index.html">Нүүр</a></li>
           <li><a href="duugaa_sonsotsgooy.html" aria-current="page">Сонсох</a></li>
-          <li><a href="training.html">Сургалт</a></li>
+          <li><a href="surgalt.html">Сургалт</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="container audio-page">
-    <!-- Category filter -->
-    <section class="filter" aria-labelledby="filter-heading">
-      <h1 id="filter-heading">Төрлөөр шүүх</h1>
-      <form class="filter-form" aria-label="Дууны ангилал">
-        <label><input type="radio" name="cat" value="all" checked> Бүгд</label>
-        <label><input type="radio" name="cat" value="traditional"> Ардын</label>
-        <label><input type="radio" name="cat" value="instrumental"> Морин хууртай</label>
-        <label><input type="radio" name="cat" value="modern"> Орчин үе</label>
-      </form>
+    <!-- Controls -->
+    <section class="audio-hero">
+      <h1>Уртын дуугаа сонсоцгооё</h1>
+      <p class="lead">Ардын аялгуу, морин хууртай дуунууд болон орчин үеийн аранжуудыг чихэнд эвтэйхнээр сонсоно уу. Мөн өвлөн тээгчдийн богино танилцуулга (voice) бичлэг нэмсэн.</p>
+
+      <div class="controls-row">
+        <div class="filter" aria-labelledby="filter-heading">
+          <h2 id="filter-heading" class="sr-only">Төрлөөр шүүх</h2>
+          <form class="filter-form" aria-label="Дууны ангилал">
+            <label><input type="radio" name="cat" value="all" checked> Бүгд</label>
+            <label><input type="radio" name="cat" value="traditional"> Ардын</label>
+            <label><input type="radio" name="cat" value="instrumental"> Морин хууртай</label>
+            <label><input type="radio" name="cat" value="modern"> Орчин үе</label>
+            <label><input type="radio" name="cat" value="voice"> Voice</label>
+          </form>
+        </div>
+
+        <div class="search">
+          <label for="song-search" class="sr-only">Дуу хайх</label>
+          <input id="song-search" type="search" placeholder="Дууны нэрээр хайх...">
+        </div>
+      </div>
     </section>
 
     <!-- Audio player list -->
     <section class="songs" aria-labelledby="songs-heading">
-      <h2 id="songs-heading">Дууны жагсаалт</h2>
-      <ul class="song-grid">
-        <li class="song-card" data-category="traditional">
-          <h3>Уртын дуу — Жишээ 1</h3>
-          <p class="meta">Ардын аялгуу</p>
-          <audio controls preload="metadata"><source src="audio/song1.mp3" type="audio/mpeg"></audio>
+      <h2 id="songs-heading" class="sr-only">Дууны жагсаалт</h2>
+      <ul class="song-grid" id="song-grid">
+        <li class="song-card reveal" data-category="traditional" tabindex="0">
+          <div class="song-meta">
+            <div class="song-title">Уртын дуу — Жишээ 1</div>
+            <div class="song-sub">Ардын аялгуу</div>
+          </div>
+          <div class="player-wrap">
+            <button class="play-btn" aria-label="Play">▶</button>
+            <audio class="audio" preload="none">
+              <source data-src="audio/song1.mp3" type="audio/mpeg">
+              Таны хөтчид audio-г дэмждэггүй.
+            </audio>
+            <canvas class="visualizer" width="300" height="48" aria-hidden="true"></canvas>
+            <a class="download" href="audio/song1.mp3" download title="Татах"><i class="fa fa-download"></i></a>
+          </div>
         </li>
 
-        <li class="song-card" data-category="instrumental">
-          <h3>Уртын дуу — Морин хуур</h3>
-          <p class="meta">Морин хуурын дагалдах</p>
-          <audio controls preload="metadata"><source src="audio/song2.mp3" type="audio/mpeg"></audio>
+        <li class="song-card reveal" data-category="instrumental" tabindex="0">
+          <div class="song-meta">
+            <div class="song-title">Урты�� дуу — Морин хуур</div>
+            <div class="song-sub">Морин хуурын дагалдах</div>
+          </div>
+          <div class="player-wrap">
+            <button class="play-btn" aria-label="Play">▶</button>
+            <audio class="audio" preload="none">
+              <source data-src="audio/song2.mp3" type="audio/mpeg">
+            </audio>
+            <canvas class="visualizer" width="300" height="48" aria-hidden="true"></canvas>
+            <a class="download" href="audio/song2.mp3" download title="Татах"><i class="fa fa-download"></i></a>
+          </div>
         </li>
 
-        <li class="song-card" data-category="modern">
-          <h3>Уртын дуу — Орчин жишээ</h3>
-          <p class="meta">Орчин үеийн аранж</p>
-          <audio controls preload="metadata"><source src="audio/song3.mp3" type="audio/mpeg"></audio>
+        <li class="song-card reveal" data-category="modern" tabindex="0">
+          <div class="song-meta">
+            <div class="song-title">Уртын дуу — Орчин жишээ</div>
+            <div class="song-sub">Орчин үеийн аранж</div>
+          </div>
+          <div class="player-wrap">
+            <button class="play-btn" aria-label="Play">▶</button>
+            <audio class="audio" preload="none">
+              <source data-src="audio/song3.mp3" type="audio/mpeg">
+            </audio>
+            <canvas class="visualizer" width="300" height="48" aria-hidden="true"></canvas>
+            <a class="download" href="audio/song3.mp3" download title="Татах"><i class="fa fa-download"></i></a>
+          </div>
         </li>
+
+        <!-- NEW: Voice recording card (Ж. Бат-Оргил танилцуулга) -->
+        <li class="song-card reveal" data-category="voice" id="voice-jbatorgil" tabindex="0">
+          <div class="song-meta">
+            <div class="song-title">Ж. Бат‑Оргил — Богино танилцуулга</div>
+            <div class="song-sub">Интервью / Voice</div>
+          </div>
+
+          <div class="player-wrap">
+            <button class="play-btn" aria-label="Play voice">▶</button>
+
+            <!-- lazy audio source; place file at audio/jbatorgil_voice.mp3 -->
+            <audio class="audio" preload="none">
+              <source data-src="audio/jbatorgil_voice.mp3" type="audio/mpeg">
+              Таны хөтчид audio-г дэмждэггүй.
+            </audio>
+
+            <!-- visualizer canvas (draws simple bars while playing) -->
+            <canvas class="visualizer" width="300" height="48" aria-hidden="true"></canvas>
+
+            <a class="download" href="audio/jbatorgil_voice.mp3" download title="Татах">Татах</a>
+            <button class="share-btn" title="Холбоос хуулах" aria-label="Share">Хуваалцах</button>
+          </div>
+
+          <!-- transcript for accessibility -->
+          <details class="transcript">
+            <summary>Транскрипт</summary>
+            <p>Сайн байцгаана уу. Би Ж. Бат‑Оргил— уртын дууны өвлөн тээгч. Энэ бол богино танилцуулга бөгөөд бид уламжлалт аялгууг хадгалж, залуу хойч үед дамжуулахаар ажиллаж байна...</p>
+          </details>
+        </li>
+
       </ul>
     </section>
   </main>
 
   <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Аудио</small></div></footer>
 
-  <script src="script.js" defer></script>
-
-  <script>
-    // simple client-side category filter
-    (function(){
-      const form=document.querySelector('.filter-form');
-      const cards=Array.from(document.querySelectorAll('.song-card'));
-      form.addEventListener('change', (e)=>{
-        const val=form.querySelector('input[name="cat"]:checked').value;
-        cards.forEach(c=>{
-          c.style.display = (val==='all' || c.dataset.category===val) ? '' : 'none';
-        });
-      });
-    })();
-  </script>
+  <script src="duugaa_sonsotsgooy.js" defer></script>
 </body>
 </html>
