@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Уралдаан болзол — Уртын дуу</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="uraldaan_bolzol.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,45 +25,96 @@
 
   <main class="container competition">
     <!-- Competition overview -->
-    <section class="overview" aria-labelledby="overview-title">
-      <h1 id="overview-title">Уралдаан — Товч</h1>
-      <p class="lead">Уралдаан нь шинэ авьяасыг нээн гаргаж, уламжлалыг түгээх зорилготой.</p>
+    <section class="hero" aria-labelledby="overview-title">
+      <div class="hero-inner">
+        <h1 id="overview-title">Уралдаан — Товч</h1>
+        <p class="lead">Шинэ авьяасыг нээж, уламжлалыг түгээх их уралдаан. Оролцох журам, чухал огноо, шагналын мэдээллийг доор дэлгэрэнгүй харна.</p>
+        <div class="hero-cta">
+          <button id="openRegister" class="btn-primary">Оролцох хүсэлт илгээх</button>
+          <button id="copyDates" class="btn-ghost" title="Чухал огноог бусадтай хуваалцах">Огноог хуулах</button>
+        </div>
+      </div>
+      <div class="hero-decor" aria-hidden="true"></div>
     </section>
 
-    <!-- Rules and conditions -->
-    <section class="rules" aria-labelledby="rules-title">
-      <h2 id="rules-title">Дүрэм, болзол</h2>
-      <ol class="rules-list">
-        <li>Оролцогчид насны ангилалд хуваагдана.</li>
-        <li>Гурван уртын дуу үзүүлэх ба шүүгчид шалгана.</li>
-        <li>Оролцогчид зөв ёс зүй баримтлана.</li>
-        <li>Шүүгчийн шийдвэр үнэмлэхүй.</li>
-      </ol>
-    </section>
+    <section class="grid-row">
+      <!-- Rules and conditions -->
+      <article class="card rules" aria-labelledby="rules-title">
+        <div class="card-head">
+          <h2 id="rules-title">Дүрэм, болзол</h2>
+          <button class="toggle-all" aria-expanded="false" aria-controls="rules-list">Бүгдийг нээх</button>
+        </div>
 
-    <!-- Important dates timeline -->
-    <section class="dates" aria-labelledby="dates-title">
-      <h2 id="dates-title">Чухал өдрүүд</h2>
-      <ul class="dates-list">
-        <li><strong>Бүртгэл хаагдах:</strong> 2026-02-10</li>
-        <li><strong>Шалгаруулалт:</strong> 2026-02-20</li>
-        <li><strong>Тэмцээн:</strong> 2026-03-05</li>
-      </ul>
+        <ol id="rules-list" class="rules-list">
+          <li>
+            <button class="rule-toggle" aria-expanded="false">Оролцогчид насны ангилалд хуваагдана.</button>
+            <div class="rule-body hidden">Насны ангилал: 12–17, 18–35, 36 болон түүнээс дээш. Бүх насны ангиллын нарийвчилсан дүрмийг хуудсны доод хэсэгт авна.</div>
+          </li>
+          <li>
+            <button class="rule-toggle" aria-expanded="false">Гурван уртын дуу үзүүлэх ба шүүгчид шалгана.</button>
+            <div class="rule-body hidden">Дуу бүрийн хугацаа 3–6 минут, оролцогч нь өөрийн бусдын зохиолыг тайлбарлах боломжтой.</div>
+          </li>
+          <li>
+            <button class="rule-toggle" aria-expanded="false">Оролцогчид зөв ёс зүй баримтлана.</button>
+            <div class="rule-body hidden">Тэмцээнд оролцохдоо зохистой хувцаслалт, тайзны соёл баримтална.</div>
+          </li>
+          <li>
+            <button class="rule-toggle" aria-expanded="false">Шүүгчийн шийдвэр үнэмлэхүй.</button>
+            <div class="rule-body hidden">Шүүгчийн шийдвэр нь эцсийн бөгөөд маргаангүй гэж үзнэ.</div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- Important dates timeline -->
+      <article class="card dates" aria-labelledby="dates-title">
+        <h2 id="dates-title">Чухал өдрүүд</h2>
+        <div class="timeline" id="timeline" aria-hidden="false">
+          <div class="timeline-item reveal" data-date="2026-02-10">
+            <div class="ti-dot"></div>
+            <div class="ti-body">
+              <div class="ti-title">Бүртгэл хаагдах</div>
+              <time datetime="2026-02-10" class="ti-date">2026-02-10</time>
+            </div>
+          </div>
+          <div class="timeline-item reveal" data-date="2026-02-20">
+            <div class="ti-dot"></div>
+            <div class="ti-body">
+              <div class="ti-title">Шалгаруулалт</div>
+              <time datetime="2026-02-20" class="ti-date">2026-02-20</time>
+            </div>
+          </div>
+          <div class="timeline-item reveal" data-date="2026-03-05">
+            <div class="ti-dot"></div>
+            <div class="ti-body">
+              <div class="ti-title">Тэмцээн</div>
+              <time datetime="2026-03-05" class="ti-date">2026-03-05</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="countdown" aria-live="polite" id="countdown" role="status">
+          <div class="cd-label">Бүртгэл хаагдах хүртэл:</div>
+          <div class="cd-timer" id="cd-timer">— days —</div>
+        </div>
+      </article>
     </section>
 
     <!-- Prizes section -->
-    <section class="prizes" aria-labelledby="prizes-title">
+    <section class="card prizes" aria-labelledby="prizes-title">
       <h2 id="prizes-title">Шагнал</h2>
       <div class="prize-grid">
-        <div class="prize">
+        <div class="prize reveal">
+          <div class="prize-icon">🏆</div>
           <h3>Тэргүүн байр</h3>
           <p>Цом, мөнгөн шагнал, тайзны уран бүтээлийн боломж.</p>
         </div>
-        <div class="prize">
+        <div class="prize reveal">
+          <div class="prize-icon">🎓</div>
           <h3>Дэд байр</h3>
           <p>Сургалтын тэтгэлэг болон медаль.</p>
         </div>
-        <div class="prize">
+        <div class="prize reveal">
+          <div class="prize-icon">🎖️</div>
           <h3>Гутгаар байр</h3>
           <p>Дурсгалын сертификат, дурсгалын зүйл.</p>
         </div>
@@ -73,6 +124,32 @@
 
   <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Уралдаан</small></div></footer>
 
-  <script src="script.js" defer></script>
+  <!-- Register modal -->
+  <div id="registerModal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="registerTitle">
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Хаах">✕</button>
+      <h3 id="registerTitle">Оролцох хүсэлт</h3>
+      <form id="registerForm" novalidate>
+        <label for="rname">Нэр болон багийн нэр</label>
+        <input id="rname" name="name" required>
+        <label for="rage">Нас</label>
+        <input id="rage" name="age" type="number" min="8" required>
+        <label for="rphone">Утас</label>
+        <input id="rphone" name="phone" type="tel" required placeholder="+976...">
+        <label for="remail">И‑мэйл (айлга)</label>
+        <input id="remail" name="email" type="email">
+        <label for="rinfo">Тайлбар (сонгон үзүүлэх дуу)</label>
+        <textarea id="rinfo" name="info" rows="4" placeholder="Дууны нэр, онцлог ..."></textarea>
+        <div class="form-actions">
+          <button type="button" class="btn-ghost" id="cancelRegister">Буцах</button>
+          <button type="submit" class="btn-primary">Илгээх</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="uraldaan_bolzol.js" defer></script>
 </body>
 </html>
