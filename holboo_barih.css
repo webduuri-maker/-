@@ -105,6 +105,8 @@ input:focus, textarea:focus{
 /* form note / errors */
 .field-error{color:#d9534f;font-size:0.9rem;margin-top:0.35rem}
 .input-row{display:flex;gap:0.6rem}
+.input-row .form-row:first-child{flex:1}
+.input-row .form-row:last-child{flex:0 0 180px}
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   font-weight:800; border-radius:10px; padding:0.6rem 0.85rem; cursor:pointer; border:0;
@@ -159,6 +161,26 @@ input:focus, textarea:focus{
   .contact-page{grid-template-columns:1fr; gap:1rem}
   .contact-info{order:2}
   .map{order:3}
+}
+
+/* mobile: stack input-row */
+@media (max-width:560px){
+  .input-row{flex-direction:column; gap:0.8rem}
+  .input-row .form-row:first-child,
+  .input-row .form-row:last-child{flex:1 1 auto}
+  .contact-form h1{font-size:1.2rem}
+  input[type="text"], input[type="email"], input[type="tel"], textarea{
+    padding:0.7rem 0.8rem;
+    font-size:0.94rem;
+  }
+  .btn{padding:0.7rem 1rem}
+}
+
+/* ultra-small devices */
+@media (max-width:375px){
+  .contact-form h1{font-size:1.1rem}
+  .card{padding:0.85rem}
+  .contact-form .card{padding:0.9rem}
 }
 
 /* reduced motion */

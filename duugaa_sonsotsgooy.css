@@ -96,6 +96,25 @@ body{
   .visualizer{max-width:180px}
 }
 
+/* tablet and mid-range */
+@media (max-width:768px){
+  .song-card{padding:0.9rem}
+  .filters button{padding:0.45rem 0.8rem; font-size:0.9rem}
+}
+
+/* small mobile */
+@media (max-width:560px){
+  h1{font-size:1.3rem}
+  .lead{font-size:0.95rem}
+  .song-title{font-size:0.95rem}
+  .visualizer{max-width:140px; height:40px}
+}
+
+@media (max-width:375px){
+  h1{font-size:1.2rem}
+  .song-card{padding:0.8rem}
+}
+
 /* Accessible helper */
 .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 

@@ -99,7 +99,7 @@
               showToast('Мессеж амжилттай илгээлээ. Бид холбогдоно.');
               form.reset();
             }).catch(err => {
-              console.warn(err);
+              // Network error
               showToast('Илгээхэд алдаа гарлаа. Дараа оролдоно уу.', 3200);
             }).finally(()=>{
               if(submitBtn){ submitBtn.disabled=false; submitBtn.removeAttribute('aria-busy'); }
@@ -179,9 +179,11 @@
           }).addTo(map);
           L.marker([parseFloat(lat), parseFloat(lng)]).addTo(map)
             .bindPopup('Орхон аймаг').openPopup();
-        }catch(e){ console.warn('Leaflet init fail', e); }
+        }catch(e){
+          // Leaflet init failed
+        }
       }).catch(err => {
-        console.warn('Leaflet load error', err);
+        // Leaflet load error
       });
     })();
 

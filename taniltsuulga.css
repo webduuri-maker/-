@@ -54,10 +54,20 @@ body{background:linear-gradient(180deg,var(--bg),#fff);min-height:100vh;}
   .primary-nav{position:absolute;left:0;right:0;top:64px;background:var(--card);padding:12px;border-top:1px solid rgba(0,0,0,0.04);display:none}
   .primary-nav.open{display:block}
 }
+
 @media (max-width:560px){
   .content-grid{grid-template-columns:1fr}
   .profile-media img{height:220px;object-fit:cover}
   .brand{font-size:15px}
+  h1{font-size:1.3rem}
+  .card{padding:0.9rem}
+}
+
+@media (max-width:375px){
+  h1{font-size:1.2rem}
+  .lead{font-size:0.95rem}
+  .profile-media img{height:180px}
+  .card{padding:0.85rem}
 }
 
 @media (prefers-reduced-motion: reduce){

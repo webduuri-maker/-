@@ -146,7 +146,7 @@
           arr.unshift(data);
           localStorage.setItem(key, JSON.stringify(arr));
         }catch(err){
-          console.warn('save failed', err);
+          // localStorage save failed
         }
         hideModal();
         registerForm.reset();

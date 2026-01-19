@@ -158,7 +158,7 @@
         list.unshift(record);
         localStorage.setItem(key, JSON.stringify(list));
       }catch(err){
-        console.warn('localStorage save failed', err);
+        // localStorage save failed
       }
       closeModal();
       enrollForm.reset();
