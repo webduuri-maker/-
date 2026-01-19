@@ -264,6 +264,13 @@ body{
   .img-card img{height:140px}
   .lightbox__img{height:50vh}
   .header-row{height:56px}
+  .card{padding:0.9rem}
+}
+
+@media (max-width:375px){
+  h1{font-size:1.3rem}
+  .img-card img{height:120px}
+  .card{padding:0.85rem}
 }
 
 /* Utility */

@@ -163,6 +163,26 @@ input:focus, textarea:focus{
   .map{order:3}
 }
 
+/* mobile: stack input-row */
+@media (max-width:560px){
+  .input-row{flex-direction:column; gap:0.8rem}
+  .input-row .form-row:first-child,
+  .input-row .form-row:last-child{flex:1 1 auto}
+  .contact-form h1{font-size:1.2rem}
+  input[type="text"], input[type="email"], input[type="tel"], textarea{
+    padding:0.7rem 0.8rem;
+    font-size:0.94rem;
+  }
+  .btn{padding:0.7rem 1rem}
+}
+
+/* ultra-small devices */
+@media (max-width:375px){
+  .contact-form h1{font-size:1.1rem}
+  .card{padding:0.85rem}
+  .contact-form .card{padding:0.9rem}
+}
+
 /* reduced motion */
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important}

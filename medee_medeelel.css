@@ -110,6 +110,19 @@ body{
   .thumb{height:160px}
 }
 
+/* small mobile */
+@media (max-width:560px){
+  h1{font-size:1.3rem}
+  .lead{font-size:0.95rem}
+  .card{padding:0.85rem}
+  .card-title{font-size:1rem}
+}
+
+@media (max-width:375px){
+  h1{font-size:1.2rem}
+  .thumb{height:140px}
+}
+
 /* Utility */
 .hidden{display:none !important}
 .sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}

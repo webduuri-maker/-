@@ -246,6 +246,24 @@ blockquote{
   .portrait-frame{display:block; margin:0 auto; width:80%}
 }
 
+/* additional mobile optimizations */
+@media (max-width:560px){
+  body::before, body::after{display:none} /* hide decorative elements to prevent overflow */
+  .brand{font-size:1.1rem}
+  .profile-card{padding:0.85rem}
+  .portrait{height:180px}
+  .portrait-frame{width:90%}
+  h1{font-size:1.3rem}
+  h2{font-size:1.15rem}
+  .card{padding:0.9rem}
+}
+
+@media (max-width:375px){
+  .container{padding:0 12px}
+  h1{font-size:1.2rem}
+  .portrait{height:160px}
+}
+
 /* prefers reduced motion */
 @media (prefers-reduced-motion:reduce){
   .portrait.floaty,

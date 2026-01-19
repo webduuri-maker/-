@@ -129,6 +129,21 @@ body{
   .teacher-photo{width:100%;height:220px;border-radius:12px}
 }
 
+/* small mobile */
+@media (max-width:600px){
+  .program-card{padding:0.9rem}
+  .pill{padding:0.25rem 0.6rem; font-size:0.8rem}
+  .btn-ghost, .btn-primary{padding:0.55rem 0.75rem; font-size:0.9rem}
+  h1{font-size:1.4rem}
+  .teacher-photo{height:180px}
+}
+
+@media (max-width:375px){
+  h1{font-size:1.3rem}
+  .lead{font-size:0.95rem}
+  .program-card h3{font-size:1rem}
+}
+
 /* prefers-reduced-motion */
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important}
