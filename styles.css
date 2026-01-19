@@ -667,6 +667,168 @@ video {
     }
 }
 
+/* Small mobile devices (414px and below) */
+@media (max-width: 414px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .header-top {
+        padding: 8px 0;
+    }
+
+    .header-top .contact-info {
+        font-size: 11px;
+    }
+
+    .logo h1 {
+        font-size: 16px;
+    }
+
+    .hero-carousel {
+        height: 280px;
+    }
+
+    .slide-content h2 {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .slide-content h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    .slide-content p {
+        font-size: 13px;
+    }
+
+    .carousel-controls {
+        padding: 0 15px;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .content-card {
+        padding: 25px 15px;
+    }
+
+    .content-card h3 {
+        font-size: 20px;
+        min-height: auto;
+    }
+}
+
+/* Extra small mobile devices (375px and below) */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .logo h1 {
+        font-size: 15px;
+    }
+
+    .hero-carousel {
+        height: 260px;
+    }
+
+    .slide-content h2 {
+        font-size: 14px;
+    }
+
+    .slide-content h1 {
+        font-size: 22px;
+    }
+
+    .slide-content p {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .content-card h3 {
+        font-size: 18px;
+    }
+}
+
+/* Ultra small mobile devices (320px) */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .logo h1 {
+        font-size: 14px;
+    }
+
+    .hero-carousel {
+        height: 240px;
+    }
+
+    .slide-content h2 {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    .slide-content h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .slide-content p {
+        font-size: 11px;
+    }
+
+    .carousel-controls {
+        padding: 0 10px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+    }
+
+    .content-card {
+        padding: 20px 12px;
+    }
+
+    .content-card i {
+        font-size: 36px;
+    }
+
+    .content-card h3 {
+        font-size: 16px;
+    }
+
+    .content-card p {
+        font-size: 14px;
+    }
+}
+
 /* =========================
    9. EDITOR PAGES STYLES
    (For additional HTML pages)
@@ -973,3 +1135,79 @@ h3 { font-size: 1.125rem; font-weight:600; }
 }
 
 /* End of appended styles */
+
+/* =========================
+   ADDITIONAL UTILITY CLASSES (for removing inline styles)
+   ========================= */
+
+/* Introduction section specific layouts */
+.intro-grid-start {
+  align-items: start;
+}
+
+.intro-content-main {
+  min-width: 300px;
+}
+
+.intro-artists-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.intro-card-compact h4 {
+  margin-bottom: 6px;
+}
+
+.intro-card-compact p {
+  font-size: 14px;
+  color: #555;
+}
+
+.intro-heading-spaced {
+  margin-top: 18px;
+}
+
+.intro-para-spaced {
+  margin-top: 18px;
+}
+
+.intro-sidebar {
+  width: 360px;
+  min-width: 260px;
+}
+
+.intro-sidebar-card {
+  padding: 18px;
+}
+
+.intro-sidebar-heading {
+  margin-bottom: 8px;
+}
+
+.intro-sidebar-subheading {
+  margin-top: 12px;
+}
+
+.intro-audio-full {
+  width: 100%;
+}
+
+.intro-audio-note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Responsive adjustments for intro section */
+@media (max-width: 920px) {
+  .intro-sidebar {
+    width: 100%;
+    min-width: 0;
+  }
+  
+  .intro-content-main {
+    min-width: 0;
+  }
+}
+
