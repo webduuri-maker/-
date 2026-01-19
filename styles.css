@@ -220,64 +220,51 @@ video {
 /* =========================
    4. HERO CAROUSEL
    ========================= */
-.hero-carousel {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.carousel-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* === ADD: Slide-1 background image (Zorgol mountain hotlink) ===
+   Append these rules into the "4. HERO CAROUSEL" section of styles.css
+*/
+.carousel-slide.slide-1 {
+    background-image: url('https://www.discovermongoliatours.com/files/img/zorgol-mountain-mongolia.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.carousel-slide.active {
+.carousel-slide.slide-1.active {
     opacity: 1;
     z-index: 1;
 }
 
-.slide-content {
-    text-align: center;
-    color: var(--white);
+/* Subtle overlay so white text remains readable on the PNG */
+.carousel-slide.slide-1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    z-index: 0;
+}
+
+/* Ensure content sits above image/overlay */
+.carousel-slide .slide-content {
+    position: relative;
     z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
 }
 
-.slide-content h2 {
-    font-size: 32px;
-    font-weight: 300;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.slide-content h1 {
-    font-size: 56px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.slide-content p {
-    font-size: 24px;
-    font-weight: 400;
-    font-style: italic;
+/* Ensure all slides sizing/positioning is correct */
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 /* Carousel Controls */
