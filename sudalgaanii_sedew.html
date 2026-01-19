@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Судалгааны сэдэв — Уртын дуу</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sudalgaanii_sedew.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -24,45 +24,123 @@
   </header>
 
   <main class="container research">
-    <!-- Research topic list -->
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 id="hero-title">Судалгааны сэдэв, архив, ба дэлгэрэнгүй баримт бичиг</h1>
+        <p class="lead">Уртын дууны архиваас сэдэв судлах, тэмдэглэл, аудио болон PDF баримтыг хялбархан олж, татаж авна.</p>
+
+        <div class="controls">
+          <div class="search">
+            <label for="site-search" class="sr-only">Сэдвээр хайх</label>
+            <input id="site-search" type="search" placeholder="Сэдвээр хайх (жишээ: Орхон, архив, хэл судлал)">
+            <button id="clear-search" class="btn-ghost hidden" aria-label="Хайлтыг цэвэрлэх">✕</button>
+          </div>
+
+          <div class="filters">
+            <select id="filter-select" aria-label="Категори шүүх">
+              <option value="all">Бүгд</option>
+              <option value="topic">Сэдэв</option>
+              <option value="preview">Товч</option>
+              <option value="doc">Баримт бичиг</option>
+            </select>
+            <button id="open-all" class="btn-ghost">Бүгдийг татах (ZIP)</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true"></div>
+    </section>
+
+    <!-- Topics -->
     <section class="topics" aria-labelledby="topics-title">
-      <h1 id="topics-title">Судалгааны сэдэв</h1>
-      <ul class="topics-list">
-        <li><h3>Орхон голын аялгуу ба гарал</h3><p>Аялгууны түүх, эх сурвалж судлах.</p></li>
-        <li><h3>Аудио архивын сэргээх</h3><p>Бичлэг сэргээх, дижитал хадгалалт.</p></li>
-        <li><h3>Уртын дуу ба экологи</h3><p>Байгаль ба аялгууны уялдаа.</p></li>
+      <h2 id="topics-title">Судалгааны сэдэв</h2>
+      <ul class="topics-list" id="topics-list">
+        <li class="topic-card" data-type="topic" data-keywords="Орхон гол аялгуу гарал">
+          <h3>Орхон голын аялгуу ба гарал</h3>
+          <p>Аялгууны түүх, эх сурвалж, бүс нутгийн ялгаа.</p>
+          <div class="card-actions">
+            <button class="btn-outline preview-btn" data-src="assets/orkhon_summary.pdf">Preview</button>
+            <a class="btn-ghost" href="assets/orkhon_study.pdf" download>Татах</a>
+          </div>
+        </li>
+
+        <li class="topic-card" data-type="topic" data-keywords="Аудио архив сэргээх бичлэг">
+          <h3>Аудио архивын сэргээх</h3>
+          <p>Бичлэг сэргээх арга, дижитал хадгалалт, метадата стандарт.</p>
+          <div class="card-actions">
+            <button class="btn-outline preview-btn" data-src="assets/archive_restore_guideline.pdf">Preview</button>
+            <a class="btn-ghost" href="assets/archive_restore_guideline.pdf" download>Татах</a>
+          </div>
+        </li>
+
+        <li class="topic-card" data-type="topic" data-keywords="Уртын дуу экологи байгаль аялгуу">
+          <h3>Уртын дуу ба экологи</h3>
+          <p>Байгаль ба аялгууны уялдаа, сэдэвчилсэн судалгаа.</p>
+          <div class="card-actions">
+            <button class="btn-outline preview-btn" data-src="assets/ecology_brief.pdf">Preview</button>
+            <a class="btn-ghost" href="assets/ecology_brief.pdf" download>Татах</a>
+          </div>
+        </li>
       </ul>
     </section>
 
-    <!-- Article preview layout -->
+    <!-- Previews -->
     <section class="previews" aria-labelledby="previews-title">
       <h2 id="previews-title">Архив судалгааны товч</h2>
 
-      <article class="preview">
-        <h3>Уртын дууны хэл судлал</h3>
-        <p class="meta">С. Төгөлдөр — 2024</p>
-        <p>Фразын бүтэц, хэл найруулгын онцлогийг судалсан. <a href="assets/study1.pdf" download>Татах</a></p>
-      </article>
+      <div class="preview-grid" id="preview-grid">
+        <article class="preview-card" data-type="preview" data-keywords="Уртын дуу хэл судлал С. Төгөлдөр">
+          <div class="preview-meta">
+            <h3>Уртын дууны хэл судлал</h3>
+            <p class="meta">С. Төгөлдөр — 2024</p>
+          </div>
+          <p>Фразын бүтэц, хэл найруулгын онцлогийг судалсан — товч тайлбар, PDF-ээр дамжуулна.</p>
+          <div class="card-actions">
+            <button class="btn-outline preview-btn" data-src="assets/study1.pdf">Preview</button>
+            <a class="btn-ghost" href="assets/study1.pdf" download>Татах</a>
+          </div>
+        </article>
 
-      <article class="preview">
-        <h3>Аудио тэмдэглэл</h3>
-        <p class="meta">М. Номин — 2022</p>
-        <p>Тэмдэглэл хийх стандарт, тэмдэглэгээний протокол. <a href="assets/study2.pdf" download>Татах</a></p>
-      </article>
+        <article class="preview-card" data-type="preview" data-keywords="Аудио тэмдэглэл М. Номин">
+          <div class="preview-meta">
+            <h3>Аудио тэмдэглэл</h3>
+            <p class="meta">М. Номин — 2022</p>
+          </div>
+          <p>Тэмдэглэл хийх стандарт, тэмдэглэгээний протокол. Жишээ PDF-ийг үзэх боломжтой.</p>
+          <div class="card-actions">
+            <button class="btn-outline preview-btn" data-src="assets/study2.pdf">Preview</button>
+            <a class="btn-ghost" href="assets/study2.pdf" download>Татах</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Downloadable documents -->
+    <!-- Documents -->
     <section class="docs" aria-labelledby="docs-title">
       <h2 id="docs-title">Татаж авах баримт бичиг</h2>
-      <ul class="docs-list">
-        <li><a href="assets/protocol.pdf" download>Судалгааны протокол (PDF)</a></li>
-        <li><a href="assets/transcription_guidelines.pdf" download>Тэмдэглэл хийх заавар (PDF)</a></li>
+      <ul class="docs-list" id="docs-list">
+        <li data-type="doc"><a href="assets/protocol.pdf" download>Судалгааны протокол (PDF)</a></li>
+        <li data-type="doc"><a href="assets/transcription_guidelines.pdf" download>Тэмдэглэл хийх заавар (PDF)</a></li>
       </ul>
     </section>
   </main>
 
   <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Судалгаa</small></div></footer>
 
-  <script src="script.js" defer></script>
+  <!-- PDF preview modal -->
+  <div id="previewModal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="previewTitle">
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Хаах">✕</button>
+      <h3 id="previewTitle">Preview</h3>
+      <div class="preview-frame-wrap">
+        <iframe id="previewFrame" src="" title="PDF preview" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="sudalgaanii_sedew.js" defer></script>
 </body>
 </html>
