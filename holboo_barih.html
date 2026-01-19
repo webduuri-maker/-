@@ -4,56 +4,112 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Холбоо барих — Уртын дуу</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Updated to use page-specific styles -->
+  <link rel="stylesheet" href="holboo_barih.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Header / nav -->
   <header class="site-header" role="banner">
     <div class="container header-row">
-      <a class="brand" href="index.html">Холбоо барих</a>
+      <a class="brand" href="index.html">Уртын дуу</a>
       <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Цэс">☰</button>
       <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Үндсэн цэс">
         <ul>
           <li><a href="index.html">Нүүр</a></li>
           <li><a href="holboo_barih.html" aria-current="page">Холбоо</a></li>
           <li><a href="medee_medeelel.html">Мэдээ</a></li>
+          <li><a href="sudalgaanii_sedew.html">Судалгаа</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container contact-page">
+  <main class="container contact-page" id="main">
     <!-- Contact form -->
-    <section class="contact-form" aria-labelledby="contact-title">
+    <section class="contact-form card" aria-labelledby="contact-title">
       <h1 id="contact-title">Холбоо барих</h1>
-      <form class="form" action="#" method="post" novalidate>
-        <div class="form-row"><label for="name">Нэр</label><input id="name" name="name" type="text" required></div>
-        <div class="form-row"><label for="email">Имэйл</label><input id="email" name="email" type="email" required></div>
-        <div class="form-row"><label for="message">Зурвас</label><textarea id="message" name="message" rows="6" required></textarea></div>
-        <div class="form-row"><button class="btn primary" type="submit">Илгээх</button></div>
+      <p class="lead">Бидэнтэй холбогдох, төслийн санал өгөх эсвэл арга хэмжээнд харъяалагдах талаар асуухдаа доорх маягтыг ашиглана уу.</p>
+
+      <form class="form" action="#" method="post" novalidate aria-labelledby="contact-title">
+        <div class="form-row">
+          <label for="name">Нэр</label>
+          <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" />
+        </div>
+
+        <div class="input-row">
+          <div class="form-row" style="flex:1">
+            <label for="email">Имэйл</label>
+            <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" />
+          </div>
+          <div class="form-row" style="flex:0 0 180px">
+            <label for="phone">Утас</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+976 91919791" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Зурвас</label>
+          <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Таны санал/асуултаа бичнэ үү..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <button class="btn btn-primary" type="submit">Илгээх</button>
+        </div>
       </form>
+
+      <p class="sr-only" id="form-status" aria-live="polite"></p>
     </section>
 
     <!-- Contact information cards -->
-    <section class="contact-info" aria-labelledby="info-title">
-      <h2 id="info-title">Мэдээлэл</h2>
-      <div class="info-grid">
-        <div class="info-card"><h3>И-мэйл</h3><p><a href="mailto:ovcl.worldheritage@gmail.com">ovcl.worldheritage@gmail.com</a></p></div>
-        <div class="info-card"><h3>Утас</h3><p>91919791 • 99914009</p></div>
-        <div class="info-card"><h3>Хаяг</h3><p>Орхон аймаг, ХХХ гудамж</p></div>
-      </div>
-    </section>
+    <aside class="contact-info">
+      <section class="card" aria-labelledby="info-title">
+        <h2 id="info-title">Мэдээлэл</h2>
 
-    <!-- Embedded map placeholder -->
-    <section class="map" aria-labelledby="map-title">
-      <h2 id="map-title">Байршил</h2>
-      <div class="map-placeholder" role="img" aria-label="Газрын зураг">MAP PLACEHOLDER — энд iframe эсвэл interactive map залгана</div>
-    </section>
+        <div class="info-grid">
+          <div class="info-card" role="region" aria-label="Имэйл">
+            <h3>И-мэйл</h3>
+            <p><a href="mailto:ovcl.worldheritage@gmail.com">ovcl.worldheritage@gmail.com</a></p>
+            <small class="muted">Дарж имэйл илгээх эсвэл дарж хуулах</small>
+          </div>
+
+          <div class="info-card" role="region" aria-label="Утас">
+            <h3>Утас</h3>
+            <p>91919791 • 99914009</p>
+            <small class="muted">Дарж утас дуудна / урт дарж дугаарыг хуулах</small>
+          </div>
+
+          <div class="info-card" role="region" aria-label="Хаяг">
+            <h3>Хаяг</h3>
+            <p>Орхон аймаг, ХХХ гудамж</p>
+            <small class="muted">Тодорхой байршил дэлгэрэнгүй карт дээр</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map -->
+      <section class="card map" aria-labelledby="map-title">
+        <h2 id="map-title">Байршил</h2>
+        <!-- Provide data-lat/data-lng to enable dynamic Leaflet loader in holboo_barih.js -->
+        <!-- Example coords (Орхон аймгийн төв/зураг): set real coords as needed -->
+        <div class="map-placeholder" role="img" aria-label="Газрын зураг" data-lat="49.0236" data-lng="104.0940">
+          MAP PLACEHOLDER — газрын зургийг ачааллахын тулд дарна уу.
+        </div>
+      </section>
+    </aside>
   </main>
 
-  <footer class="site-footer"><div class="container"><small>© 2026 Уртын дуу — Холбоо</small></div></footer>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 Уртын дуу — Холбоо</small>
+    </div>
+  </footer>
 
-  <script src="script.js" defer></script>
+  <!-- toast for feedback -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <!-- Updated script reference -->
+  <script src="holboo_barih.js" defer></script>
 </body>
 </html>
